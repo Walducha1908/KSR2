@@ -31,7 +31,6 @@ public class DataReader {
             if(row.getCell(0) == null){
                 break;
             }
-            System.out.println(row.getRowNum());
 
             recordList.add(createRecord(row));
         }

@@ -14,10 +14,9 @@ public class Program {
 
     public static void main(String[] args) throws IOException, ParseException {
         RecordContainer r = new RecordContainer(readRecords(args[0]));
+        System.out.println("Started reading data...");
 
-        LinkedList<Record> temp = RecordContainer.getAllRecordList();
-
-        System.out.println("0: " + temp.get(0).toString());
-        System.out.println("1: " + temp.get(1).toString());
+        LinkedList<Record> records = RecordContainer.getAllRecordList();
+        System.out.println(records.size() + " records have been downloaded!");
     }
 }
