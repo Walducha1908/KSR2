@@ -50,4 +50,9 @@ public class AndSummarizer {
     public void setSecondVariable(LinguisticVariable secondVariable) {
         this.secondVariable = secondVariable;
     }
+
+    @Override
+    public String toString() {
+        return " and ";
+    }
 }

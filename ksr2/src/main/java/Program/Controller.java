@@ -16,7 +16,7 @@ import static Program.Data.DataReader.readRecords;
 public class Controller {
 
     @FXML private Button button;
-    @FXML private CheckBox chckbox;
+    @FXML private CheckBox checkbox;
 
     public void useButton() throws IOException, ParseException {
         RecordContainer r = new RecordContainer(readRecords("baza.xlsx"));

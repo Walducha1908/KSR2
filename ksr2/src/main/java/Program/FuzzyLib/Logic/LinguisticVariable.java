@@ -10,10 +10,10 @@ public class LinguisticVariable {
     private boolean absolute;
     private MembershipFunction membershipFunction;
 
-    public LinguisticVariable(String quantifierName, String memberToExtract, boolean absolute, MembershipFunction membershipFunction) {
+    public LinguisticVariable(String quantifierName, String memberToExtract, MembershipFunction membershipFunction) {
         this.quantifierName = quantifierName;
         this.memberToExtract = memberToExtract;
-        this.absolute = absolute;
+        this.absolute = false;
         this.membershipFunction = membershipFunction;
     }
 

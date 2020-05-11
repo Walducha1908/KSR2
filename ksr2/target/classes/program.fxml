@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Program.Controller">
    <children>
-      <CheckBox fx:id="chckbox" layoutX="652.0" layoutY="304.0" mnemonicParsing="false" text="First " />
+      <CheckBox fx:id="checkbox" layoutX="652.0" layoutY="304.0" mnemonicParsing="false" text="First " />
       <Button fx:id="button" layoutX="316.0" layoutY="300.0" mnemonicParsing="false" onAction="#useButton" text="Załaduj se rekordy człowieku" />
    </children>
 </AnchorPane>

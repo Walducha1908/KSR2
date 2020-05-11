@@ -1,6 +1,8 @@
 package Program;
 
 
+import Program.FuzzyLib.Containers.LinguisticVariableContainer;
+import Program.FuzzyLib.Logic.LinguisticVariable;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,22 +13,20 @@ import java.text.ParseException;
 
 public class Program extends Application {
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/program.fxml"));
-        primaryStage.setTitle("Mati je kluski");
-        primaryStage.setScene(new Scene(root, 800,600));
-        primaryStage.show();
+    public void start(Stage primaryStage) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/program.fxml"));
+            primaryStage.setTitle("Mati je kluski");
+            primaryStage.setScene(new Scene(root, 800, 600));
+            primaryStage.show();
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
     }
+
     public static void main(String[] args) throws IOException, ParseException {
+        Manager.prepareLinguisticVariables();
         launch(args);
-
-        /*
-        RecordContainer r = new RecordContainer(readRecords(args[0]));
-        System.out.println("Started reading data...");
-
-        LinkedList<Record> records = RecordContainer.getAllRecordList();
-        System.out.println(records.size() + " records have been downloaded!");
-        */
     }
 
 

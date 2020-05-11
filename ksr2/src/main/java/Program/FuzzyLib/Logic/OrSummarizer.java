@@ -45,4 +45,9 @@ public class OrSummarizer {
     public void setSecondVariable(LinguisticVariable secondVariable) {
         this.secondVariable = secondVariable;
     }
+
+    @Override
+    public String toString() {
+        return " or ";
+    }
 }
