@@ -1,21 +1,24 @@
 package Program.FuzzyLib.Logic;
 
+import Program.Model.Record;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class OrSummarizer {
+public class OrSummarizer extends LinguisticVariable{
     private LinguisticVariable firstVariable;
     private LinguisticVariable secondVariable;
 
     public OrSummarizer(LinguisticVariable firstVariable, LinguisticVariable secondVariable) {
+        super();
         this.firstVariable = firstVariable;
         this.secondVariable = secondVariable;
     }
 
-    public double getMembership(double x) {
-        return Math.max(firstVariable.getMembership(x), secondVariable.getMembership(x));
+    public double getMembershipWithRecord(Record record) {
+        return Math.max(firstVariable.getMembershipWithRecord(record), secondVariable.getMembershipWithRecord(record));
     }
 
     public LinkedList<Double> support(LinkedList<Double> values) {

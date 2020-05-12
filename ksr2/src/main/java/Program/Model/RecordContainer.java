@@ -7,7 +7,6 @@ public class RecordContainer {
     private static LinkedList<Record> allRecordList;
     private static LinkedList<Record> usedRecordList;
 
-
     public RecordContainer() {
         this.allRecordList = new LinkedList<Record>();
         this.usedRecordList = new LinkedList<Record>();

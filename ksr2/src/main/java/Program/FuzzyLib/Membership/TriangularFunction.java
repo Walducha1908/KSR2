@@ -16,7 +16,7 @@ public class TriangularFunction implements MembershipFunction {
 
     @Override
     public double getMembership(double x) {
-        if (x <= a)
+        if (x < a)
             return 0.0;
         else if (a <= x && x < b)
             return (x - a) / (b - a);

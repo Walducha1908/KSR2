@@ -19,10 +19,6 @@ public class Controller {
     @FXML private CheckBox checkbox;
 
     public void useButton() throws IOException, ParseException {
-        RecordContainer r = new RecordContainer(readRecords("baza.xlsx"));
-        System.out.println("Started reading data...");
-
-        LinkedList<Record> records = r.getAllRecordList();
-        System.out.println(records.size() + " records have been downloaded!");
+        Manager.readAllRecords();
     }
 }

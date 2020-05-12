@@ -1,7 +1,7 @@
 package Program;
 
 
-import Program.FuzzyLib.Containers.LinguisticVariableContainer;
+import Program.FuzzyLib.Containers.QuantifierContainer;
 import Program.FuzzyLib.Logic.LinguisticVariable;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -25,8 +25,14 @@ public class Program extends Application {
     }
 
     public static void main(String[] args) throws IOException, ParseException {
+        Manager.readAllRecords();
         Manager.prepareLinguisticVariables();
-        launch(args);
+        Manager.prepareQuantifiers();
+//        launch(args);
+
+        for (LinguisticVariable quantifier: QuantifierContainer.quantifiersList) {
+            Manager.simpleLinguisticSentence(quantifier, "HotTGSA", "ModerateFG");
+        }
     }
 
 

@@ -1,24 +1,77 @@
 package Program.FuzzyLib.Logic;
 
 import Program.FuzzyLib.Membership.MembershipFunction;
+import Program.Model.Columns;
+import Program.Model.Record;
+import Program.Model.Seasons;
 
 import java.util.LinkedList;
 
 public class LinguisticVariable {
     private String quantifierName;
-    private String memberToExtract;
     private boolean absolute;
     private MembershipFunction membershipFunction;
+    private Columns column;
+    private Seasons season;
 
-    public LinguisticVariable(String quantifierName, String memberToExtract, MembershipFunction membershipFunction) {
+    /* Variables constructor */
+    public LinguisticVariable(String quantifierName, Columns column, Seasons season, MembershipFunction membershipFunction) {
         this.quantifierName = quantifierName;
-        this.memberToExtract = memberToExtract;
         this.absolute = false;
         this.membershipFunction = membershipFunction;
+        this.column = column;
+        this.season = null;
+    }
+
+    /* Quantifiers constructor */
+    public LinguisticVariable(String quantifierName, boolean absolute, MembershipFunction membershipFunction) {
+        this.quantifierName = quantifierName;
+        this.absolute = absolute;
+        this.membershipFunction = membershipFunction;
+        this.column = null;
+        this.season = null;
+    }
+
+    public LinguisticVariable() {
+        this.quantifierName = null;
+        this.absolute = false;
+        this.membershipFunction = null;
+        this.column = null;
     }
 
     public double getMembership(double x) {
         return membershipFunction.getMembership(x);
+    }
+
+    public double getMembershipWithRecord(Record record) {
+        double x = getValueFromColumn(record);
+        return getMembership(x);
+    }
+
+    public double getValueFromColumn(Record record) {
+        switch (column) {
+            case FG:
+                return record.getFG();
+            case FHX:
+                return record.getFHX();
+            case FHN:
+                return record.getFHN();
+            case FXX:
+                return record.getFXX();
+            case TG:
+                return record.getTG();
+            case TN:
+                return record.getTN();
+            case TX:
+                return record.getTX();
+            case T10N:
+                return record.getT10N();
+            case Q:
+                return record.getQ();
+            case RH:
+                return record.getRH();
+        }
+        return -1;
     }
 
     public double cardinality() {
@@ -42,7 +95,7 @@ public class LinguisticVariable {
 
     @Override
     public String toString() {
-        return quantifierName + " " + memberToExtract;
+        return quantifierName + " ";
     }
 
     public String getQuantifierName() {
@@ -51,14 +104,6 @@ public class LinguisticVariable {
 
     public void setQuantifierName(String quantifierName) {
         this.quantifierName = quantifierName;
-    }
-
-    public String getMemberToExtract() {
-        return memberToExtract;
-    }
-
-    public void setMemberToExtract(String memberToExtract) {
-        this.memberToExtract = memberToExtract;
     }
 
     public boolean isAbsolute() {
@@ -75,5 +120,21 @@ public class LinguisticVariable {
 
     public void setMembershipFunction(MembershipFunction membershipFunction) {
         this.membershipFunction = membershipFunction;
+    }
+
+    public Columns getColumn() {
+        return column;
+    }
+
+    public void setColumn(Columns column) {
+        this.column = column;
+    }
+
+    public Seasons getSeason() {
+        return season;
+    }
+
+    public void setSeason(Seasons season) {
+        this.season = season;
     }
 }

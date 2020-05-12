@@ -1,6 +1,7 @@
 package Program.FuzzyLib.Logic;
 
 import Program.FuzzyLib.Membership.MembershipFunction;
+import Program.Model.Record;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -8,17 +9,19 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class AndSummarizer {
+public class AndSummarizer extends LinguisticVariable {
     private LinguisticVariable firstVariable;
     private LinguisticVariable secondVariable;
 
     public AndSummarizer(LinguisticVariable firstVariable, LinguisticVariable secondVariable) {
+        super();
         this.firstVariable = firstVariable;
         this.secondVariable = secondVariable;
     }
 
-    public double getMembership(double x) {
-        return Math.min(firstVariable.getMembership(x), secondVariable.getMembership(x));
+    @Override
+    public double getMembershipWithRecord(Record record) {
+        return Math.min(firstVariable.getMembershipWithRecord(record), secondVariable.getMembershipWithRecord(record));
     }
 
     public LinkedList<Double> support(LinkedList<Double> values) {

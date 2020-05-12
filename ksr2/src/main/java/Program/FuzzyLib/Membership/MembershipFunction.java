@@ -1,5 +1,8 @@
 package Program.FuzzyLib.Membership;
 
+import Program.Model.Columns;
+import Program.Model.Record;
+
 import java.util.LinkedList;
 
 public interface MembershipFunction {

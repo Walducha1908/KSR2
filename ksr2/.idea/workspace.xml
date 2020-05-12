@@ -2,18 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0edc1891-cb6a-4050-be60-2eb2d34676f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/CEL.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Containers/LinguisticVariableContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Program/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Data/Zmienne_lingwistyczne.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Data/Zmienne_lingwistyczne.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Containers/QuantifierContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Logic/Measures.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Program/Helper/SentenceMaker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Program/Model/Columns.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Program/Model/Seasons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/CEL.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/CEL.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Program/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Containers/LinguisticVariableContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Containers/LinguisticVariableContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Logic/AndSummarizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Logic/AndSummarizer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Logic/LinguisticVariable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Logic/LinguisticVariable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Logic/OrSummarizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Logic/OrSummarizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Membership/MembershipFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Membership/MembershipFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Membership/TriangularFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Membership/TriangularFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Program/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Program/Model/RecordContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/Model/RecordContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Program/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/Program.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/program.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/program.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Program/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Program/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Containers/LinguisticVariableContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Containers/LinguisticVariableContainer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Logic/AndSummarizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Logic/AndSummarizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Logic/LinguisticVariable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Logic/LinguisticVariable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Logic/OrSummarizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Logic/OrSummarizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Membership/TriangularFunction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Membership/TriangularFunction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Program/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Program/Manager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Program/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Program/Program.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/program.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/program.fxml" afterDir="false" />
     </list>
@@ -28,6 +42,7 @@
         <option value="FxmlFile" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -50,7 +65,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -62,6 +77,7 @@
       <option name="MAIN_CLASS_NAME" value="Program.Program" />
       <module name="ksr2" />
       <option name="PROGRAM_PARAMETERS" value="baza.xlsx" />
+      <option name="VM_PARAMETERS" value="--illegal-access=deny" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -107,7 +123,8 @@
       <updated>1588586905001</updated>
       <workItem from="1588598935970" duration="334000" />
       <workItem from="1588603585395" duration="1049000" />
-      <workItem from="1589185180698" duration="12793000" />
+      <workItem from="1589185180698" duration="12869000" />
+      <workItem from="1589284647018" duration="10636000" />
     </task>
     <servers />
   </component>
@@ -119,14 +136,15 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="183" key="#Project_Structure/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588586927726" />
-    <state x="414" y="180" width="1092" height="775" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588602357054">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="414" y="180" width="1092" height="775" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588602357054" />
-    <state x="2685" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1589203086320">
+    <state x="2334" y="178" width="1092" height="775" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589289530020">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2685" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589203086320" />
+    <state x="2334" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589289530020" />
+    <state x="414" y="180" width="1092" height="775" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588602357054" />
+    <state x="2685" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1589296323120">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2685" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589296323120" />
     <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588599696032" />
     <state width="421" height="466" key="DebuggerActiveHint" timestamp="1589203297802">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -137,55 +155,67 @@
     </state>
     <state x="592" y="253" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588604293585" />
     <state x="740" y="322" key="FileChooserDialogImpl/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588599990249" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1589203554302">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1589296614624">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589203554302" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589296614624" />
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588604634390" />
     <state width="1877" height="248" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588602822792" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1589203554302">
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1589296614624">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589203554302" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589296614624" />
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588604634390" />
     <state width="1877" height="248" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588602822792" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1589203554301">
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1589296614624">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589203554301" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589296614624" />
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588604634390" />
     <state width="1877" height="248" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588602822792" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1589203554302">
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1589296614624">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589203554302" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589296614624" />
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588604634390" />
     <state width="1877" height="248" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588602822792" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1589203325291">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1589294963632">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589203325291" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589294963632" />
     <state width="1877" height="352" key="GridCell.Tab.1.bottom/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588596183784" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1589203325291">
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1589294963632">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589203325291" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589294963632" />
     <state width="1877" height="352" key="GridCell.Tab.1.center/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588596183784" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1589203325290">
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1589294963632">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589203325290" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589294963632" />
     <state width="1877" height="352" key="GridCell.Tab.1.left/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588596183784" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1589203325291">
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1589294963632">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589203325291" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589294963632" />
     <state width="1877" height="352" key="GridCell.Tab.1.right/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588596183784" />
-    <state x="81" y="109" key="SettingsEditor" timestamp="1588604294750">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="2410" y="1" width="998" height="715" key="SettingsEditor" timestamp="1589289324295">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="2410" y="1" width="998" height="715" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589289324295" />
     <state x="81" y="109" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1588604294750" />
     <state x="101" y="189" key="SettingsEditor/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588601997811" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Logic/Measures.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="simpleUML.UMLToolWindowPlugin">
     <General>
