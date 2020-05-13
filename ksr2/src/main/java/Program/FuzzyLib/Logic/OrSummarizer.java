@@ -15,6 +15,20 @@ public class OrSummarizer extends LinguisticVariable{
         super();
         this.firstVariable = firstVariable;
         this.secondVariable = secondVariable;
+
+        if (firstVariable.getSeason() != null && secondVariable.getSeason() != null) {
+            if (firstVariable.getSeason() != secondVariable.getSeason()) {
+                throw new IllegalArgumentException("Cannot run sentence with different seasons!");
+            }
+        }
+
+        if (firstVariable.getSeason() != null) {
+            this.setSeason(firstVariable.getSeason());
+        } else if (secondVariable.getSeason() != null) {
+            this.setSeason(secondVariable.getSeason());
+        } else {
+            this.setSeason(null);
+        }
     }
 
     public double getMembershipWithRecord(Record record) {
@@ -51,6 +65,6 @@ public class OrSummarizer extends LinguisticVariable{
 
     @Override
     public String toString() {
-        return " or ";
+        return firstVariable + " or " + secondVariable;
     }
 }

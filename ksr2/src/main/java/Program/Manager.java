@@ -2,14 +2,10 @@ package Program;
 
 import Program.FuzzyLib.Containers.LinguisticVariableContainer;
 import Program.FuzzyLib.Containers.QuantifierContainer;
-import Program.FuzzyLib.Logic.LinguisticVariable;
-import Program.FuzzyLib.Logic.Measures;
-import Program.Helper.SentenceMaker;
 import Program.Model.Record;
-import Program.Model.RecordContainer;
+import Program.Model.Containers.RecordContainer;
 
 import java.io.IOException;
-import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.LinkedList;
 
@@ -37,18 +33,7 @@ public class Manager {
         }
         System.out.println("Started reading data...");
 
-        LinkedList<Record> records = r.getAllRecordList();
+        LinkedList<Record> records = r.getAllRecordsList();
         System.out.println(records.size() + " records have been downloaded!");
-    }
-
-    public static void simpleLinguisticSentence(LinguisticVariable quantifier, String qualifierName, String summarizerName) {
-        double result;
-        LinguisticVariable qualifier = LinguisticVariableContainer.linguisticVariables.get(qualifierName);
-        LinguisticVariable summarizer = LinguisticVariableContainer.linguisticVariables.get(summarizerName);
-
-        DecimalFormat df = new DecimalFormat("0.000");
-
-        result = Measures.degreeOfTruth(quantifier, qualifier, summarizer, RecordContainer.getAllRecordList());
-        System.out.println(SentenceMaker.makeSentence(quantifier, qualifier, summarizer) + " [T = " + df.format(result) + "]");
     }
 }

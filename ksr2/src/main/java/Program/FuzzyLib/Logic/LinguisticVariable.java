@@ -1,6 +1,7 @@
 package Program.FuzzyLib.Logic;
 
 import Program.FuzzyLib.Membership.MembershipFunction;
+import Program.FuzzyLib.Summaries.SentenceMaker;
 import Program.Model.Columns;
 import Program.Model.Record;
 import Program.Model.Seasons;
@@ -20,7 +21,7 @@ public class LinguisticVariable {
         this.absolute = false;
         this.membershipFunction = membershipFunction;
         this.column = column;
-        this.season = null;
+        this.season = season;
     }
 
     /* Quantifiers constructor */
@@ -95,7 +96,7 @@ public class LinguisticVariable {
 
     @Override
     public String toString() {
-        return quantifierName + " ";
+        return quantifierName + " " + SentenceMaker.columnDictionary(column);
     }
 
     public String getQuantifierName() {

@@ -58,7 +58,7 @@ public class LinguisticVariableContainer {
                 Columns.TG,
                 Seasons.winter,
                 new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(100.0, 150.0, 270.0, 306.0))));
-        linguisticVariables.put("HotTGW", WarmTGW);
+        linguisticVariables.put("HotTGW", HotTGW);
 
         /* Column TG - spring and autumn */
         LinguisticVariable ColdTGSA = new LinguisticVariable(

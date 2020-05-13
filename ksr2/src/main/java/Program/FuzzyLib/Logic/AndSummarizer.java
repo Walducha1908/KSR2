@@ -1,10 +1,7 @@
 package Program.FuzzyLib.Logic;
 
-import Program.FuzzyLib.Membership.MembershipFunction;
 import Program.Model.Record;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,6 +14,20 @@ public class AndSummarizer extends LinguisticVariable {
         super();
         this.firstVariable = firstVariable;
         this.secondVariable = secondVariable;
+
+        if (firstVariable.getSeason() != null && secondVariable.getSeason() != null) {
+            if (firstVariable.getSeason() != secondVariable.getSeason()) {
+                throw new IllegalArgumentException("Cannot run sentence with different seasons!");
+            }
+        }
+
+        if (firstVariable.getSeason() != null) {
+            this.setSeason(firstVariable.getSeason());
+        } else if (secondVariable.getSeason() != null) {
+            this.setSeason(secondVariable.getSeason());
+        } else {
+            this.setSeason(null);
+        }
     }
 
     @Override
@@ -56,6 +67,6 @@ public class AndSummarizer extends LinguisticVariable {
 
     @Override
     public String toString() {
-        return " and ";
+        return firstVariable + " and " + secondVariable;
     }
 }
