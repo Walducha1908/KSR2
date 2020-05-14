@@ -6,6 +6,7 @@ import Program.Model.Containers.ResultContainer;
 import Program.Model.Record;
 import Program.Model.Containers.RecordContainer;
 import Program.Model.Result;
+import Program.Settings;
 
 import java.text.DecimalFormat;
 import java.util.LinkedList;
@@ -38,6 +39,8 @@ public class LinguisticSummary {
 
         ResultContainer.addResult(new Result(sentence, degreeOfTruth, records.size()));
 
-        System.out.print(ResultContainer.results.getLast());
+        if (Settings.displayAll) {
+            System.out.print(ResultContainer.results.getLast());
+        }
     }
 }

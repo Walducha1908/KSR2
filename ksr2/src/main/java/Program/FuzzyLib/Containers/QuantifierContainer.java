@@ -93,55 +93,55 @@ public class QuantifierContainer {
                 "Less than 200",
                 true,
                 new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(0.0, 0.0, 200.0, 220.0))));
-        nonAbsoluteQuantifiersMap.put("lessThan200", lessThan200);
-        nonAbsoluteQuantifiersList.add(lessThan200);
+        absoluteQuantifiersMap.put("lessThan200", lessThan200);
+        absoluteQuantifiersList.add(lessThan200);
 
         /* Around 500 */
         LinguisticVariable around500 = new LinguisticVariable(
                 "Around 500",
                 true,
                 new TriangularFunction(new LinkedList<Double>(Arrays.asList(350.0, 500.0, 650.0))));
-        nonAbsoluteQuantifiersMap.put("around500", around500);
-        nonAbsoluteQuantifiersList.add(around500);
+        absoluteQuantifiersMap.put("around500", around500);
+        absoluteQuantifiersList.add(around500);
 
         /* Around 1000 */
         LinguisticVariable around1000 = new LinguisticVariable(
                 "Around 1000",
                 true,
                 new TriangularFunction(new LinkedList<Double>(Arrays.asList(700.0, 1000.0, 1300.0))));
-        nonAbsoluteQuantifiersMap.put("around1000", around1000);
-        nonAbsoluteQuantifiersList.add(around1000);
+        absoluteQuantifiersMap.put("around1000", around1000);
+        absoluteQuantifiersList.add(around1000);
 
         /* Around 2000 */
         LinguisticVariable around2000 = new LinguisticVariable(
                 "Around 2000",
                 true,
                 new TriangularFunction(new LinkedList<Double>(Arrays.asList(1700.0, 2000.0, 2300.0))));
-        nonAbsoluteQuantifiersMap.put("around2000", around2000);
-        nonAbsoluteQuantifiersList.add(around2000);
+        absoluteQuantifiersMap.put("around2000", around2000);
+        absoluteQuantifiersList.add(around2000);
 
         /* Around 3000 */
         LinguisticVariable around3000 = new LinguisticVariable(
                 "Around 3000",
                 true,
                 new TriangularFunction(new LinkedList<Double>(Arrays.asList(2600.0, 3000.0, 3400.0))));
-        nonAbsoluteQuantifiersMap.put("around3000", around3000);
-        nonAbsoluteQuantifiersList.add(around3000);
+        absoluteQuantifiersMap.put("around3000", around3000);
+        absoluteQuantifiersList.add(around3000);
 
         /* Around 5000 */
         LinguisticVariable around5000 = new LinguisticVariable(
                 "Around 5000",
                 true,
                 new TriangularFunction(new LinkedList<Double>(Arrays.asList(4500.0, 5000.0, 5500.0))));
-        nonAbsoluteQuantifiersMap.put("around5000", around5000);
-        nonAbsoluteQuantifiersList.add(around5000);
+        absoluteQuantifiersMap.put("around5000", around5000);
+        absoluteQuantifiersList.add(around5000);
 
         /* More than 6000 */
         LinguisticVariable moreThan6000 = new LinguisticVariable(
                 "More than 6000",
                 true,
                 new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(5500.0, 6000.0, 8000.0, 17000.0))));
-        nonAbsoluteQuantifiersMap.put("moreThan6000", moreThan6000);
-        nonAbsoluteQuantifiersList.add(moreThan6000);
+        absoluteQuantifiersMap.put("moreThan6000", moreThan6000);
+        absoluteQuantifiersList.add(moreThan6000);
     }
 }
