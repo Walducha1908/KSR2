@@ -18,8 +18,11 @@ public class Manager {
     }
 
     public static void prepareQuantifiers() {
-        QuantifierContainer.prepareQuantifiers();
-        System.out.println(QuantifierContainer.quantifiersMap.size() + " quantifiers have been created!");
+        QuantifierContainer.prepareNonAbsoluteQuantifiers();
+        System.out.println(QuantifierContainer.nonAbsoluteQuantifiersMap.size() + " non absolute quantifiers have been created!");
+
+        QuantifierContainer.prepareAbsoluteQuantifiers();
+        System.out.println(QuantifierContainer.absoluteQuantifiersList.size() + " absolute quantifiers have been created!");
     }
 
     public static void readAllRecords() {

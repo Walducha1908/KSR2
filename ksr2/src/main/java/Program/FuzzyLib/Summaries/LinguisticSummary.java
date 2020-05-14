@@ -34,11 +34,10 @@ public class LinguisticSummary {
         }
 
         degreeOfTruth = Measures.degreeOfTruth(quantifier, qualifier, summarizer, records);
-        sentence = (SentenceMaker.makeSentence(quantifier, qualifier, summarizer) +
-                " [T = " + df.format(degreeOfTruth) + "]" +
-                " [Records used = " + records.size() + "]");
-        System.out.println(sentence);
+        sentence = (SentenceMaker.makeSentence(quantifier, qualifier, summarizer));
 
         ResultContainer.addResult(new Result(sentence, degreeOfTruth, records.size()));
+
+        System.out.print(ResultContainer.results.getLast());
     }
 }
