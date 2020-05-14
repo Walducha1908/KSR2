@@ -21,7 +21,7 @@ public class LinguisticVariableContainer {
             "gentle",
                 Columns.FG,
             null,
-            new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(5.0, 10.0, 21.0, 28.0))));
+            new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(5.0, 5.0, 21.0, 28.0))));
         linguisticVariables.put("GentleFG", GentleFG);
 
         LinguisticVariable ModerateFG = new LinguisticVariable(
@@ -35,7 +35,7 @@ public class LinguisticVariableContainer {
                 "strong",
                 Columns.FG,
                 null,
-                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(50.0, 75.0, 125.0, 157.0))));
+                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(50.0, 75.0, 157.0, 157.0))));
         linguisticVariables.put("StrongFG", StrongFG);
 
         /* Column TG - winter */
@@ -43,7 +43,7 @@ public class LinguisticVariableContainer {
                 "cold",
                 Columns.TG,
                 Seasons.winter,
-                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(-81.0, -60.0, -10.0, 20.0))));
+                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(-81.0, -81.0, -10.0, 20.0))));
         linguisticVariables.put("ColdTGW", ColdTGW);
 
         LinguisticVariable WarmTGW = new LinguisticVariable(
@@ -57,7 +57,7 @@ public class LinguisticVariableContainer {
                 "hot",
                 Columns.TG,
                 Seasons.winter,
-                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(100.0, 150.0, 270.0, 306.0))));
+                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(100.0, 150.0, 306.0, 306.0))));
         linguisticVariables.put("HotTGW", HotTGW);
 
         /* Column TG - spring and autumn */
@@ -65,7 +65,7 @@ public class LinguisticVariableContainer {
                 "cold",
                 Columns.TG,
                 Seasons.spring_autumn,
-                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(-81.0, -50.0, 35.0, 85.0))));
+                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(-81.0, -81.0, 35.0, 85.0))));
         linguisticVariables.put("ColdTGSA", ColdTGSA);
 
         LinguisticVariable WarmTGSA = new LinguisticVariable(
@@ -79,7 +79,7 @@ public class LinguisticVariableContainer {
                 "hot",
                 Columns.TG,
                 Seasons.spring_autumn,
-                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(160.0, 200.0, 270.0, 306.0))));
+                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(160.0, 200.0, 306.0, 306.0))));
         linguisticVariables.put("HotTGSA", HotTGSA);
 
         /* Column TG - summer */
@@ -87,7 +87,7 @@ public class LinguisticVariableContainer {
                 "cold",
                 Columns.TG,
                 Seasons.summer,
-                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(-81.0, -50.0, 100.0, 150.0))));
+                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(-81.0, -81.0, 100.0, 150.0))));
         linguisticVariables.put("ColdTGS", ColdTGS);
 
         LinguisticVariable WarmTGS = new LinguisticVariable(
@@ -101,7 +101,7 @@ public class LinguisticVariableContainer {
                 "hot",
                 Columns.TG,
                 Seasons.summer,
-                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(240.0, 260.0, 290.0, 306.0))));
+                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(240.0, 260.0, 306.0, 306.0))));
         linguisticVariables.put("HotTGS", HotTGS);
 
         /* Column Q */
@@ -109,7 +109,7 @@ public class LinguisticVariableContainer {
                 "overcast",
                 Columns.Q,
                 null,
-                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(24.0, 100.0, 350.0, 500.0))));
+                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(24.0, 24.0, 350.0, 500.0))));
         linguisticVariables.put("OvercastQ", OvercastQ);
 
         LinguisticVariable CloudyQ = new LinguisticVariable(
@@ -123,7 +123,7 @@ public class LinguisticVariableContainer {
                 "sunny",
                 Columns.Q,
                 null,
-                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(1400.0, 1900.0, 2700.0, 3145.0))));
+                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(1400.0, 1900.0, 3145.0, 3145.0))));
         linguisticVariables.put("SunnyQ", SunnyQ);
     }
 }
