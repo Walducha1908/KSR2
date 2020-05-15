@@ -3,9 +3,7 @@ package Program;
 
 import Program.FuzzyLib.Containers.LinguisticVariableContainer;
 import Program.FuzzyLib.Containers.QuantifierContainer;
-import Program.FuzzyLib.Logic.AndSummarizer;
 import Program.FuzzyLib.Logic.LinguisticVariable;
-import Program.FuzzyLib.Logic.OrSummarizer;
 import Program.FuzzyLib.Summaries.LinguisticSummary;
 import Program.Model.Containers.ResultContainer;
 import javafx.application.Application;
@@ -37,54 +35,68 @@ public class Program extends Application {
 
         // Common case.
         for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
-            LinguisticSummary.simpleLinguisticSentence(
+            LinguisticSummary.createLinguisticSentence(
                     quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"),
-                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"));
+                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+                    LinguisticVariableContainer.linguisticVariables.get("NoneRH"));
         }
-        for (LinguisticVariable quantifier: QuantifierContainer.absoluteQuantifiersList) {
-            LinguisticSummary.simpleLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"),
-                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"));
-        }
+//        for (LinguisticVariable quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"),
+//                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"));
+//        }
 
-        // Using and.
-        AndSummarizer andSummarizer = new AndSummarizer(
-                LinguisticVariableContainer.linguisticVariables.get("CloudyQ"),
-                LinguisticVariableContainer.linguisticVariables.get("OvercastQ"));
-        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
-            LinguisticSummary.simpleLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"),
-                    andSummarizer);
-        }
-        for (LinguisticVariable quantifier: QuantifierContainer.absoluteQuantifiersList) {
-            LinguisticSummary.simpleLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"),
-                    andSummarizer);
-        }
+//        // Using and.
+//        AndSummarizer andSummarizer = new AndSummarizer(
+//                LinguisticVariableContainer.linguisticVariables.get("CloudyQ"),
+//                LinguisticVariableContainer.linguisticVariables.get("OvercastQ"));
+//        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.simpleLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"),
+//                    andSummarizer);
+//        }
+//        for (LinguisticVariable quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//            LinguisticSummary.simpleLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"),
+//                    andSummarizer);
+//        }
 
-        // Using or.
-        OrSummarizer orSummarizer = new OrSummarizer(
-                LinguisticVariableContainer.linguisticVariables.get("CloudyQ"),
-                LinguisticVariableContainer.linguisticVariables.get("OvercastQ"));
-        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
-            LinguisticSummary.simpleLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"),
-                    orSummarizer);
-        }
-        for (LinguisticVariable quantifier: QuantifierContainer.absoluteQuantifiersList) {
-            LinguisticSummary.simpleLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"),
-                    orSummarizer);
-        }
+//        // Using or.
+//        OrSummarizer orSummarizer = new OrSummarizer(
+//                LinguisticVariableContainer.linguisticVariables.get("CloudyQ"),
+//                LinguisticVariableContainer.linguisticVariables.get("OvercastQ"));
+//        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.simpleLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"),
+//                    orSummarizer);
+//        }
+//        for (LinguisticVariable quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//            LinguisticSummary.simpleLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"),
+//                    orSummarizer);
+//        }
+
+        // Using 'and' and 'or' both - hardcore case.
+//        OrSummarizer orAndSummarizer = new OrSummarizer(
+//                andSummarizer,
+//                LinguisticVariableContainer.linguisticVariables.get("ColdTGSA"));
+//        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.simpleLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"),
+//                    orAndSummarizer);
+//        }
 
         // We have all results in container, let's print only positive.
         System.out.println("\nTrue sentences: " + ResultContainer.getOnlyTrue());
+
+        // Close app.
+        Runtime.getRuntime().exit(0);
     }
 
 }

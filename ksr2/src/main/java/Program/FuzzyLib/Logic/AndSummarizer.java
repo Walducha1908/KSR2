@@ -35,18 +35,17 @@ public class AndSummarizer extends LinguisticVariable {
         return Math.min(firstVariable.getMembershipWithRecord(record), secondVariable.getMembershipWithRecord(record));
     }
 
-    public LinkedList<Double> support(LinkedList<Double> values) {
-        List<Double> list = firstVariable.support(values).stream()
+    public LinkedList<Record> support(LinkedList<Record> records) {
+        List<Record> list = firstVariable.support(records).stream()
                 .distinct()
-                .filter(secondVariable.support(values)::contains)
+                .filter(secondVariable.support(records)::contains)
                 .collect(Collectors.toList());
-        LinkedList<Double> result = new LinkedList<Double>(list);
+        LinkedList<Record> result = new LinkedList<>(list);
         return result;
     }
 
-    public double degreeOfFuzziness(LinkedList<Double> values)
-    {
-        return firstVariable.degreeOfFuzziness(values) * secondVariable.degreeOfFuzziness(values);
+    public double degreeOfFuzziness(LinkedList<Record> records) {
+        return firstVariable.degreeOfFuzziness(records) * secondVariable.degreeOfFuzziness(records);
     }
 
     public LinguisticVariable getFirstVariable() {
@@ -68,5 +67,13 @@ public class AndSummarizer extends LinguisticVariable {
     @Override
     public String toString() {
         return firstVariable + " and " + secondVariable;
+    }
+
+    @Override
+    public LinkedList<LinguisticVariable> getAllLinguisticVariables() {
+        LinkedList<LinguisticVariable> variables = new LinkedList<>();
+        variables.addAll(firstVariable.getAllLinguisticVariables());
+        variables.addAll(secondVariable.getAllLinguisticVariables());
+        return variables;
     }
 }

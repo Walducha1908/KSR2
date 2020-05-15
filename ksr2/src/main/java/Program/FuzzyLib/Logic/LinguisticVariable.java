@@ -79,19 +79,19 @@ public class LinguisticVariable {
         return membershipFunction.cardinality();
     }
 
-    public LinkedList<Double> support(LinkedList<Double> values) {
-        LinkedList<Double> supported = new LinkedList<Double>();
+    public LinkedList<Record> support(LinkedList<Record> records) {
+        LinkedList<Record> supported = new LinkedList<Record>();
 
-        for (int i = 0; i < values.size(); i++) {
-            if (getMembership(values.get(i)) > 0) {
-                supported.add(values.get(i));
+        for (int i = 0; i < records.size(); i++) {
+            if (getMembershipWithRecord((records.get(i))) > 0) {
+                supported.add(records.get(i));
             }
         }
         return supported;
     }
 
-    public double degreeOfFuzziness(LinkedList<Double> values) {
-        return (double) support(values).size() / values.size();
+    public double degreeOfFuzziness(LinkedList<Record> records) {
+        return (double) this.support(records).size() / records.size();
     }
 
     @Override
@@ -137,5 +137,11 @@ public class LinguisticVariable {
 
     public void setSeason(Seasons season) {
         this.season = season;
+    }
+
+    public LinkedList<LinguisticVariable> getAllLinguisticVariables() {
+        LinkedList<LinguisticVariable> variables = new LinkedList<>();
+        variables.add(this);
+        return variables;
     }
 }

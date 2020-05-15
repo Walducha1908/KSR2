@@ -13,8 +13,11 @@ import java.util.LinkedList;
 
 public class LinguisticSummary {
 
-    public static void simpleLinguisticSentence(LinguisticVariable quantifier, LinguisticVariable qualifier, LinguisticVariable summarizer) {
-        double degreeOfTruth;
+    public static void createLinguisticSentence(LinguisticVariable quantifier, LinguisticVariable qualifier, LinguisticVariable summarizer) {
+        double degreeOfTruth = -1, degreeOfImprecision = -1, degreeOfCovering = -1, degreeOfAppropriateness = -1,
+            lengthOfSummary = -1, degreeOfQuantifierImprecision = -1, degreeOfQuantifierCardinality = -1,
+            degreeOfSummarizerCardinality = -1, degreeOfQualifierImprecision = -1, degreeOfQualifierCardinality = -1,
+            lengthOfQualifier = -1;
         String sentence;
 
         LinkedList<Record> records = new LinkedList<>();
@@ -35,9 +38,25 @@ public class LinguisticSummary {
         }
 
         degreeOfTruth = Measures.degreeOfTruth(quantifier, qualifier, summarizer, records);
+        if (!Settings.countOnlyDegreeOfTruth) {
+            degreeOfImprecision = Measures.DegreeOfImprecision(summarizer, records);
+            degreeOfCovering = Measures.DegreeOfCovering(qualifier, summarizer, records);
+            degreeOfAppropriateness = Measures.DegreeOfAppropriateness(qualifier, summarizer, records);
+            lengthOfSummary = Measures.LengthOfSummary(summarizer);
+            degreeOfQuantifierImprecision = Measures.DegreeOfQuantifierImprecision(quantifier, records);
+            degreeOfQuantifierCardinality = Measures.DegreeOfQuantifierCardinality(quantifier, records);
+            degreeOfSummarizerCardinality = Measures.DegreeOfSummarizerCardinality(summarizer, records);
+            degreeOfQualifierImprecision = Measures.DegreeOfQualifierImprecision(qualifier, records);
+            degreeOfQualifierCardinality = Measures.DegreeOfQualifierCardinality(qualifier, records);
+            lengthOfQualifier = Measures.LengthOfQualifier(qualifier);
+        }
+
         sentence = (SentenceMaker.makeSentence(quantifier, qualifier, summarizer));
 
-        ResultContainer.addResult(new Result(sentence, degreeOfTruth, records.size()));
+        ResultContainer.addResult(new Result(sentence, records.size(), degreeOfTruth, degreeOfImprecision,
+                degreeOfCovering, degreeOfAppropriateness, lengthOfSummary, degreeOfQuantifierImprecision,
+                degreeOfQuantifierCardinality, degreeOfSummarizerCardinality, degreeOfQualifierImprecision,
+                degreeOfQualifierCardinality, lengthOfQualifier));
 
         if (Settings.displayAll) {
             System.out.print(ResultContainer.results.getLast());

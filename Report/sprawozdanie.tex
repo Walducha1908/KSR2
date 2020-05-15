@@ -57,7 +57,7 @@ W celu analizy bazy danych i tworzenia jej lingwistycznych podsumowań wybraliś
 \item TX - maksymalna dzienna temperatura [$0.1^{\circ} C$].
 \item T10N - minimalna dzienna temperatura na wysokości 10 cm od poziomu gruntu [$0.1^{\circ} C$].
 \item Q - nasłonecznienie, energia słoneczna przypadająca na powierzchnię [$\frac{J}{cm^2}$].
-\item RH - suma opadów atmosferycznych w ciągu całegi dnia [$0.1 mm$].\newline
+\item RH - suma opadów atmosferycznych w ciągu całego dnia [$0.1 mm$].\newline
 \end{itemize}
 
 Oprócz wyżej opisanych danych liczbowych, w naszej bazie znajdują się także dwie dodatkowe kolumny, służące do identyfikacji pomiaru:
@@ -73,16 +73,26 @@ Oprócz wyżej opisanych danych liczbowych, w naszej bazie znajdują się także
 \end{figure}
 
 
+\subsection{Wykorzystywane funkcje przynależności}
 
+W celu zdefiniowania zmiennych lingwistycznych i kwantyfikatorów, posłużyliśmy się dwoma rodzajami funkcji przynależności:
 
-
-
-\subsection{Przykładowe zmienne lingwistyczne}
-W tym rozdziale przedstawimy wzory i wykresy opisujące zaproponowane przez nas zmiennie lingwistyczne. We wszystkich przypadkach, wykorzystywanymi przez nas funkcjami przynależności są funkcje trapezoidalne.  \footnote{Wartości prezentowane w tabelach są tylko propozycjami. Autorzy sprawozdania zastrzegają sobie możliwość do ich późniejszej modyfikacji}.\newline
-
-Ogólna postać funkcji trapezoidalnej, opisana jest wzorem:
+\begin{itemize}[label=$\bullet$\scshape\bfseries]
+\item funkcją trójkątną opisaną wzorem:
 \begin{equation}
-{FG}_{GENTLE}(x)= \left\{ \begin{array}{ll}
+{f}_{troj}(x)= \left\{ \begin{array}{ll}
+\frac{x-a}{b-a} 	& \textrm{jeśli $a \leq x < b$} \\
+1 			& \textrm{jeśli $ x = b $} \\
+\frac{c-x}{c-b} 	& \textrm{jeśli $b < x \leq v$} \\
+0 			& \textrm{w przeciwnym wypadku.} \\
+\end{array} \right.
+\end{equation}
+
+
+\item oraz funkcją trapezoidalną opisaną wzorem:
+
+\begin{equation}
+{f}_{trap}(x)= \left\{ \begin{array}{ll}
 \frac{x-a}{b-a} 	& \textrm{jeśli $a \leq x < b$} \\
 1 			& \textrm{jeśli $b \leq x \leq c$} \\
 \frac{d-x}{d-c} 	& \textrm{jeśli $c < x \leq d$} \\
@@ -90,7 +100,21 @@ Ogólna postać funkcji trapezoidalnej, opisana jest wzorem:
 \end{array} \right.
 \end{equation}
 
-Aby nie duplikować treści wzorów, niepotrzebnie zwiększając w ten sposób objętość sprawozdania, zdecydowano się na zamieszczenie tabel z parametrami etykiet zmienny lingwistycznych, odnoszącymi się do powyższego wzoru.
+
+\end{itemize}
+
+
+gdzie $a$, $b$, $c$ oraz $d$ są parametrami funkcji przynależności - wierzchołkami trójkąta lub trapezu na wykresie. \newline\newline
+
+
+
+
+\subsection{Zmienne lingwistyczne}
+W tym rozdziale przedstawimy wzory i wykresy opisujące zaproponowane przez nas zmiennie lingwistyczne. We wszystkich przypadkach, wykorzystywanymi przez nas funkcjami przynależności są funkcje trapezoidalne.  \footnote{Wartości prezentowane w tabelach są tylko propozycjami. Autorzy sprawozdania zastrzegają sobie możliwość do ich późniejszej modyfikacji}.\newline
+
+Aby nie duplikować treści wzorów, niepotrzebnie zwiększając w ten sposób objętość sprawozdania, zdecydowano się na zamieszczenie tabel z parametrami etykiet zmiennych lingwistycznych, odnoszącymi się do wzorów z poprzedniego podrozdziału.
+
+\clearpage
 
 
 
@@ -117,15 +141,97 @@ Strong	 & 50 & 75 & 157 & 157 \\
 	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla kolumny FG.}
 \end{table}
 
+\clearpage
+
+
+
+\subsubsection{Kolumna FHX}
+Wykres opisujący zmienną lingwistyczną dla kolumny zawierającej najwyższą średnią prędkości wiatru w przeciągu jednej godziny (FHX), zamieszczono poniżej.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/FHX.png}
+	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny FHX.}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c c c} 
+		\hline
+		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
+		\hline
+		\hline 
+Gentle	 & 10 & 10 & 30 & 40 \\
+Moderate & 30 & 45 & 75 & 90 \\
+Strong	 & 80 & 100 & 150 & 180 \\
+Very strong & 150 & 180 & 240 & 240 \\
+		\hline
+	\end{tabular}
+	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla kolumny FHX.}
+\end{table}
+
+\clearpage
+
+\subsubsection{Kolumna FHN}
+Wykres opisujący zmienną lingwistyczną dla kolumny zawierającej najniższą średnią prędkości wiatru w przeciągu jednej godziny (FHN), zamieszczono poniżej.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/FHN.png}
+	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny FHN.}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c c c} 
+		\hline
+		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
+		\hline
+		\hline 
+Gentle	 & 0 & 0 & 10 & 15 \\
+Moderate & 10 & 18 & 28 & 36 \\
+Strong	 & 30 & 38 & 55 & 65 \\
+Very strong & 50 & 70 & 140 & 140 \\
+		\hline
+	\end{tabular}
+	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla kolumny FHN.}
+\end{table}
+
+\clearpage
+
+\subsubsection{Kolumna FXX}
+Wykres opisujący zmienną lingwistyczną dla kolumny zawierającej najsilniejszy powiew wiatru (FXX), zamieszczono poniżej.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/FXX.png}
+	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny FXX.}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c c c} 
+		\hline
+		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
+		\hline
+		\hline 
+Gentle	 & 20 & 20 & 50 & 60 \\
+Moderate & 50 & 65 & 100 & 120 \\
+Strong	 & 100 & 130 & 200 & 250 \\
+Very strong & 200 & 275 & 390 & 390 \\
+		\hline
+	\end{tabular}
+	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla kolumny FXX.}
+\end{table}
+
+\clearpage
+
 
 
 \subsubsection{Kolumna TG}
-W przypadku średniej dziennej temperatury (TG), zdecydowaliśmy się podzielić nasze rozważania ze względu na pory roku. Dlatego też przyjęliśmy trzy różne warianty zmiennej lingiwstycznej dla kolumny TG:
+W przypadku średniej dziennej temperatury (TG) oraz innych kolumn związacnyh z temperaturą (TN, TX oraz T10N), zdecydowaliśmy się podzielić nasze rozważania ze względu na pory roku. Dlatego też przyjęliśmy trzy różne warianty zmiennej lingiwstycznej dla kolumny TG:
 
 \begin{itemize}[label=$\bullet$\scshape\bfseries]
 \item TGW - dla pomiarów uzyskanych podczas astronomicznej zimy (litera $W$ od $Winter$),
 \item TGSA - dla pomiarów uzyskanych podczas astronomicznej wiosny lub jesieni ($S$ od $Spring$, $A$ od $Autumn$),
-\item TGS -dla pomiarów uzyskanych podczas astronomicznego lata  (litera $S$ od $Summer$).\newline\newline
+\item TGS - dla pomiarów uzyskanych podczas astronomicznego lata (litera $S$ od $Summer$).\newline\newline
 \end{itemize}
 
 Rozpocznijmy od zmiennej lingwistycznej TGW.
@@ -149,7 +255,6 @@ Hot	 & 100 & 150 & 306 & 306 \\
 	\end{tabular}
 	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej TGW.}
 \end{table}
-
 
 
 Następną prezentowaną zmienną, będzie zmienna lingwistyczna TGSA.
@@ -198,7 +303,247 @@ Hot	 & 240 & 260 & 306 & 306 \\
 \end{table}
 
 
+\clearpage
 
+
+\subsubsection{Kolumna TN}
+Kolumna TN zawiera najniższą temperaturę powietrza w ciągu dnia. Wszystkie trzy warianty zmiennej lingwistycznej dla kolumny TN zaprezentowano poniżej:
+
+\begin{itemize}[label=$\bullet$\scshape\bfseries]
+\item TNW - dla pomiarów uzyskanych podczas astronomicznej zimy,
+\item TNSA - dla pomiarów uzyskanych podczas astronomicznej wiosny lub jesieni,
+\item TNS - dla pomiarów uzyskanych podczas astronomicznego lata.\newline\newline\newline
+\end{itemize}
+
+
+Pomiary zimowe - zmienna TNW.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/TN_Z.png}
+	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny TN dla pomiarów wykonanych astronomiczną zimą.}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c c c} 
+		\hline
+		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
+		\hline
+		\hline 
+Cold	 &-108 & -108 & -40 & -20 \\
+Warm & -40 & -10 & 60 & 80 \\
+Hot	 & 60 & 100 & 244 & 244 \\
+		\hline
+	\end{tabular}
+	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej TNW.}
+\end{table}
+
+Pomiary wiosenne i jesienne - zmienna TNSA.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/TN_WJ.png}
+	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny TN dla pomiarów wykonanych astronomiczną wiosną i jesienią.}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c c c} 
+		\hline
+		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
+		\hline
+		\hline 
+Cold	 &-108 & -108 & 0 & 30 \\
+Warm & 10 & 50 & 110 & 140 \\
+Hot	 & 110 & 160 & 244 & 244 \\
+		\hline
+	\end{tabular}
+	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej TNSA.}
+\end{table}
+
+Pomiary letnie - zmienna TNS.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/TN_L.png}
+	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny TN dla pomiarów wykonanych astronomicznym latem.}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c c c} 
+		\hline
+		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
+		\hline
+		\hline 
+Cold	 &-108 & -108 & 70 & 100 \\
+Warm & 80 & 130 & 180 & 200 \\
+Hot	 & 175 & 210 & 244 & 244 \\
+		\hline
+	\end{tabular}
+	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej TNS.}
+\end{table}
+
+\clearpage
+
+
+
+
+\subsubsection{Kolumna TX}
+Kolumna TX zawiera najwyższą temperaturę powietrza w ciągu dnia. Wszystkie trzy warianty zmiennej lingwistycznej dla kolumny TX zaprezentowano poniżej:
+
+\begin{itemize}[label=$\bullet$\scshape\bfseries]
+\item TXW - dla pomiarów uzyskanych podczas astronomicznej zimy,
+\item TXSA - dla pomiarów uzyskanych podczas astronomicznej wiosny lub jesieni,
+\item TXS - dla pomiarów uzyskanych podczas astronomicznego lata.\newline\newline\newline
+\end{itemize}
+
+
+Pomiary zimowe - zmienna TXW.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/TX_Z.png}
+	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny TX dla pomiarów wykonanych astronomiczną zimą.}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c c c} 
+		\hline
+		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
+		\hline
+		\hline 
+Cold	 &-60 & -60 & 10 & 30 \\
+Warm & 10 & 50 & 100 & 130 \\
+Hot	 & 100 & 150 & 376 & 376 \\
+		\hline
+	\end{tabular}
+	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej TXW.}
+\end{table}
+
+Pomiary wiosenne i jesienne - zmienna TXSA.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/TX_WJ.png}
+	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny TX dla pomiarów wykonanych astronomiczną wiosną i jesienią.}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c c c} 
+		\hline
+		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
+		\hline
+		\hline 
+Cold	 &-60 & -60 & 60 & 80 \\
+Warm & 60 & 100 & 190 & 225 \\
+Hot	 & 180 & 250 & 376 & 376 \\
+		\hline
+	\end{tabular}
+	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej TXSA.}
+\end{table}
+
+Pomiary letnie - zmienna TXS.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/TX_L.png}
+	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny TX dla pomiarów wykonanych astronomicznym latem.}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c c c} 
+		\hline
+		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
+		\hline
+		\hline 
+Cold	 &-60 & -60 & 160 & 190 \\
+Warm & 170 & 210 & 270 & 300 \\
+Hot	 & 280 & 300 & 376 & 376 \\
+		\hline
+	\end{tabular}
+	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej TXS.}
+\end{table}
+
+\clearpage
+
+
+
+\subsubsection{Kolumna T10N}
+Kolumna T10N zawiera najmniejszą temperaturę w ciągu dnia zmierzoną na wysokości 10cm od poziomu gruntu. Wszystkie trzy warianty zmiennej lingwistycznej dla kolumny T10N zaprezentowano poniżej:
+
+\begin{itemize}[label=$\bullet$\scshape\bfseries]
+\item T10NW - dla pomiarów uzyskanych podczas astronomicznej zimy,
+\item T10NSA - dla pomiarów uzyskanych podczas astronomicznej wiosny lub jesieni,
+\item T10NS - dla pomiarów uzyskanych podczas astronomicznego lata.\newline\newline\newline
+\end{itemize}
+
+
+Pomiary zimowe - zmienna T10NW.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/T10_Z.png}
+	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny T10N dla pomiarów wykonanych astronomiczną zimą.}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c c c} 
+		\hline
+		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
+		\hline
+		\hline 
+Cold	 & -138 & -138 & -60 & -30 \\
+Warm & -50 & -10 & 40 & 60 \\
+Hot	 & 45 & 75 & 232 & 232 \\
+		\hline
+	\end{tabular}
+	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej T10NW.}
+\end{table}
+
+Pomiary wiosenne i jesienne - zmienna T10NSA.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/T10_WJ.png}
+	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny T10N dla pomiarów wykonanych astronomiczną wiosną i jesienią.}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c c c} 
+		\hline
+		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
+		\hline
+		\hline 
+Cold	 & -138 & -138 & -20 & 20 \\
+Warm & 0 & 30 & 100 & 130 \\
+Hot	 & 100 & 140 & 232 & 232 \\
+		\hline
+	\end{tabular}
+	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej T10NSA.}
+\end{table}
+
+Pomiary letnie - zmienna T10NS.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/T10_L.png}
+	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny T10N dla pomiarów wykonanych astronomicznym latem.}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c c c} 
+		\hline
+		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
+		\hline
+		\hline 
+Cold	 & -138 & -138 & 50 & 70 \\
+Warm & 50 & 80 & 160 & 180 \\
+Hot	 & 150 & 190 & 232 & 232 \\
+		\hline
+	\end{tabular}
+	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej T10NS.}
+\end{table}
+
+\clearpage
 
 
 
@@ -225,8 +570,101 @@ Sunny	 & 1400 & 1900 & 3145 & 3145 \\
 	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla kolumny Q.}
 \end{table}
 
+\clearpage
 
 
+
+\subsubsection{Kolumna RH}
+Wykres opisujący zmienną lingwistyczną dla kolumny zawierającej sumę opadów atmosferycznych w ciągu całego dnia (RH), zamieszczono poniżej.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/RH.png}
+	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny RH}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c c c} 
+		\hline
+		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
+		\hline
+		\hline 
+None	 & -1 & -1 & 5 & 7 \\
+Low 	& 5 & 10 & 35 & 45 \\
+High		 & 40 & 60 & 120 & 175 \\
+Downpour	 & 150 & 180 & 776 & 776 \\
+		\hline
+	\end{tabular}
+	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla kolumny RH.}
+\end{table}
+
+\clearpage
+
+
+
+
+\subsection{Kwantyfikatory}
+W tym rozdziale skoncentrujemy się na zaproponowanych przez nas kwantyfikatorach. Prezentację rozpoczniemy od kwantyfikatorów względnych, aby następnie omówić kwantyfikatory bezwzględne.\newline
+
+W przypadku kwantyfikatorów, wykorzystywanymi przez nas funkcjami przynależności są zarówno funkcje trapezoidalne jak i funkcje trójkątne. Za każdym razem w tabelach podano, z jakiej funkcji skorzystano przy definicji danej etykiety, co ma swoje odzwierciedlenie na prezentowanych wykresach.
+
+\subsubsection{Kwantyfikatory względne}
+Wykres ilustrujący wszystkie kwantyfikatory względne, zamieszczono poniżej.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/nonabsolute.png}
+	\caption{Kwantyfikatory względne}
+\end{figure}
+
+Tabela zawierająca parametry i nazwy funkcji przynależności, dla poszczególnych kwantyfikatorów, prezentuje się następująco.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c c c c} 
+		\hline
+		\textbf{Kwantyfikator} & \textbf{Funkcja przynależności} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
+		\hline
+		\hline 
+None	 			 & Trójkątna 		& 0 & 0 & 0.1 & - \\
+Less than quarter		 & Trapezoidalna  	& 0 & 0.1 & 0.25 & 0.3 \\
+Some				 & Trapezoidalna   & 0.15 & 0.2 & 0.35 & 0.4 \\
+Around one thirds		 & Trójkątna 		& 0.23 & 0.33 & 0.43 & - \\
+Around half	 		 & Trapezoidalna 	& 0.4 & 0.45 & 0.55 & 0.6 \\
+Around two thirds		 & Trójkątna 		& 0.56 & 0.66 & 0.67 & - \\
+Majority	 			 & Trapezoidalna 	& 0.7 & 0.75 & 0.85 & 0.9 \\
+Almost all			 & Trapezoidalna 	& 0.85 & 0.9 & 1 & 1 \\
+		\hline
+	\end{tabular}
+	\caption{Funkcje przynależności kwantyfikatorów względnych - nazwy wraz z parametrami.}
+\end{table}
+
+
+\subsubsection{Kwantyfikatory bezwzględne}
+Wykres ilustrujący wszystkie kwantyfikatory bezwzględne, zamieszczono poniżej.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/absolute.png}
+	\caption{Kwantyfikatory bezwzględne}
+\end{figure}
+
+Tabela zawierająca parametry i nazwy funkcji przynależności, dla poszczególnych kwantyfikatorów, prezentuje się następująco.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c c c c} 
+		\hline
+		\textbf{Kwantyfikator} & \textbf{Funkcja przynależności} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
+		\hline
+		\hline 
+Less than 200	 	& Trapezoidalna 		& 0 & 0 & 200 & 220 \\
+Around 500			& Trójkątna  			& 350 & 500 & 650 & - \\
+Around 1000		      & Trójkątna   			& 700 & 1000 & 1300 & - \\
+Around 2000	 		& Trójkątna 			& 1700 & 2000 & 2300 & - \\
+Around 3000 		 	& Trójkątna 			& 2600 & 3000 & 3400 & - \\
+Around 5000	 		& Trójkątna 			& 4500 & 5000 & 5500 & - \\
+More than 6000		& Trapezoidalna 		& 5500 & 6000 & 8000 & 17000 \\
+		\hline
+	\end{tabular}
+	\caption{Funkcje przynależności kwantyfikatorów bezwzględnych - nazwy wraz z parametrami.}
+\end{table}
 
 \section{Wyniki}
 \textit{Praca w toku}
