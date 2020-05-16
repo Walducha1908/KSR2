@@ -81,4 +81,44 @@ public class Result {
     public void setRecordsUsed(int recordsUsed) {
         this.recordsUsed = recordsUsed;
     }
+
+    public double getDegreeOfImprecision() {
+        return degreeOfImprecision;
+    }
+
+    public double getDegreeOfCovering() {
+        return degreeOfCovering;
+    }
+
+    public double getDegreeOfAppropriateness() {
+        return degreeOfAppropriateness;
+    }
+
+    public double getLengthOfSummary() {
+        return lengthOfSummary;
+    }
+
+    public double getDegreeOfQuantifierImprecision() {
+        return degreeOfQuantifierImprecision;
+    }
+
+    public double getDegreeOfQuantifierCardinality() {
+        return degreeOfQuantifierCardinality;
+    }
+
+    public double getDegreeOfSummarizerCardinality() {
+        return degreeOfSummarizerCardinality;
+    }
+
+    public double getDegreeOfQualifierImprecision() {
+        return degreeOfQualifierImprecision;
+    }
+
+    public double getDegreeOfQualifierCardinality() {
+        return degreeOfQualifierCardinality;
+    }
+
+    public double getLengthOfQualifier() {
+        return lengthOfQualifier;
+    }
 }

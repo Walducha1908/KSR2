@@ -1,6 +1,7 @@
 package Program;
 
 
+import Program.Data.DataWriter;
 import Program.FuzzyLib.Containers.LinguisticVariableContainer;
 import Program.FuzzyLib.Containers.QuantifierContainer;
 import Program.FuzzyLib.Logic.LinguisticVariable;
@@ -37,15 +38,15 @@ public class Program extends Application {
         for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
             LinguisticSummary.createLinguisticSentence(
                     quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("HotTGSA"),
-                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"));
+                    LinguisticVariableContainer.linguisticVariables.get("NoneRH"),
+                    LinguisticVariableContainer.linguisticVariables.get("GentleFG"));
         }
-//        for (LinguisticVariable quantifier: QuantifierContainer.absoluteQuantifiersList) {
-//            LinguisticSummary.createLinguisticSentence(
-//                    quantifier,
-//                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"),
-//                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"));
-//        }
+        for (LinguisticVariable quantifier: QuantifierContainer.absoluteQuantifiersList) {
+            LinguisticSummary.createLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get("NoneRH"),
+                    LinguisticVariableContainer.linguisticVariables.get("GentleFG"));
+        }
 
 //        // Using and.
 //        AndSummarizer andSummarizer = new AndSummarizer(
@@ -94,6 +95,9 @@ public class Program extends Application {
 
         // We have all results in container, let's print only positive.
         System.out.println("\nTrue sentences: " + ResultContainer.getOnlyTrue());
+
+        // Save results
+        DataWriter.saveResults();
 
         // Close app.
         Runtime.getRuntime().exit(0);
