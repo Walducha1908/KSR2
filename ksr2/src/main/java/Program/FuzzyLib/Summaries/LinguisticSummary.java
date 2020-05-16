@@ -39,16 +39,16 @@ public class LinguisticSummary {
 
         degreeOfTruth = Measures.degreeOfTruth(quantifier, qualifier, summarizer, records);
         if (!Settings.countOnlyDegreeOfTruth) {
-            degreeOfImprecision = Measures.DegreeOfImprecision(summarizer, records);
-            degreeOfCovering = Measures.DegreeOfCovering(qualifier, summarizer, records);
-            degreeOfAppropriateness = Measures.DegreeOfAppropriateness(qualifier, summarizer, records);
-            lengthOfSummary = Measures.LengthOfSummary(summarizer);
-            degreeOfQuantifierImprecision = Measures.DegreeOfQuantifierImprecision(quantifier, records);
-            degreeOfQuantifierCardinality = Measures.DegreeOfQuantifierCardinality(quantifier, records);
-            degreeOfSummarizerCardinality = Measures.DegreeOfSummarizerCardinality(summarizer, records);
-            degreeOfQualifierImprecision = Measures.DegreeOfQualifierImprecision(qualifier, records);
-            degreeOfQualifierCardinality = Measures.DegreeOfQualifierCardinality(qualifier, records);
-            lengthOfQualifier = Measures.LengthOfQualifier(qualifier);
+            degreeOfImprecision = Measures.degreeOfImprecision(summarizer, records);
+            degreeOfCovering = Measures.degreeOfCovering(qualifier, summarizer, records);
+            degreeOfAppropriateness = Measures.degreeOfAppropriateness(qualifier, summarizer, records);
+            lengthOfSummary = Measures.lengthOfSummary(summarizer);
+            degreeOfQuantifierImprecision = Measures.degreeOfQuantifierImprecision(quantifier, records);
+            degreeOfQuantifierCardinality = Measures.degreeOfQuantifierCardinality(quantifier, records);
+            degreeOfSummarizerCardinality = Measures.degreeOfSummarizerCardinality(summarizer, records);
+            degreeOfQualifierImprecision = Measures.degreeOfQualifierImprecision(qualifier, records);
+            degreeOfQualifierCardinality = Measures.degreeOfQualifierCardinality(qualifier, records);
+            lengthOfQualifier = Measures.lengthOfQualifier(qualifier);
         }
 
         sentence = (SentenceMaker.makeSentence(quantifier, qualifier, summarizer));
