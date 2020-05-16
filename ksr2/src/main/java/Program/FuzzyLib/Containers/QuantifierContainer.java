@@ -140,7 +140,7 @@ public class QuantifierContainer {
         LinguisticVariable moreThan6000 = new LinguisticVariable(
                 "More than 6000",
                 true,
-                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(5500.0, 6000.0, 8000.0, 17000.0))));
+                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(5500.0, 6000.0, 8000.0, 8000.1))));
         absoluteQuantifiersMap.put("moreThan6000", moreThan6000);
         absoluteQuantifiersList.add(moreThan6000);
     }

@@ -38,14 +38,14 @@ public class Program extends Application {
         for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
             LinguisticSummary.createLinguisticSentence(
                     quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("NoneRH"),
-                    LinguisticVariableContainer.linguisticVariables.get("GentleFG"));
+                    LinguisticVariableContainer.linguisticVariables.get("VeryStrongFXX"),
+                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"));
         }
         for (LinguisticVariable quantifier: QuantifierContainer.absoluteQuantifiersList) {
             LinguisticSummary.createLinguisticSentence(
                     quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("NoneRH"),
-                    LinguisticVariableContainer.linguisticVariables.get("GentleFG"));
+                    LinguisticVariableContainer.linguisticVariables.get("VeryStrongFXX"),
+                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"));
         }
 
 //        // Using and.
