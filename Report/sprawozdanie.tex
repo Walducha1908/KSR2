@@ -28,15 +28,42 @@
 \maketitle
 
 \section{Cel}
-\textit{Praca w toku}
+Celem zadania było zaprojektowanie aplikacji desktopowej, służącej do generowania podsumowań lingwistycznych oraz obliczania ich miar jakości dla wybranej bazy danych. Dodatkowo, aplikacja powinna posiadać graficzny interfejs użytkownika, który umożliwi intuicyjne korzystanie z programu.
+
 
 
 \section{Wprowadzenie}
 \textit{Praca w toku}
 
 
+
 \section{Opis implementacji}
-\textit{Praca w toku}
+
+Program został napisany w języku Java z wykorzystaniem narzędzia Maven \cite{Maven}, służącego do automatyzacji budowy oprogramowania. Graficzny interfejs użytkownika został zbudowany w oparciu o bibliotekę JavaFX \cite{FX}.\newline
+
+W opisie implementacji skoncentrujemy się na jej najważniejszej części, czyli logice aplikacji.\newline 
+
+W celu zbudowania struktury klas reprezentujących typy, parametry i własności zbiorów rozmytych oraz operacji na nich, zaimplementowaliśmy własną bibliotekę w formie pakietu w naszej aplikacji o nazwie \textit{FuzzyLib}.\newline
+
+Pakiet \textit{FuzzyLib} został podzielony na następujące podpakiety:
+\begin{itemize}[label=$\bullet$\scshape\bfseries]
+\item  \textit{Membership},
+\item  \textit{Logic},
+\item  \textit{Containers},
+\item  \textit{Summaries}.
+\end{itemize}
+
+W tym rozdziale omówione zostaną wszystkie wyżej wymienione podpakiety. Przedstawimy diagramy UML każdego z podpakietów a także omówimy zastosowanie poszczególnych klas.
+
+\subsection{Podpakiet Membership}
+Podpakiet \textit{Membership} zawiera implementacje funkcji przynależności. Każda klasa tego podpakietu implementuje interfejs  \textit{MembershipFunction}.
+
+
+
+
+
+
+
 
 
 \section{Materiały i metody}
@@ -678,9 +705,15 @@ More than 6000		& Trapezoidalna 		& 5500 & 6000 & 8000 & 17000 \\
 \textit{Praca w toku}
 
 
-\begin{thebibliography}{1}
+\begin{thebibliography}{2}
 \bibitem{baza} 
 Baza danych - 
 \href{https://www.kaggle.com/sinaasappel/historical-weather-in-the-netherlands-19012018}{\textit{"Historical weather in the Netherlands 1901-2018"}}
+\bibitem{Maven} 
+Narzędzie Maven\newline
+\textit{https://maven.apache.org/}. 
+\bibitem{FX} 
+Biblioteka JavaFX\newline
+\textit{https://openjfx.io/}
 \end{thebibliography}
 \end{document}

@@ -97,6 +97,7 @@ public class Measures {
     }
 
     public static double DegreeOfQualifierCardinality(LinguisticVariable qualifier, LinkedList<Record> records) {
+        double var = qualifier.cardinality();
         return 1 - (qualifier.cardinality() / records.size());
     }
 

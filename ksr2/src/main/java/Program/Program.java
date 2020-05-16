@@ -37,8 +37,8 @@ public class Program extends Application {
         for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
             LinguisticSummary.createLinguisticSentence(
                     quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
-                    LinguisticVariableContainer.linguisticVariables.get("NoneRH"));
+                    LinguisticVariableContainer.linguisticVariables.get("HotTGSA"),
+                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"));
         }
 //        for (LinguisticVariable quantifier: QuantifierContainer.absoluteQuantifiersList) {
 //            LinguisticSummary.createLinguisticSentence(
