@@ -46,11 +46,8 @@ Celem zadania było zaprojektowanie aplikacji desktopowej, służącej do genero
 Rozważania we wprowadzeniu rozpoczniemy od \emph{zbioru rozmytego}, czyli najbardziej podstawowego pojęcia, bez którego analiza działania ingwistycznych podsumowań baz danych nie byłaby mozliwa. Przytoczmy zatem definicję \emph{zbioru rozmytego}:
 
 \begin{definition}
-Niech \(\mathcal{X}\) będzie zbiorem, którego elementy interesują
-nas w sposób bezpośredni, czyli jest zbiorem klasycznym znanym z teorii mnogości (dany element przynależy do zbioru lub nie przynależy).
-Wówczas \emph{zbiorem rozmytym opisanym w przestrzeni rozważań \(\mathcal{X}\)}
-nazywamy każdy zbiór \(A\) postaci:
-\[A = \bigcup_{x \in \mathcal{X}} \{(x,\, \mu_A(x))\},\]
+Zbiór rozmyty A w niepustej przestrzeni X \cite{zadech}
+\[A = \{\langle x, \mu_A(x)\rangle: x \in X \} \]
 gdzie \(\mu_A(x) : \mathcal{X} \to [0,\,1]\) nazywamy \emph{funkcją
 przynależności do zbioru rozmytego \(A\)}.
 \end{definition}
@@ -94,126 +91,62 @@ W naszym programie, posłużyliśmy się dwoma rodzajami funkcji przynależnośc
 gdzie $a$, $b$, $c$ oraz $d$ są parametrami funkcji przynależności - wierzchołkami trójkąta lub trapezu na wykresie.
 
 
+\subsection{Podsumowania lingwistyczne}
+
+W tym rozdziale skoncentrujemy się na wyjaśnieniu czym są podsumowania lingwistyczne, które stanowią głowny przedmiot rozważań tego zadania. \newline
+
+Ogólna postać lingwistycznego podsumowania bazy danych, prezentuje się następująco \cite{ksiazka}:
+\begin{equation}
+Q  ~ P  ~ { \textit{jest/są} }  ~ S_j ~[T]
+\end{equation}
+
+Omówmy poszczególne elementy powyższego wzoru:
+\begin{itemize}[label=$\bullet$\scshape\bfseries]
+\item $Q$ stanowi kwantyfikator, kwantyfikatory mogą być względne (np. \textit{większość}, \textit{prawie wszystkie}, \textit{około połowa}) lub bezwzględne (np. \textit{mniej niż 100}, \textit{około 500}),
+\item $P$ jest podmiotem podsumowania lingwistycznego, zestawem obiektów reprezentowanym przez krotki w bazie danych (np. \textit{pomiary pogodowe},  \textit{ludzie},  \textit{samochody}),
+\item $S_j$ jest sumaryzatorem, stanowi zbiór rozmyty na zbiorze wartości przyjmowanych przez $j$-tą kolumnę w bazie danych (np. \textit{wysoka temperatura} w dziedzinie $V_j$ [-20, 40]),
+\item $T$ to stopień prawdziwości podsumowania (więcej informacji zamieszczono w rozdziale 2.3 dotyczącym miar jakości).
+\end{itemize}
+
+Zaprezentujmy przykład, dla omówionej postaci podsumowania lingwistycznego: \textit{"Prawie wszyscy programiści zarabiają ponad 2000 złotych [0.88]"}, gdzie:  \textit{"Prawie wszyscy"} to kwantyfikator,  \textit{"programiści"} to podmit lingwistyczny, \textit{"zarabiają ponad 2000 złotych"} to sumaryztaor, a  \textit{"[0.88]"} to stopień prawdziwości podsumowania. \newline
+
+Aby zwiększyć stopień skomplikowania podsumowania lingwistycznego, można skorzystać ze złożonego sumaryztora. Wtedy podsumowanie lingwistyczne przybiera postać:
+\begin{equation}
+Q  ~ P ~ { \textit{jest/są} }  ~ S_1 ~ \textit{i/lub} ~ S_2  ~ \textit{i/lub} ~ ... ~ \textit{i/lub} ~ S_n ~[T]
+\end{equation}
+gdzie za pomocą słowa \textit{lub} wyrażamy sumę sumaryzatorów zaś z wykorzystaniem słowa \textit{i} - ich iloczyn.\newline
+
+Rozwińmy podany wcześniej przykład, tak aby wykorzystywał on sumaryzator złożony: \textit{"Prawie wszyscy programiści zarabiają ponad 2000 złotych i mają bardzo drogi samochód [0.54]"}, sumaryzatorem złożonym w tym przykładzie jest \textit{"zarabiają ponad 2000 złotych i mają bardzo drogi samochód}".\newline
+
+
+Ostatnim etapem w naszej wędrówce po rozważaniach dotyczących podsumowań lingwistycznych, będzie podsumowanie z kwalifikatorem, które ma postać:
+\begin{equation}
+Q  ~ P ~ \textit{będących/mających własność} ~ W  ~ { \textit{jest/są} }  ~ S_j ~[T]
+\end{equation}
+gdzie $W$ jest kwalifikatorem - dodatkową właściwością (lub zestawem właściwości) posiadaną przez analizowane obiekty (np. \textit{"[programiści] mający około 30 lat"}).\newline
+
+Kończąc nasze rozważania, zaprezentujemy jeszcze przytaczany wcześniej przykład, z wykorzystaniem kwalifikatora i sumaryzatora złożonego: \textit{"Prawie wszyscy programiści mający około 30 lat zarabiają ponad 2000 złotych i mają bardzo drogi samochód [0.54]"}.
 
 
 \subsection{Miary jakości dla podumowań lingwistycznych}
 
-Aby określić jakość naszych podsumowaniań zaimplementowaliśmy 11 miar jakości od $T_1$ do $T_{11}$ \cite{ksiazka}.
+Aby określić jakość naszych podsumowaniań zaimplementowaliśmy 11 miar jakości od $T_1$ do $T_{11}$. Poniżej zestawimy nazwy miar jakości wraz z onaczeniami matematycznymi, którymi będziemy się posługiwać w następnych rozdziałach:
 
-\subsubsection{\(T_1\) -- stopień prawdziwości}
+\begin{itemize}[label=$\bullet$\scshape\bfseries]
+\item $T_1$ - stopień prawdziwości,
+\item $T_2$ - stopień nieprecyzyjności,
+\item $T_3$ - stopień pokrycia,
+\item $T_4$ - stopień trafności,
+\item $T_5$ - długość podsumowania,
+\item $T_6$ - stopień nieprecyzyjności kwantyfikatora,
+\item $T_7$ - stopień liczności kwantyfikatora,
+\item $T_8$ - stopień liczności sumaryzator,
+\item $T_9$ - stopień nieprecyzyjności kwalifikatora,
+\item $T_{10}$ - stopień liczności kwalifikatora,
+\item $T_{11}$ - długość kwalifikatora.
+\end{itemize}
 
-Stopień prawdziwości jest najbardziej naturalną miarą jakości podsumowania. Określa ona sumę przynależności wszystkich rozważanych krotek do sumaryzatora \(S_j\):
-\[r = \sum_{i=1}^{m} \mu_{\mathrm{ce}(S_j)}(d_i) ~\mbox{,}\]
-gdzie \(\mathrm{ce}(S_j)\) jest rozszerzeniem cylindrycznym
-sumaryzatora \(S_j\), \(m\) liczba wszystkich krotek, a \(d_i\).
-Dla kwantyfikatorów relatywnych stopnień
-prawdziwości możemy zapisać jako
-$$T_1 = \mu_Q(\frac{r}{m}),$$
-zaś dla kwantyfikatorów absolutnych jako
-$$T_1 = \mu_Q(r),$$
-gdzie \(r\) jest kardynalnością. 
-
-\subsubsection{\(T_2\) -- stopień nieprecyzyjności}
-Dla podsumowania z \(n\) sumaryzatorami \(S_1 \ldots S_n\) możemy określić stopień nieprecyzyjności,
-definiowany następującym wzorem:
-\[T_2 = 1 - \left(\prod_{j=1}^{n} \mathrm{in}(S_j)\right)^{1/n} ~\mbox{.}\]
-Wyrażenie \(\left(\prod_{j=1}^{n} \mathrm{in}(S_j)\right)^{1/n}\) to określa średnią geometryczna ze stopni rozmycia wykorzystanych sumaryzatorów, czyli w jakim stopniu precyzyjny jest sumaryzator. Im mniejszy nośnik zbioru rozmytego, tym wyższa jest jego precyzja.
-   
-
-\subsubsection{\(T_3\) -- stopień pokrycia}
-Stopień pokrycia \(T_3\) jest zdefiniowany dla podsumowań z kwalifikatorami. Stopień pokrycia $T_3$ 
-Dla każdego \(i=1\ldots m\) (związanego z krotką \(d_i\) z bazy
-danych) możemy zdefiniować (z kwalifikatorem):
-\[
-\begin{array}{l}
-t_i = \begin{cases}
-1 & \mbox{gdy } \mu_{\mathrm{ce}(S_j)}(d_i) > 0 ~ \wedge ~ \mu_{W}(d_i) > 0 \\
-0 & \mbox{w przeciwnym wypadku.}
-\end{cases} \\
-h_i = \begin{cases}
-1 & \mbox{gdy } \mu_{W}(d_i) > 0 \\
-0 & \mbox{w przeciwnym wypadku.}
-\end{cases}
-\end{array}\]
-
-Bez kwalifikatora:
-
-\[
-\begin{array}{l}
-t_i = \begin{cases}
-1 & \mbox{gdy } \mu_{\mathrm{ce}(S_j)}(d_i) > 0  \\
-0 & \mbox{w przeciwnym wypadku.}
-\end{cases} \\
-\end{array}\]
-\[h_1 = 1\]
-
-Przy powyższych oznaczeniach:
-\[T_3 = \frac{\sum_{i=1}^{m} t_i}{\sum_{i=1}^{m} h_i} ~\mbox{.}\]
-
-Reprezentuje stopień w jakim nośnik sumaryzatora pokrywa się z nośnikiem kwalifikatora.
-
-
-\subsubsection{\(T_4\) -- stopień trafności}
-Dla podsumowania z \(n\) sumaryzatorami \(S_1 \ldots S_n\)
-oraz \(m\) krotkami w bazie danych możemy wprowadzić oznaczenia:
-\[g_{ij} = \begin{cases}
-1 & \mbox{gdy } \mu_{\mathrm{ce}(S_j)}(d_i) > 0 \\
-0 & \mbox{w przeciwnym wypadku.}
-\end{cases}\]
-oraz
-\[r_j = \frac{\sum_{i=1}^{m} g_{ij}}{m} ~\mbox{.}\]
-Wówczas możemy zapisać:
-\[T_4 = \left| \prod_{j=1}^{n} r_j - T_3\right| ~\mbox{.}\]
-
- Określa jak wiele krotek przynależy do sumaryzatora, czyli czy dane podsumowanie jest właściwe dla zestawu danych.
-
-\subsubsection{\(T_5\) -- długość podsumowania}
-Dla podsumowania z \(n\) sumaryzatorami \(S_1 \ldots S_n\)
-miarę długości podsumowania definiujemy jako:
-\[T_5 =  2 \left(\frac{1}{2}\right)^{|s|} ~\mbox{.}\]
-
-Gdzie \(|s|\) jest ilością zbiorów rozmytych,z  których skomponowany jest sumaryzator. Określa jakość podsumowania na podstawie złożoności sumaryzatora, czyli im więcej składowych sumaryzatora złożonego, tym niższa wartość tej miary.
-
-\subsubsection{\(T_6\) -- stopień nieprecyzyjności kwantyfikatora}
-\(T_6\), czyli stopień nieprecyzyjności kwantyfikatora możemy zdefiniować jako:
-
-\[T_6 = 1-\mathrm{in}(Q) ~\mbox{.}\]
-
-Reprezentuje w jakim stopniu precyzyjny jest kwantyfikator. Im mniejszy nośnik zbioru rozmytego tym wyższa jest jego precyzja.
-
-\subsubsection{\(T_7\) -- stopień liczności kwantyfikatora}
-W przeciwieństwie do \(T_6\), zamiast zliczać elementy z nośnika \(Q\),
-policzymy moc zbioru rozmytego:
-\[T_7 = 1-\frac{|Q|}{|\mathcal{X}_Q|} ~\mbox{.}\]
-
-Opisuje stopień precyzji kwantyfikatora, im mniejsza kardynalność kwantyfikatora tym jest on bardziej precyzyjny.
-
-\subsubsection{\(T_8\) -- stopień liczności sumaryzatora}
-W przypadku zastosowania sumaryzatora złożonego, podobnie jak przy poprzednich miarach, stosujemy średnią geometryczną.
-Dla podsumowania z \(n\) sumaryzatorami \(S_1 \ldots S_n\):
-
-\[T_8 = 1- \left(\prod_{j=1}^{n} \frac{|S_j|}{|\mathcal{X}_j|}\right)^{\frac{1}{n}} ~\mbox{.}\]
-
-Opisuje stopień precyzji sumaryzatora, im mniejsza kardynalność kwantyfikatora tym jest on bardziej precyzyjny.
-
-\subsubsection{\(T_9\) -- stopień nieprecyzyjności kwalifikatora}
-Stopień precyzji kwalifikatora \(T_9\) jest oparty na drugiej formie podsumowań tzn.: Q obiektów będących/mających W jest/ma S, gdzie W jest reprezentowane przez zbiór rozmyty i jest kwalifikatorem. Definicja tej miary jest następująca:
-\[T_9 = 1-\mathrm{in}(W) ~\mbox{.}\]
-
-Określa w jakim stopniu precyzyjny jest kwalifikator. Im szerszy nośnik zbioru rozmytego tym niższa jest jego precyzja, gdyż bierze pod uwagę większy zakres wartości. 
-
-
-\subsubsection{\(T_{10}\) -- stopień liczności kwalifikatora}
-Stopień kardynalności kwalifikatora \(T_{10}\) definiujemy jako:
-\[T_{10} = 1-\frac{|W|}{|\mathcal{X}_g|} ~\mbox{.}\]\\
-
-Opisuje stopień precyzji kwalifikatora, im większa jest kardynalność kwalifikator tym jest on mniej precyzyjny.
-
-\subsubsection{\(T_{11}\) -- długość kwalifikatora}
-Długość kwalifikatora \(T_{11}\) definiujemy następująco:
-\[T_{11} = 2\left(\frac{1}{2}\right)^{|W|} ~\mbox{.}\]
-
-Wyznacza jakość podsumowania na podstawie złożoności kwalifikatora, Im bardziej złożony kwalifikator tym jakość podsumowania gorsza.
+Dokładny opis miar i wzorów można znaleźć w rozdziałach 8.3 i 8.4 w monografii \textit{Methods for the linguistic summarization of data - aplications of fuzzy sets and their extensions, Adam Niewiadomski} \cite{ksiazka}.
 
 \clearpage
 
@@ -1079,7 +1012,7 @@ More than 6000	&	0,000	&	0,853	&	0,868	\\
 \textit{Praca w toku}
 
 
-\begin{thebibliography}{2}
+\begin{thebibliography}{5}
 \bibitem{baza} 
 Baza danych - 
 \href{https://www.kaggle.com/sinaasappel/historical-weather-in-the-netherlands-19012018}{\textit{"Historical weather in the Netherlands 1901-2018"}}
@@ -1091,5 +1024,7 @@ Biblioteka JavaFX\newline
 \textit{https://openjfx.io/}
 \bibitem{ksiazka}
 Methods for the linguistic summarization of data - aplications of fuzzy sets and their extensions, Adam Niewiadomski, Akademicka Oficyna Wydawnicza EXIT, Warszawa 2008
+\bibitem{zadech} 
+Zadeh, L. A.: 1965, ‘Fuzzy sets’.  \textit{Inf. and Control} 8, 338–353.
 \end{thebibliography}
 \end{document}
