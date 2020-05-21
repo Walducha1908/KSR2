@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0edc1891-cb6a-4050-be60-2eb2d34676f2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Membership/GaussianFunction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Containers/QuantifierContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Containers/QuantifierContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Membership/ConstantFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Membership/ContinuousFunction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +107,7 @@
       <workItem from="1589569451515" duration="11661000" />
       <workItem from="1589650501837" duration="1573000" />
       <workItem from="1589714967738" duration="9000" />
-      <workItem from="1590064648317" duration="433000" />
+      <workItem from="1590064648317" duration="1964000" />
     </task>
     <servers />
   </component>
@@ -125,11 +124,11 @@
     </state>
     <state x="2334" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589296689636" />
     <state x="414" y="180" width="1092" height="775" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588602357054" />
-    <state x="612" y="189" key="#com.intellij.ide.util.MemberChooser" timestamp="1589627824500">
+    <state x="612" y="189" key="#com.intellij.ide.util.MemberChooser" timestamp="1590065363152">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="2685" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589541666436" />
-    <state x="612" y="189" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1589627824500" />
+    <state x="612" y="189" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1590065363152" />
     <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588599696032" />
     <state x="2676" y="404" width="408" height="238" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1589550957016">
       <screen x="1920" y="0" width="1920" height="1040" />
