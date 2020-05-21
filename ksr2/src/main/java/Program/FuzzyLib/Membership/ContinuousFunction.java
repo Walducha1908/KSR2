@@ -4,7 +4,7 @@ import org.apache.poi.ss.formula.eval.NotImplementedException;
 
 import java.util.LinkedList;
 
-public class ConstantFunction implements MembershipFunction {
+public class ContinuousFunction implements MembershipFunction {
     @Override
     public double getMembership(double x) {
         return 1.0;
