@@ -45,6 +45,9 @@ public class LinguisticVariable {
     }
 
     public double getMembershipWithRecord(Record record) {
+        if (column == null) {
+            return 1;
+        }
         double x = getValueFromColumn(record);
         return getMembership(x);
     }

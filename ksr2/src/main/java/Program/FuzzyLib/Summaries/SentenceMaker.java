@@ -13,9 +13,13 @@ public class SentenceMaker {
         } else if (qualifier.getSeason() != null) {
             sentence += seasonDictionary(qualifier.getSeason()) + " ";
         }
-        sentence += "measures with ";
-        sentence += qualifier.toString();
-        sentence += " have ";
+        sentence += "measures ";
+        if (qualifier.getColumn() != null) {
+            sentence += "with ";
+            sentence += qualifier.toString();
+            sentence += " ";
+        }
+        sentence += "have ";
         sentence += summarizer.toString();
         sentence += ".";
 

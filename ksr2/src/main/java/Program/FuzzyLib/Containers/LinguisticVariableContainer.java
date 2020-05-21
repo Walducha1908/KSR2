@@ -440,5 +440,13 @@ public class LinguisticVariableContainer {
                 new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(150.0, 180.0, 776.0, 776.0))));
         linguisticVariables.put("DownpourRH", DownpourRH);
 
+        // No qualifier - "all objects"
+        LinguisticVariable All = new LinguisticVariable(
+                "",
+                null,
+                null,
+                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(-2.0, -1.0, 776.0, 777.0))));
+        linguisticVariables.put("All", All);
+
     }
 }
