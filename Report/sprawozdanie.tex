@@ -284,9 +284,7 @@ Oprócz wyżej opisanych danych liczbowych, w naszej bazie znajdują się także
 
 
 \subsection{Zmienne lingwistyczne}
-W tym rozdziale przedstawimy wzory i wykresy opisujące zaproponowane przez nas zmiennie lingwistyczne. We wszystkich przypadkach, wykorzystywanymi przez nas funkcjami przynależności są funkcje trapezoidalne.  \footnote{Wartości prezentowane w tabelach są tylko propozycjami. Autorzy sprawozdania zastrzegają sobie możliwość do ich późniejszej modyfikacji}.\newline
-
-Aby nie duplikować treści wzorów, niepotrzebnie zwiększając w ten sposób objętość sprawozdania, zdecydowano się na zamieszczenie tabel z parametrami etykiet zmiennych lingwistycznych, odnoszącymi się do wzorów z poprzedniego podrozdziału.
+W tym rozdziale przedstawimy wzory i wykresy opisujące wybrane, zaproponowane przez nas zmiennie lingwistyczne. We wszystkich przypadkach, wykorzystywanymi przez nas funkcjami przynależności są funkcje trapezoidalne.  \footnote{Wartości prezentowane w tabelach są tylko propozycjami. Autorzy sprawozdania zastrzegają sobie możliwość do ich późniejszej modyfikacji}.\newline
 
 \clearpage
 
@@ -300,76 +298,36 @@ Wykres opisujący zmienną lingwistyczną dla kolumny zawierającej wartości ś
 	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny FG.}
 \end{figure}
 
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c} 
-		\hline
-		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-Gentle	 & 5 & 5 & 21 & 28 \\
-Moderate & 23 & 32 & 47 & 56 \\
-Strong	 & 50 & 75 & 157 & 157 \\
-		\hline
-	\end{tabular}
-	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla kolumny FG.}
-\end{table}
+Wzory opisujące przynależność do poszczególnych etykiet prezentują się następująco. \newline
+
+Dla etykiety $Gentle$:
+\begin{equation}
+{FG}_{GENTLE}(x)= \left\{ \begin{array}{ll}
+1 			& \textrm{jeśli $5 \leq x \leq 21$} \\
+\frac{28-x}{7} 	& \textrm{jeśli $21 < x \leq 28$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety $Moderate$:
+\begin{equation}
+{FG}_{MODERATE}(x)= \left\{ \begin{array}{ll}
+\frac{x-23}{9} 	& \textrm{jeśli $23 \leq x < 32$} \\
+1 			& \textrm{jeśli $32 \leq x \leq 47$} \\
+\frac{56-x}{9} 	& \textrm{jeśli $47 < x \leq 56$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety $Strong$:
+\begin{equation}
+{FG}_{STRONG}(x)= \left\{ \begin{array}{ll}
+\frac{x-50}{25} 	 & \textrm{jeśli $50 \leq x < 75$} \\
+1 			 & \textrm{jeśli $75 \leq x \leq 157$}
+\end{array} \right.
+\end{equation}
 
 \clearpage
 
 
-
-\subsubsection{Kolumna FHX}
-Wykres opisujący zmienną lingwistyczną dla kolumny zawierającej najwyższą średnią prędkości wiatru w przeciągu jednej godziny (FHX), zamieszczono poniżej.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/FHX.png}
-	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny FHX.}
-\end{figure}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c} 
-		\hline
-		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-Gentle	 & 10 & 10 & 30 & 40 \\
-Moderate & 30 & 45 & 75 & 90 \\
-Strong	 & 80 & 100 & 150 & 180 \\
-Very strong & 150 & 180 & 240 & 240 \\
-		\hline
-	\end{tabular}
-	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla kolumny FHX.}
-\end{table}
-
-\clearpage
-
-\subsubsection{Kolumna FHN}
-Wykres opisujący zmienną lingwistyczną dla kolumny zawierającej najniższą średnią prędkości wiatru w przeciągu jednej godziny (FHN), zamieszczono poniżej.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/FHN.png}
-	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny FHN.}
-\end{figure}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c} 
-		\hline
-		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-Gentle	 & 0 & 0 & 10 & 15 \\
-Moderate & 10 & 18 & 28 & 36 \\
-Strong	 & 30 & 38 & 55 & 65 \\
-Very strong & 50 & 70 & 140 & 140 \\
-		\hline
-	\end{tabular}
-	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla kolumny FHN.}
-\end{table}
-
-\clearpage
 
 \subsubsection{Kolumna FXX}
 Wykres opisujący zmienną lingwistyczną dla kolumny zawierającej najsilniejszy powiew wiatru (FXX), zamieszczono poniżej.
@@ -379,21 +337,41 @@ Wykres opisujący zmienną lingwistyczną dla kolumny zawierającej najsilniejsz
 	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny FXX.}
 \end{figure}
 
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c} 
-		\hline
-		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-Gentle	 & 20 & 20 & 50 & 60 \\
-Moderate & 50 & 65 & 100 & 120 \\
-Strong	 & 100 & 130 & 200 & 250 \\
-Very strong & 200 & 275 & 390 & 390 \\
-		\hline
-	\end{tabular}
-	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla kolumny FXX.}
-\end{table}
+Wzory opisujące przynależność do poszczególnych etykiet prezentują się następująco. \newline
+
+Dla etykiety \textit{Gentle}:
+\begin{equation}
+{FXX}_{GENTLE}(x)= \left\{ \begin{array}{ll}
+1 			& \textrm{jeśli $20 \leq x \leq 50$} \\
+\frac{60-x}{10} 	& \textrm{jeśli $50 < x \leq 60$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety \textit{Moderate}:
+\begin{equation}
+{FXX}_{MODERATE}(x)= \left\{ \begin{array}{ll}
+\frac{x-50}{15} 	& \textrm{jeśli $50 \leq x < 65$} \\
+1 			& \textrm{jeśli $65 \leq x \leq 100$} \\
+\frac{120-x}{20} 	& \textrm{jeśli $100 < x \leq 120$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety \textit{Strong}:
+\begin{equation}
+{FXX}_{STRONG}(x)= \left\{ \begin{array}{ll}
+\frac{x-100}{30} 	& \textrm{jeśli $100 \leq x < 130$} \\
+1 			& \textrm{jeśli $130 \leq x \leq 200$} \\
+\frac{250-x}{50} 	& \textrm{jeśli $200 < x \leq 250$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety \textit{Very Strong}:
+\begin{equation}
+{FXX}_{VERYSTRONG}(x)= \left\{ \begin{array}{ll}
+\frac{x-200}{75} 	 & \textrm{jeśli $200 \leq x < 275$} \\
+1 			 & \textrm{jeśli $275 \leq x \leq 390$}
+\end{array} \right.
+\end{equation}
 
 \clearpage
 
@@ -415,20 +393,32 @@ Rozpocznijmy od zmiennej lingwistycznej TGW.
 	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny TG dla pomiarów wykonanych astronomiczną zimą.}
 \end{figure}
 
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c} 
-		\hline
-		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-Cold	 &-81 & -81 & -10 & 20 \\
-Warm & 10 & 40 & 90 & 120 \\
-Hot	 & 100 & 150 & 306 & 306 \\
-		\hline
-	\end{tabular}
-	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej TGW.}
-\end{table}
+Wzory opisujące przynależność do poszczególnych etykiet zmiennej lingwistycznej TGW prezentują się następująco. \newline
+
+Dla etykiety $Cold$:
+\begin{equation}
+{TGW}_{COLD}(x)= \left\{ \begin{array}{ll}
+1 			& \textrm{jeśli $-81 \leq x \leq -10$} \\
+\frac{20-x}{30} 	& \textrm{jeśli $-10 < x \leq 20$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety $Warm$:
+\begin{equation}
+{TGW}_{WARM}(x)= \left\{ \begin{array}{ll}
+\frac{x-10}{30} 	 & \textrm{jeśli $10 \leq x < 40$} \\
+1 			 & \textrm{jeśli $40 \leq x \leq 90$} \\
+\frac{120-x}{30} & \textrm{jeśli $90 < x \leq 120$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety $Hot$:
+\begin{equation}
+{TGW}_{HOT}(x)= \left\{ \begin{array}{ll}
+\frac{x-100}{50} & \textrm{jeśli $100 \leq x < 150$} \\
+1 			 & \textrm{jeśli $150 \leq x \leq 306$} \\
+\end{array} \right.
+\end{equation}
 
 
 Następną prezentowaną zmienną, będzie zmienna lingwistyczna TGSA.
@@ -438,20 +428,32 @@ Następną prezentowaną zmienną, będzie zmienna lingwistyczna TGSA.
 	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny TG dla pomiarów wykonanych astronomiczną wiosną i jesienią.}
 \end{figure}
 
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c} 
-		\hline
-		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-Cold	 &-81 & -81 & 35 & 85 \\
-Warm & 70 & 100 & 150 & 180 \\
-Hot	 & 160 & 200 & 306 & 306 \\
-		\hline
-	\end{tabular}
-	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej TGSA.}
-\end{table}
+Wzory opisujące przynależność do poszczególnych etykiet zmiennej lingwistycznej TGSA prezentują się następująco. \newline
+
+Dla etykiety $Cold$:
+\begin{equation}
+{TGSA}_{COLD}(x)= \left\{ \begin{array}{ll}
+1 			& \textrm{jeśli $-81 \leq x \leq 35$} \\
+\frac{85-x}{50} 	& \textrm{jeśli $35 < x \leq 85$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety $Warm$:
+\begin{equation}
+{TGSA}_{WARM}(x)= \left\{ \begin{array}{ll}
+\frac{x-70}{30} 	 & \textrm{jeśli $70 \leq x < 100$} \\
+1 			 & \textrm{jeśli $100 \leq x \leq 150$} \\
+\frac{180-x}{30} & \textrm{jeśli $150 < x \leq 180$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety $Hot$:
+\begin{equation}
+{TGSA}_{HOT}(x)= \left\{ \begin{array}{ll}
+\frac{x-160}{40} & \textrm{jeśli $160 \leq x < 200$} \\
+1 			 & \textrm{jeśli $200 \leq x \leq 306$} \\
+\end{array} \right.
+\end{equation}\newline
 
 
 Ostatnią zmienną dla kolumny TG będzie zmienna dotycząca pomiarów letnich - TGS.
@@ -461,23 +463,39 @@ Ostatnią zmienną dla kolumny TG będzie zmienna dotycząca pomiarów letnich -
 	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny TG dla pomiarów wykonanych astronomicznym latem.}
 \end{figure}
 
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c} 
-		\hline
-		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-Cold	 &-81 & -81 & 100 & 150 \\
-Warm & 130 & 150 & 230 & 250 \\
-Hot	 & 240 & 260 & 306 & 306 \\
-		\hline
-	\end{tabular}
-	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej TGS.}
-\end{table}
+Wzory opisujące przynależność do poszczególnych etykiet zmiennej lingwistycznej TGS prezentują się następująco. \newline
+
+Dla etykiety $Cold$:
+\begin{equation}
+{TGS}_{COLD}(x)= \left\{ \begin{array}{ll}
+1 			& \textrm{jeśli $-81 \leq x \leq 100$} \\
+\frac{150-x}{50}& \textrm{jeśli $100 < x \leq 150$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety $Warm$:
+\begin{equation}
+{TGS}_{WARM}(x)= \left\{ \begin{array}{ll}
+\frac{x-130}{20} & \textrm{jeśli $130 \leq x < 150$} \\
+1 			 & \textrm{jeśli $150 \leq x \leq 230$} \\
+\frac{250-x}{20} & \textrm{jeśli $230 < x \leq 250$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety $Hot$:
+\begin{equation}
+{TGS}_{HOT}(x)= \left\{ \begin{array}{ll}
+\frac{x-240}{20} & \textrm{jeśli $240 \leq x < 260$} \\
+1 			 & \textrm{jeśli $260 \leq x \leq 306$} \\
+\end{array} \right.
+\end{equation}
 
 
 \clearpage
+
+
+
+
 
 
 \subsubsection{Kolumna TN}
@@ -497,20 +515,32 @@ Pomiary zimowe - zmienna TNW.
 	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny TN dla pomiarów wykonanych astronomiczną zimą.}
 \end{figure}
 
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c} 
-		\hline
-		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-Cold	 &-108 & -108 & -40 & -20 \\
-Warm & -40 & -10 & 60 & 80 \\
-Hot	 & 60 & 100 & 244 & 244 \\
-		\hline
-	\end{tabular}
-	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej TNW.}
-\end{table}
+Wzory opisujące przynależność do poszczególnych etykiet zmiennej lingwistycznej TNW prezentują się następująco. \newline
+
+Dla etykiety $Cold$:
+\begin{equation}
+{TNW}_{COLD}(x)= \left\{ \begin{array}{ll}
+1 			& \textrm{jeśli $-108 \leq x \leq -40$} \\
+\frac{-20-x}{20} 	& \textrm{jeśli $-40 < x \leq -20$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety $Warm$:
+\begin{equation}
+{TNW}_{WARM}(x)= \left\{ \begin{array}{ll}
+\frac{x+40}{30} 	 & \textrm{jeśli $-40 \leq x < -10$} \\
+1 			 & \textrm{jeśli $-10 \leq x \leq 60$} \\
+\frac{80-x}{20} & \textrm{jeśli $60 < x \leq 80$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety $Hot$:
+\begin{equation}
+{TNW}_{HOT}(x)= \left\{ \begin{array}{ll}
+\frac{x-60}{40} & \textrm{jeśli $60 \leq x < 100$} \\
+1 			 & \textrm{jeśli $100 \leq x \leq 244$} \\
+\end{array} \right.
+\end{equation}
 
 Pomiary wiosenne i jesienne - zmienna TNSA.
 \begin{figure}[H]
@@ -519,20 +549,32 @@ Pomiary wiosenne i jesienne - zmienna TNSA.
 	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny TN dla pomiarów wykonanych astronomiczną wiosną i jesienią.}
 \end{figure}
 
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c} 
-		\hline
-		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-Cold	 &-108 & -108 & 0 & 30 \\
-Warm & 10 & 50 & 110 & 140 \\
-Hot	 & 110 & 160 & 244 & 244 \\
-		\hline
-	\end{tabular}
-	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej TNSA.}
-\end{table}
+Wzory opisujące przynależność do poszczególnych etykiet zmiennej lingwistycznej TNSA prezentują się następująco. \newline
+
+Dla etykiety $Cold$:
+\begin{equation}
+{TNSA}_{COLD}(x)= \left\{ \begin{array}{ll}
+1 			& \textrm{jeśli $-108 \leq x \leq 0$} \\
+\frac{30-x}{30} 	& \textrm{jeśli $0 < x \leq 30$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety $Warm$:
+\begin{equation}
+{TNSA}_{WARM}(x)= \left\{ \begin{array}{ll}
+\frac{x-10}{40} 	 & \textrm{jeśli $10 \leq x < 50$} \\
+1 			 & \textrm{jeśli $50 \leq x \leq 110$} \\
+\frac{140-x}{30} & \textrm{jeśli $110 < x \leq 140$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety $Hot$:
+\begin{equation}
+{TNSA}_{HOT}(x)= \left\{ \begin{array}{ll}
+\frac{x-110}{50} & \textrm{jeśli $110 \leq x < 160$} \\
+1 			 & \textrm{jeśli $160 \leq x \leq 244$} \\
+\end{array} \right.
+\end{equation}\newline
 
 Pomiary letnie - zmienna TNS.
 \begin{figure}[H]
@@ -541,181 +583,32 @@ Pomiary letnie - zmienna TNS.
 	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny TN dla pomiarów wykonanych astronomicznym latem.}
 \end{figure}
 
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c} 
-		\hline
-		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-Cold	 &-108 & -108 & 70 & 100 \\
-Warm & 80 & 130 & 180 & 200 \\
-Hot	 & 175 & 210 & 244 & 244 \\
-		\hline
-	\end{tabular}
-	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej TNS.}
-\end{table}
+Wzory opisujące przynależność do poszczególnych etykiet zmiennej lingwistycznej TNS prezentują się następująco. \newline
 
-\clearpage
+Dla etykiety $Cold$:
+\begin{equation}
+{TNS}_{COLD}(x)= \left\{ \begin{array}{ll}
+1 			& \textrm{jeśli $-108 \leq x \leq 70$} \\
+\frac{100-x}{30} 	& \textrm{jeśli $70 < x \leq 100$}
+\end{array} \right.
+\end{equation}
 
+Dla etykiety $Warm$:
+\begin{equation}
+{TNS}_{WARM}(x)= \left\{ \begin{array}{ll}
+\frac{x-80}{50} & \textrm{jeśli $80 \leq x < 130$} \\
+1 			 & \textrm{jeśli $130 \leq x \leq 180$} \\
+\frac{200-x}{20} & \textrm{jeśli $180 < x \leq 200$}
+\end{array} \right.
+\end{equation}
 
-
-
-\subsubsection{Kolumna TX}
-Kolumna TX zawiera najwyższą temperaturę powietrza w ciągu dnia. Wszystkie trzy warianty zmiennej lingwistycznej dla kolumny TX zaprezentowano poniżej:
-
-\begin{itemize}[label=$\bullet$\scshape\bfseries]
-\item TXW - dla pomiarów uzyskanych podczas astronomicznej zimy,
-\item TXSA - dla pomiarów uzyskanych podczas astronomicznej wiosny lub jesieni,
-\item TXS - dla pomiarów uzyskanych podczas astronomicznego lata.\newline\newline\newline
-\end{itemize}
-
-
-Pomiary zimowe - zmienna TXW.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/TX_Z.png}
-	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny TX dla pomiarów wykonanych astronomiczną zimą.}
-\end{figure}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c} 
-		\hline
-		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-Cold	 &-60 & -60 & 10 & 30 \\
-Warm & 10 & 50 & 100 & 130 \\
-Hot	 & 100 & 150 & 376 & 376 \\
-		\hline
-	\end{tabular}
-	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej TXW.}
-\end{table}
-
-Pomiary wiosenne i jesienne - zmienna TXSA.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/TX_WJ.png}
-	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny TX dla pomiarów wykonanych astronomiczną wiosną i jesienią.}
-\end{figure}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c} 
-		\hline
-		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-Cold	 &-60 & -60 & 60 & 80 \\
-Warm & 60 & 100 & 190 & 225 \\
-Hot	 & 180 & 250 & 376 & 376 \\
-		\hline
-	\end{tabular}
-	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej TXSA.}
-\end{table}
-
-Pomiary letnie - zmienna TXS.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/TX_L.png}
-	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny TX dla pomiarów wykonanych astronomicznym latem.}
-\end{figure}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c} 
-		\hline
-		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-Cold	 &-60 & -60 & 160 & 190 \\
-Warm & 170 & 210 & 270 & 300 \\
-Hot	 & 280 & 300 & 376 & 376 \\
-		\hline
-	\end{tabular}
-	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej TXS.}
-\end{table}
-
-\clearpage
-
-
-
-\subsubsection{Kolumna T10N}
-Kolumna T10N zawiera najmniejszą temperaturę w ciągu dnia zmierzoną na wysokości 10cm od poziomu gruntu. Wszystkie trzy warianty zmiennej lingwistycznej dla kolumny T10N zaprezentowano poniżej:
-
-\begin{itemize}[label=$\bullet$\scshape\bfseries]
-\item T10NW - dla pomiarów uzyskanych podczas astronomicznej zimy,
-\item T10NSA - dla pomiarów uzyskanych podczas astronomicznej wiosny lub jesieni,
-\item T10NS - dla pomiarów uzyskanych podczas astronomicznego lata.\newline\newline\newline
-\end{itemize}
-
-
-Pomiary zimowe - zmienna T10NW.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/T10_Z.png}
-	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny T10N dla pomiarów wykonanych astronomiczną zimą.}
-\end{figure}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c} 
-		\hline
-		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-Cold	 & -138 & -138 & -60 & -30 \\
-Warm & -50 & -10 & 40 & 60 \\
-Hot	 & 45 & 75 & 232 & 232 \\
-		\hline
-	\end{tabular}
-	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej T10NW.}
-\end{table}
-
-Pomiary wiosenne i jesienne - zmienna T10NSA.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/T10_WJ.png}
-	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny T10N dla pomiarów wykonanych astronomiczną wiosną i jesienią.}
-\end{figure}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c} 
-		\hline
-		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-Cold	 & -138 & -138 & -20 & 20 \\
-Warm & 0 & 30 & 100 & 130 \\
-Hot	 & 100 & 140 & 232 & 232 \\
-		\hline
-	\end{tabular}
-	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej T10NSA.}
-\end{table}
-
-Pomiary letnie - zmienna T10NS.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.99\textwidth]{Pictures/TermsCharts/T10_L.png}
-	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny T10N dla pomiarów wykonanych astronomicznym latem.}
-\end{figure}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c} 
-		\hline
-		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-Cold	 & -138 & -138 & 50 & 70 \\
-Warm & 50 & 80 & 160 & 180 \\
-Hot	 & 150 & 190 & 232 & 232 \\
-		\hline
-	\end{tabular}
-	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla zmiennej T10NS.}
-\end{table}
+Dla etykiety $Hot$:
+\begin{equation}
+{TNS}_{HOT}(x)= \left\{ \begin{array}{ll}
+\frac{x-175}{35} & \textrm{jeśli $175 \leq x < 210$} \\
+1 			 & \textrm{jeśli $210 \leq x \leq 244$} \\
+\end{array} \right.
+\end{equation}
 
 \clearpage
 
@@ -729,20 +622,30 @@ Wykres opisujący zmienną lingwistyczną dla kolumny zawierającej wartości na
 	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny Q}
 \end{figure}
 
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c} 
-		\hline
-		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-Overcast	 & 24 & 24 & 350 & 500 \\
-Cloudy & 400 & 700 & 1300 & 1600 \\
-Sunny	 & 1400 & 1900 & 3145 & 3145 \\
-		\hline
-	\end{tabular}
-	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla kolumny Q.}
-\end{table}
+Dla etykiety $Overcast$:
+\begin{equation}
+{Q}_{OVERCAST}(x)= \left\{ \begin{array}{ll}
+1 			& \textrm{jeśli $24 \leq x \leq 350$} \\
+\frac{500-x}{150}& \textrm{jeśli $350 < x \leq 500$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety $Cloudy$:
+\begin{equation}
+{Q}_{CLOUDY}(x)= \left\{ \begin{array}{ll}
+\frac{x-400}{300} & \textrm{jeśli $400 \leq x < 700$} \\
+1 			 & \textrm{jeśli $700 \leq x \leq 1300$} \\
+\frac{1600-x}{300} & \textrm{jeśli $1300 < x \leq 1600$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety $Sunny$:
+\begin{equation}
+{Q}_{SUNNY}(x)= \left\{ \begin{array}{ll}
+\frac{x-1400}{500} & \textrm{jeśli $1400 \leq x < 1900$} \\
+1 			 & \textrm{jeśli $1900 \leq x \leq 3145$} \\
+\end{array} \right.
+\end{equation}
 
 \clearpage
 
@@ -756,22 +659,41 @@ Wykres opisujący zmienną lingwistyczną dla kolumny zawierającej sumę opadó
 	\caption{Wykres opisujący zmienną lingwistyczną dla kolumny RH}
 \end{figure}
 
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c} 
-		\hline
-		\textbf{Etykieta} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-None	 & -1 & -1 & 5 & 7 \\
-Low 	& 5 & 10 & 35 & 45 \\
-High		 & 40 & 60 & 120 & 175 \\
-Downpour	 & 150 & 180 & 776 & 776 \\
-		\hline
-	\end{tabular}
-	\caption{Przyporządkowane parametry funkcji trapezoidalnej dla kolumny RH.}
-\end{table}
+Wzory opisujące przynależność do poszczególnych etykiet prezentują się następująco. \newline
 
+Dla etykiety \textit{None}:
+\begin{equation}
+{RH}_{NONE}(x)= \left\{ \begin{array}{ll}
+1 			& \textrm{jeśli $-1 \leq x \leq 5$} \\
+\frac{7-x}{2} 	& \textrm{jeśli $5 < x \leq 7$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety \textit{Low}:
+\begin{equation}
+{RH}_{LOW}(x)= \left\{ \begin{array}{ll}
+\frac{x-5}{5} 	& \textrm{jeśli $5 \leq x < 10$} \\
+1 			& \textrm{jeśli $10 \leq x \leq 35$} \\
+\frac{45-x}{10} 	& \textrm{jeśli $35 < x \leq 45$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety \textit{High}:
+\begin{equation}
+{RH}_{HIGH}(x)= \left\{ \begin{array}{ll}
+\frac{x-40}{20} 	& \textrm{jeśli $40 \leq x < 60$} \\
+1 			& \textrm{jeśli $60 \leq x \leq 120$} \\
+\frac{175-x}{55} 	& \textrm{jeśli $120 < x \leq 175$}
+\end{array} \right.
+\end{equation}
+
+Dla etykiety \textit{Downpour}:
+\begin{equation}
+{RH}_{DOWNPOUR}(x)= \left\{ \begin{array}{ll}
+\frac{x-150}{30} 	 & \textrm{jeśli $150 \leq x < 180$} \\
+1 			 & \textrm{jeśli $180 \leq x \leq 776$}
+\end{array} \right.
+\end{equation}
 \clearpage
 
 
