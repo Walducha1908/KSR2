@@ -170,6 +170,10 @@ Pakiet \textit{FuzzyLib} został podzielony na następujące podpakiety:
 
 W tym rozdziale omówione zostaną wszystkie wyżej wymienione podpakiety. Przedstawimy diagramy UML każdego z podpakietów a także omówimy zastosowanie poszczególnych klas.
 
+\clearpage
+
+
+
 \subsection{Podpakiet Membership}
 Podpakiet \textit{Membership} zawiera implementacje funkcji przynależności. Każda klasa tego podpakietu implementuje interfejs  \textit{MembershipFunction}.
 
@@ -183,15 +187,13 @@ Klasy podpakietu \textit{Membership} są następujące:
 \begin{itemize}[label=$\bullet$\scshape\bfseries]
 \item \textit{MembershipFunction} - interfejs implementowany przez wszystkie klasy należące do tego podpakietu,
 \item \textit{TriangularFunction} - klasa implementująca trójkątną funkcję przynależności,
-\item \textit{DescreteFunction} - klasa implementująca dyskretną funkcję przynależności,
-\item \textit{ConstantFunction} - klasa implementująca stałą funkcję przynależności,
+\item \textit{GaussianFunction} - klasa implementująca gaussowską funkcję przynależności,
 \item \textit{TrapezoidFunction} - klasa implementująca trapezoidalną funkcję przynależności.
 \end{itemize}
 
 
-
 \subsection{Podpakiet Logic}
-Podpakiet \textit{Logic} odpowiada za implementacje zmiennych lingwistycznych, operacji sumy i iloczynu zbiorów rozmytych a także miar jakości podsumowań lingwistycznych.
+Podpakiet \textit{Logic} odpowiada za implementacje zmiennych lingwistycznych, operacji sumy zbiorów rozmytych a także miar jakości podsumowań lingwistycznych.
 
 \begin{figure}[H]
 	\centering
@@ -203,8 +205,7 @@ Klasy podpakietu \textit{Logic} są następujące:
 \begin{itemize}[label=$\bullet$\scshape\bfseries]
 \item \textit{LinguisticVariable} - klasa implementująca zmienną lingwistyczną,
 \item \textit{AndSummarizer} - klasa implementująca operacje iloczynu, dziedziczy z klasy \textit{LinguisticVariable},
-\item \textit{OrSummarizer} -  klasa implementująca operacje sumy, dziedziczy z klasy \textit{LinguisticVariable},
-\item \textit{Measures} - klasa implementująca miary jakości podsumowań lingwistycznych.
+\item \textit{Measures} - klasa implementująca miary jakości podsumowań lingwistycznych.\newline\newline
 \end{itemize}
 
 
@@ -855,7 +856,7 @@ Kwantyfikator \textit{More than 6000} - funkcja trapezoidalna:
 Przeprowadzone eksperymenty zostały podzielone na trzy etapy, w których porównywać będziemy różne zależności:
 \begin{itemize}[label=$\bullet$\scshape\bfseries]
 \item W pierwszym etapie sprawdzimy jak zmieniać się będą miary podsumowań dla poszczególnych kwantyfikatorów.
-\item W drugim etapie przeanalizujemy zdania bardziej złożone - sumaryzatory wykorzystujące spójniki \emph{AND} oraz \emph{OR}.
+\item W drugim etapie przeanalizujemy zdania bardziej złożone - sumaryzatory wykorzystujące spójnik \emph{AND}.
 \item W trzecim etapie skoncentrujemy się na różnicy w rezultatch uzyskiwanych w wyniku wykorzystania kwalifikatora w opozycji do zdań, w których kwalifikator nie jest używany.
 \end{itemize}
 
@@ -896,17 +897,17 @@ $T_2$ = 0,537, $T_3$ = 0,726, $T_4$ = 0,374, $T_5$ = 1, $T_8$ = 0,797, $T_9$ = 0
 None	&	0,000	&	0,900	&	0,950	\\
 Less than quarter	&	0,000	&	0,700	&	0,775	\\
 Some 	&	0,000	&	0,750	&	0,800	\\
-Around one thirds 	&	0,000	&	0,800	&	0,900	\\
-Around half 	&	0,000	&	0,800	&	0,850	\\
-Around two thirds 	&	0,116	&	0,800	&	0,900	\\
+About one thirds 	&	0,000	&	0,800	&	0,900	\\
+About half 	&	0,000	&	0,800	&	0,850	\\
+About two thirds 	&	0,116	&	0,800	&	0,900	\\
 Majority 	&	0,968	&	0,800	&	0,850	\\
 Almost all	&	0,000	&	0,840	&	0,870	\\
 Less than 200	&	1,000	&	0,950	&	0,953	\\
-Around 500	&	0,000	&	0,932	&	0,966	\\
-Around 1000	&	0,000	&	0,865	&	0,932	\\
-Around 2000	&	0,000	&	0,865	&	0,932	\\
-Around 3000	&	0,000	&	0,820	&	0,910	\\
-Around 5000	&	0,000	&	0,775	&	0,887	\\
+About 500	&	0,000	&	0,932	&	0,966	\\
+About 1000	&	0,000	&	0,865	&	0,932	\\
+About 2000	&	0,000	&	0,865	&	0,932	\\
+About 3000	&	0,000	&	0,820	&	0,910	\\
+About 5000	&	0,000	&	0,775	&	0,887	\\
 More than 6000	&	0,000	&	0,437	&	0,493	\\
 		\hline
 	\end{tabular}
@@ -937,17 +938,17 @@ $T_2$ = 0,690, $T_3$ = 0,633, $T_4$ = 0,358, $T_5$ = 1, $T_8$ = 0,976, $T_9$ = 0
 None	&	0,000	&	0,900	&	0,950	\\
 Less than quarter	&	0,000	&	0,700	&	0,775	\\
 Some 	&	0,000	&	0,750	&	0,800	\\
-Around one thirds 	&	0,000	&	0,800	&	0,900	\\
-Around half 	&	0,000	&	0,800	&	0,850	\\
-Around two thirds 	&	0,905	&	0,800	&	0,900	\\
+About one thirds 	&	0,000	&	0,800	&	0,900	\\
+About half 	&	0,000	&	0,800	&	0,850	\\
+About two thirds 	&	0,905	&	0,800	&	0,900	\\
 Majority 	&	0,000	&	0,800	&	0,850	\\
 Almost all	&	0,000	&	0,840	&	0,870	\\
 Less than 200	&	1,000	&	0,987	&	0,988	\\
-Around 500	&	0,000	&	0,982	&	0,991	\\
-Around 1000	&	0,000	&	0,965	&	0,982	\\
-Around 2000	&	0,000	&	0,965	&	0,982	\\
-Around 3000	&	0,000	&	0,953	&	0,976	\\
-Around 5000	&	0,000	&	0,941	&	0,971	\\
+About 500	&	0,000	&	0,982	&	0,991	\\
+About 1000	&	0,000	&	0,965	&	0,982	\\
+About 2000	&	0,000	&	0,965	&	0,982	\\
+About 3000	&	0,000	&	0,953	&	0,976	\\
+About 5000	&	0,000	&	0,941	&	0,971	\\
 More than 6000	&	0,000	&	0,853	&	0,868	\\
 		\hline
 	\end{tabular}
@@ -978,17 +979,17 @@ $T_2$ = 0,742, $T_3$ = 0,332, $T_4$ = 0,141, $T_5$ = 1, $T_8$ = 0,999, $T_9$ = 0
 None	&	0,000	&	0,900	&	0,950	\\
 Less than quarter	&	0,915	&	0,700	&	0,775	\\
 Some 	&	1,000	&	0,750	&	0,800	\\
-Around one thirds 	&	0,242	&	0,800	&	0,900	\\
-Around half 	&	0,000	&	0,800	&	0,850	\\
-Around two thirds 	&	0,000	&	0,800	&	0,900	\\
+About one thirds 	&	0,242	&	0,800	&	0,900	\\
+About half 	&	0,000	&	0,800	&	0,850	\\
+About two thirds 	&	0,000	&	0,800	&	0,900	\\
 Majority 	&	0,000	&	0,800	&	0,850	\\
 Almost all	&	0,000	&	0,840	&	0,870	\\
 Less than 200	&	0,000	&	0,987	&	0,988	\\
-Around 500	&	0,000	&	0,982	&	0,991	\\
-Around 1000	&	0,000	&	0,965	&	0,982	\\
-Around 2000	&	0,000	&	0,965	&	0,982	\\
-Around 3000	&	0,201	&	0,953	&	0,976	\\
-Around 5000	&	0,000	&	0,941	&	0,971	\\
+About 500	&	0,000	&	0,982	&	0,991	\\
+About 1000	&	0,000	&	0,965	&	0,982	\\
+About 2000	&	0,000	&	0,965	&	0,982	\\
+About 3000	&	0,201	&	0,953	&	0,976	\\
+About 5000	&	0,000	&	0,941	&	0,971	\\
 More than 6000	&	0,000	&	0,853	&	0,868	\\
 		\hline
 	\end{tabular}
@@ -999,7 +1000,7 @@ More than 6000	&	0,000	&	0,853	&	0,868	\\
 
 
 
-\subsection{Wpływ wykorzystania operacji sumy i ilooczynu na jakość podsumowania}
+\subsection{Wpływ wykorzystania operacji sumy na jakość podsumowania}
 \textit{Praca w toku}
 
 \subsection{Wpływ wykorzystania kwalifikatora na jakość podsumowania}
