@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0edc1891-cb6a-4050-be60-2eb2d34676f2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Report/Pictures/Diagrams/Membership.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Report/Pictures/Diagrams/Membership.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Containers/LinguisticVariableContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Containers/LinguisticVariableContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Containers/QuantifierContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Containers/QuantifierContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Logic/LinguisticVariable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Logic/LinguisticVariable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Logic/Measures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Logic/Measures.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Summaries/SentenceMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Summaries/SentenceMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Program/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/Program.java" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +47,18 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\zange\Desktop\KSR2\ksr2\src\main\resources" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -113,11 +121,23 @@
       <workItem from="1589650501837" duration="1573000" />
       <workItem from="1589714967738" duration="9000" />
       <workItem from="1590064648317" duration="4789000" />
+      <workItem from="1590245991220" duration="248000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="183" key="#Project_Structure" timestamp="1588586927726">
