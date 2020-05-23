@@ -702,7 +702,7 @@ Dla etykiety \textit{Downpour}:
 \subsection{Kwantyfikatory}
 W tym rozdziale skoncentrujemy się na zaproponowanych przez nas kwantyfikatorach. Prezentację rozpoczniemy od kwantyfikatorów względnych, aby następnie omówić kwantyfikatory bezwzględne.\newline
 
-W przypadku kwantyfikatorów, wykorzystywanymi przez nas funkcjami przynależności są zarówno funkcje trapezoidalne jak i funkcje trójkątne. Za każdym razem w tabelach podano, z jakiej funkcji skorzystano przy definicji danej etykiety, co ma swoje odzwierciedlenie na prezentowanych wykresach.
+W przypadku kwantyfikatorów, wykorzystywanymi przez nas funkcjami przynależności są zarówno funkcje trapezoidalne jak i funkcje trójkątne. Wzory funkcji przynależności kwantyfikatorów zamieszczono pod wykresami.
 
 \subsubsection{Kwantyfikatory względne}
 Wykres ilustrujący wszystkie kwantyfikatory względne, zamieszczono poniżej.
@@ -712,26 +712,72 @@ Wykres ilustrujący wszystkie kwantyfikatory względne, zamieszczono poniżej.
 	\caption{Kwantyfikatory względne}
 \end{figure}
 
-Tabela zawierająca parametry i nazwy funkcji przynależności, dla poszczególnych kwantyfikatorów, prezentuje się następująco.
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c c} 
-		\hline
-		\textbf{Kwantyfikator} & \textbf{Funkcja przynależności} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-None	 			 & Trójkątna 		& 0 & 0 & 0.1 & - \\
-Less than quarter		 & Trapezoidalna  	& 0 & 0.1 & 0.25 & 0.3 \\
-Some				 & Trapezoidalna   & 0.15 & 0.2 & 0.35 & 0.4 \\
-Around one thirds		 & Trójkątna 		& 0.23 & 0.33 & 0.43 & - \\
-Around half	 		 & Trapezoidalna 	& 0.4 & 0.45 & 0.55 & 0.6 \\
-Around two thirds		 & Trójkątna 		& 0.56 & 0.66 & 0.67 & - \\
-Majority	 			 & Trapezoidalna 	& 0.7 & 0.75 & 0.85 & 0.9 \\
-Almost all			 & Trapezoidalna 	& 0.85 & 0.9 & 1 & 1 \\
-		\hline
-	\end{tabular}
-	\caption{Funkcje przynależności kwantyfikatorów względnych - nazwy wraz z parametrami.}
-\end{table}
+Kwantyfikator \textit{None} - funkcja trójkątna:
+\begin{equation}
+{Qt}_{NONE}(x)= \left\{ \begin{array}{ll}
+\frac{0.1-x}{0.1} 	 & \textrm{jeśli $0 \leq x \leq 0.1$}
+\end{array} \right.
+\end{equation}
+
+Kwantyfikator \textit{Less than quarter} - funkcja trapezoidalna:
+\begin{equation}
+{Qt}_{\textit{LESS THAN QUARTER}}(x)= \left\{ \begin{array}{ll}
+\frac{x}{0.1} 	& \textrm{jeśli $0 \leq x < 0.1$} \\
+1 			& \textrm{jeśli $0.1 \leq x \leq 0.25$} \\
+\frac{0.3-x}{0.05} 	& \textrm{jeśli $0.25 < x \leq 0.3$}
+\end{array} \right.
+\end{equation}
+
+Kwantyfikator \textit{Some} - funkcja trapezoidalna:
+\begin{equation}
+{Qt}_{\textit{SOME}}(x)= \left\{ \begin{array}{ll}
+\frac{x-0.15}{0.05} 	& \textrm{jeśli $0.15 \leq x < 0.2$} \\
+1 			& \textrm{jeśli $0.2 \leq x \leq 0.35$} \\
+\frac{0.4-x}{0.05} 	& \textrm{jeśli $0.35 < x \leq 0.4$}
+\end{array} \right.
+\end{equation}
+
+Kwantyfikator \textit{About one thirds} - funkcja trójkątna:
+\begin{equation}
+{Qt}_{\textit{ABOUT ONE THIRDS}}(x)= \left\{ \begin{array}{ll}
+\frac{x-0.23}{0.1} 	 & \textrm{jeśli $0.23 \leq x \leq 0.33$} \\
+\frac{0.43-x}{0.1} 	 & \textrm{jeśli $0.33 \leq x \leq 0.43$} \\
+\end{array} \right.
+\end{equation}
+
+Kwantyfikator \textit{About half} - funkcja trapezoidalna:
+\begin{equation}
+{Qt}_{\textit{ABOUT HALF}}(x)= \left\{ \begin{array}{ll}
+\frac{x-0.4}{0.05} 	& \textrm{jeśli $0.4 \leq x < 0.45$} \\
+1 			& \textrm{jeśli $0.45 \leq x \leq 0.55$} \\
+\frac{0.6-x}{0.05} 	& \textrm{jeśli $0.55 < x \leq 0.6$}
+\end{array} \right.
+\end{equation}
+
+Kwantyfikator \textit{About two thirds} - funkcja trójkątna:
+\begin{equation}
+{Qt}_{\textit{ABOUT TWO THIRDS}}(x)= \left\{ \begin{array}{ll}
+\frac{x-0.56}{0.1} 	 & \textrm{jeśli $0.56 \leq x \leq 0.66$} \\
+\frac{0.76-x}{0.1} 	 & \textrm{jeśli $0.66 \leq x \leq 0.76$} \\
+\end{array} \right.
+\end{equation}
+
+Kwantyfikator \textit{Majority} - funkcja trapezoidalna:
+\begin{equation}
+{Qt}_{\textit{MAJORITY}}(x)= \left\{ \begin{array}{ll}
+\frac{x-0.7}{0.05} 	& \textrm{jeśli $0.7 \leq x < 0.75$} \\
+1 			& \textrm{jeśli $0.75 \leq x \leq 0.85$} \\
+\frac{0.9-x}{0.05} 	& \textrm{jeśli $0.85 < x \leq 0.9$}
+\end{array} \right.
+\end{equation}
+
+Kwantyfikator \textit{Almost all} - funkcja trapezoidalna:
+\begin{equation}
+{Qt}_{\textit{ALMOST ALL}}(x)= \left\{ \begin{array}{ll}
+\frac{x-0.85}{0.05} 	& \textrm{jeśli $0.85 \leq x < 0.9$} \\
+1 			& \textrm{jeśli $0.9 \leq x \leq 1.0$} \\
+\end{array} \right.
+\end{equation}
 
 
 \subsubsection{Kwantyfikatory bezwzględne}
@@ -742,25 +788,61 @@ Wykres ilustrujący wszystkie kwantyfikatory bezwzględne, zamieszczono poniżej
 	\caption{Kwantyfikatory bezwzględne}
 \end{figure}
 
-Tabela zawierająca parametry i nazwy funkcji przynależności, dla poszczególnych kwantyfikatorów, prezentuje się następująco.
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c c c} 
-		\hline
-		\textbf{Kwantyfikator} & \textbf{Funkcja przynależności} & \textbf{a} & \textbf{b} & \textbf{c} & \textbf{d}\\ [0.5ex] 
-		\hline
-		\hline 
-Less than 200	 	& Trapezoidalna 		& 0 & 0 & 200 & 220 \\
-Around 500			& Trójkątna  			& 350 & 500 & 650 & - \\
-Around 1000		      & Trójkątna   			& 700 & 1000 & 1300 & - \\
-Around 2000	 		& Trójkątna 			& 1700 & 2000 & 2300 & - \\
-Around 3000 		 	& Trójkątna 			& 2600 & 3000 & 3400 & - \\
-Around 5000	 		& Trójkątna 			& 4500 & 5000 & 5500 & - \\
-More than 6000		& Trapezoidalna 		& 5500 & 6000 & 8000 & 17000 \\
-		\hline
-	\end{tabular}
-	\caption{Funkcje przynależności kwantyfikatorów bezwzględnych - nazwy wraz z parametrami.}
-\end{table}
+Kwantyfikator \textit{Less than 200} - funkcja trapezoidalna:
+\begin{equation}
+{Qt}_{\textit{LESS THAN 200}}(x)= \left\{ \begin{array}{ll}
+1 			& \textrm{jeśli $0 \leq x \leq 200$} \\
+\frac{220-x}{20} 	& \textrm{jeśli $200 < x \leq 220$}
+\end{array} \right.
+\end{equation}
+
+Kwantyfikator \textit{About 500} - funkcja trójkątna:
+\begin{equation}
+{Qt}_{\textit{ABOUT 500}}(x)= \left\{ \begin{array}{ll}
+\frac{x-350}{150} 	 & \textrm{jeśli $350 \leq x \leq 500$} \\
+\frac{650-x}{150} 	 & \textrm{jeśli $500 \leq x \leq 650$} \\
+\end{array} \right.
+\end{equation}
+
+Kwantyfikator \textit{About 1000} - funkcja trójkątna:
+\begin{equation}
+{Qt}_{\textit{ABOUT 1000}}(x)= \left\{ \begin{array}{ll}
+\frac{x-700}{300} 	 & \textrm{jeśli $700 \leq x \leq 1000$} \\
+\frac{1300-x}{300} 	 & \textrm{jeśli $1000 \leq x \leq 1300$} \\
+\end{array} \right.
+\end{equation}
+
+Kwantyfikator \textit{About 2000} - funkcja trójkątna:
+\begin{equation}
+{Qt}_{\textit{ABOUT 2000}}(x)= \left\{ \begin{array}{ll}
+\frac{x-1700}{300} 	 & \textrm{jeśli $1700 \leq x \leq 2000$} \\
+\frac{2300-x}{300} 	 & \textrm{jeśli $2000 \leq x \leq 2300$} \\
+\end{array} \right.
+\end{equation}
+
+Kwantyfikator \textit{About 3000} - funkcja trójkątna:
+\begin{equation}
+{Qt}_{\textit{ABOUT 3000}}(x)= \left\{ \begin{array}{ll}
+\frac{x-2600}{400} 	 & \textrm{jeśli $2600 \leq x \leq 3000$} \\
+\frac{3400-x}{400} 	 & \textrm{jeśli $3000 \leq x \leq 3400$} \\
+\end{array} \right.
+\end{equation}
+
+Kwantyfikator \textit{About 5000} - funkcja trójkątna:
+\begin{equation}
+{Qt}_{\textit{ABOUT 5000}}(x)= \left\{ \begin{array}{ll}
+\frac{x-4500}{500} 	 & \textrm{jeśli $4500 \leq x \leq 5000$} \\
+\frac{5500-x}{500} 	 & \textrm{jeśli $5000 \leq x \leq 5500$} \\
+\end{array} \right.
+\end{equation}
+
+Kwantyfikator \textit{More than 6000} - funkcja trapezoidalna:
+\begin{equation}
+{Qt}_{\textit{MORE THAN 6000}}(x)= \left\{ \begin{array}{ll}
+\frac{x-5500}{500} 	 & \textrm{jeśli $5500 \leq x \leq 6000$} \\
+1 			& \textrm{jeśli $6000 \leq x \leq 17000$} \\
+\end{array} \right.
+\end{equation}
 
 \clearpage
 
