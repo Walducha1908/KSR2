@@ -865,8 +865,8 @@ Przeprowadzone eksperymenty zostały podzielone na trzy etapy, w których porów
 
 W pierwszym etapie, wygenerowano następujące zdania:
 \begin{itemize}[label=$\bullet$\scshape\bfseries]
-\item Zdanie pierwsze: \textit{X of summer measures with cold daily average temperature have cloudy insolation} - wykorzystujące zmienną lingwistyczną TGS jako kwalifikator (etykieta \textit{Cold}) oraz zmienną Q jako sumaryzator (etykieta \textit{Cloudy}).
-\item Zdanie drugie: \textit{X of measures with very strong strongest wind blow have overcast insolation} - wykorzystujące zmienną lingwistyczną FXX jako kwalifikator (etykieta \textit{Very strong}) oraz zmienną Q jako sumaryzator (etykieta \textit{Overcast}).
+\item Zdanie pierwsze: \textit{X of summer measures with cold daily average temperature have cloudy insolation.} - wykorzystujące zmienną lingwistyczną TGS jako kwalifikator (etykieta \textit{Cold}) oraz zmienną Q jako sumaryzator (etykieta \textit{Cloudy}).
+\item Zdanie drugie: \textit{X of measures with very strong strongest wind blow have overcast insolation.} - wykorzystujące zmienną lingwistyczną FXX jako kwalifikator (etykieta \textit{Very strong}) oraz zmienną Q jako sumaryzator (etykieta \textit{Overcast}).
 \item Zdanie trzecie: \textit{X of measures with none precipitation have gentle daily wind speed average.} - wykorzystujące zmienną lingwistyczną RH jako kwalifikator (etykieta \textit{None}) oraz zmienną FG jako sumaryzator (etykieta \textit{Gentle}).
 \end{itemize}
 gdzie \textit{X} jest jednym ze zdefiniowaych przez nas kwantyfikatorów.\newline
@@ -893,6 +893,7 @@ $T_2$ = 0,537, $T_3$ = 0,726, $T_4$ = 0,374, $T_5$ = 1, $T_8$ = 0,797, $T_9$ = 0
 	\begin{tabular}{c c c c} 
 		\hline
 		\textbf{Kwantyfikator}  & \textbf{$T_1$} & \textbf{$T_6$} & \textbf{$T_7$}\\ [0.5ex] 
+		\hline
 		\hline
 None	&	0,000	&	0,900	&	0,950	\\
 Less than quarter	&	0,000	&	0,700	&	0,775	\\
@@ -935,6 +936,7 @@ $T_2$ = 0,690, $T_3$ = 0,633, $T_4$ = 0,358, $T_5$ = 1, $T_8$ = 0,976, $T_9$ = 0
 		\hline
 		\textbf{Kwantyfikator}  & \textbf{$T_1$} & \textbf{$T_6$} & \textbf{$T_7$}\\ [0.5ex] 
 		\hline
+		\hline
 None	&	0,000	&	0,900	&	0,950	\\
 Less than quarter	&	0,000	&	0,700	&	0,775	\\
 Some 	&	0,000	&	0,750	&	0,800	\\
@@ -976,6 +978,7 @@ $T_2$ = 0,742, $T_3$ = 0,332, $T_4$ = 0,141, $T_5$ = 1, $T_8$ = 0,999, $T_9$ = 0
 		\hline
 		\textbf{Kwantyfikator}  & \textbf{$T_1$} & \textbf{$T_6$} & \textbf{$T_7$}\\ [0.5ex] 
 		\hline
+		\hline
 None	&	0,000	&	0,900	&	0,950	\\
 Less than quarter	&	0,915	&	0,700	&	0,775	\\
 Some 	&	1,000	&	0,750	&	0,800	\\
@@ -1000,8 +1003,141 @@ More than 6000	&	0,000	&	0,853	&	0,868	\\
 
 
 
-\subsection{Wpływ wykorzystania operacji sumy na jakość podsumowania}
-\textit{Praca w toku}
+\subsection{Wpływ wykorzystania operacji iloczynu na jakość podsumowania}
+
+W drugim etapie, wygenerowano następujące zdania:
+\begin{itemize}[label=$\bullet$\scshape\bfseries]
+\item Zdanie pierwsze: \textit{X of measures with gentle daily wind speed average have sunny insolation.} - wykorzystujące zmienną lingwistyczną FG jako kwalifikator (etykieta \textit{Gentle}) oraz zmienną Q jako sumaryzator (etykieta \textit{Sunny}).
+\item Zdanie drugie: \textit{X of measures with gentle daily wind speed average have none precipitation.} - wykorzystujące zmienną lingwistyczną FG jako kwalifikator (etykieta \textit{Gentle}) oraz zmienną RH jako sumaryzator (etykieta \textit{None}).
+\item Zdanie trzecie: \textit{X of measures with gentle daily wind speed average have sunny insolation and none precipitation.} - wykorzystujące zmienną lingwistyczną FG jako kwalifikator (etykieta \textit{Gentle}) oraz iloczyn zmiennych Q (etykieta \textit{Sunny}) i RH (etykieta \textit{None})  jako sumaryzator.
+\end{itemize}
+gdzie \textit{X} jest jednym ze zdefiniowaych przez nas kwantyfikatorów.\newline
+
+W tym podrozdziale porównamy wszystkie miary dla tych kwantyfikatorów, dla których otrzymane zdanie było choć trochę prawdziwe - miara $T_1$ osiągnęła wartość większą od 0.
+
+\clearpage
+
+
+\subsubsection{Kwantyfikator względny}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Pictures/ResultCharts/Eks2_1.png}
+	\caption{Wykres przedstawiający wyniki eksperymentu drugiego dla sumaryzatorów względnych - wizualizacja danych z tabel 4. 5. i 6.}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c} 
+		\hline
+		\textbf{Miara}  & {Some} & {About one thirds}\\ [0.5ex] 
+		\hline
+		\hline
+$T_1$	&	1,000	&	0,902	\\
+$T_2$	&	0,653	&	0,653	\\
+$T_3$	&	0,417	&	0,417	\\
+$T_4$	&	0,153	&	0,153	\\
+$T_5$	&	1,000	&	1,000	\\
+$T_6$	&	0,750	&	0,800	\\
+$T_7$	&	0,800	&	0,900	\\
+$T_8$	&	0,912	&	0,912	\\
+$T_9$	&	0,742	&	0,742	\\
+$T_{10}$	&	0,999	&	0,999	\\
+$T_{11}$	&	1,000	&	1,000	\\
+		\hline
+	\end{tabular}
+	\caption{Tabela przedstawiająca wyniki eksperymentu dla zdania pierwszego - z sumaryzatorem $Q_{\textit{SUNNY}}(x)$}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c} 
+		\hline
+		\textbf{Miara}  & {Majority}\\ [0.5ex] 
+		\hline
+		\hline
+$T_1$	&	1,000	\\
+$T_2$	&	0,373	\\
+$T_3$	&	0,808	\\
+$T_4$	&	0,188	\\
+$T_5$	&	1,000	\\
+$T_6$	&	0,800	\\
+$T_7$	&	0,850	\\
+$T_8$	&	1,000	\\
+$T_9$	&	0,742	\\
+$T_{10}$	&	0,999	\\
+$T_{11}$	&	1,000	\\
+		\hline
+	\end{tabular}
+	\caption{Tabela przedstawiająca wyniki eksperymentu dla zdania drugiego - z sumaryzatorem ${RH}_{\textit{NONE}}(x)$}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c c} 
+		\hline
+		\textbf{Miara}  & {Less than quarter} & {Some} & {About one thirds}\\ [0.5ex] 
+		\hline
+		\hline
+$T_1$	&	0,215	&	1,000	&	0,593	\\
+$T_2$	&	0,534	&	0,534	&	0,534	\\
+$T_3$	&	0,367	&	0,367	&	0,367	\\
+$T_4$	&	0,203	&	0,203	&	0,203	\\
+$T_5$	&	0,500	&	0,500	&	0,500	\\
+$T_6$	&	0,700	&	0,750	&	0,800	\\
+$T_7$	&	0,775	&	0,800	&	0,900	\\
+$T_8$	&	0,994	&	0,994	&	0,994	\\
+$T_9$	&	0,742	&	0,742	&	0,742	\\
+$T_{10}$	&	0,999	&	0,999	&	0,999	\\
+$T_{11}$	&	1,000	&	1,000	&	1,000	\\
+		\hline
+	\end{tabular}
+	\caption{Tabela przedstawiająca wyniki eksperymentu dla zdania trzeciego - z sumaryzatorem ${Q}_{\textit{SUNNY}}(x) ~AND~ {RH}_{\textit{NONE}}(x)$}
+\end{table}
+
+
+\clearpage
+
+
+
+\subsubsection{Kwantyfikator bezwzględny}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Pictures/ResultCharts/Eks2_2.png}
+	\caption{Wykres przedstawiający wyniki eksperymentu drugiego dla sumaryzatorów bezwzględnych - wizualizacja danych z tabeli 7.}
+\end{figure}
+
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c c} 
+		\hline
+		  &  $Q_{\textit{SUNNY}}(x)$ & ${RH}_{\textit{NONE}}(x)$ & ${Q}_{\textit{SUNNY}}(x) ~{AND}~ {RH}_{\textit{NONE}}(x)$\\ [0.5ex] 
+		\hline
+		\hline
+		\textbf{Miara}  & {About 1000} & {About 3000} & {About 1000}\\ [0.5ex] 
+		\hline
+		\hline
+$T_1$	&	0,862	&	0,201	&	0,802	\\
+$T_2$	&	0,653	&	0,373	&	0,534	\\
+$T_3$	&	0,417	&	0,808	&	0,367	\\
+$T_4$	&	0,153	&	0,188	&	0,203	\\
+$T_5$	&	1,000	&	1,000	&	0,500	\\
+$T_6$	&	0,965	&	0,953	&	0,965	\\
+$T_7$	&	0,982	&	0,976	&	0,982	\\
+$T_8$	&	0,912	&	1,000	&	0,994	\\
+$T_9$	&	0,742	&	0,742	&	0,742	\\
+$T_{10}$	&	0,999	&	0,999	&	0,999	\\
+$T_{11}$	&	1,000	&	1,000	&	1,000	\\
+		\hline
+	\end{tabular}
+	\caption{Tabela przedstawiająca wyniki eksperymentu dla wszystkich trzech zdań, w pierwszym wierszu podano wykorzystywany w danym zdaniu sumaryzator.}
+\end{table}
+
+\clearpage
+
+
 
 \subsection{Wpływ wykorzystania kwalifikatora na jakość podsumowania}
 \textit{Praca w toku}
