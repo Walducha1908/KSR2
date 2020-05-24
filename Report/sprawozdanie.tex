@@ -1023,7 +1023,7 @@ W tym podrozdziale porównamy wszystkie miary dla tych kwantyfikatorów, dla kt�
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{Pictures/ResultCharts/Eks2_1.png}
-	\caption{Wykres przedstawiający wyniki eksperymentu drugiego dla sumaryzatorów względnych - wizualizacja danych z tabel 4. 5. i 6.}
+	\caption{Wykres przedstawiający wyniki eksperymentu drugiego dla kwantyfikatorów względnych - wizualizacja danych z tabel 4. 5. i 6.}
 \end{figure}
 
 \begin{table}[H]
@@ -1105,7 +1105,7 @@ $T_{11}$	&	1,000	&	1,000	&	1,000	\\
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{Pictures/ResultCharts/Eks2_2.png}
-	\caption{Wykres przedstawiający wyniki eksperymentu drugiego dla sumaryzatorów bezwzględnych - wizualizacja danych z tabeli 7.}
+	\caption{Wykres przedstawiający wyniki eksperymentu drugiego dla kwantyfikatorów bezwzględnych - wizualizacja danych z tabeli 7.}
 \end{figure}
 
 
@@ -1140,9 +1140,87 @@ $T_{11}$	&	1,000	&	1,000	&	1,000	\\
 
 
 \subsection{Wpływ wykorzystania kwalifikatora na jakość podsumowania}
-\textit{Praca w toku}
+
+W ostatnim etapie, wygenerowano dwa zdania:
+\begin{itemize}[label=$\bullet$\scshape\bfseries]
+\item Zdanie pierwsze: \textit{X of measures with overcast insolation have high precipitation.} - wykorzystujące zmienną lingwistyczną Q jako kwalifikator (etykieta \textit{Overcast}) oraz zmienną RH jako sumaryzator (etykieta \textit{High}).
+\item Zdanie drugie: \textit{X of measures have high precipitation.} - nie posiada kwalifikatora, sumaryzator zaś stanowi ponownie zmienna RH (etykieta \textit{High}).
+\end{itemize}
+gdzie \textit{X} jest jednym ze zdefiniowaych przez nas kwantyfikatorów.\newline
+
+W tym podrozdziale, podobnie jak w przypadku poprzedniego etapu eksperymentów, porównamy wszystkie miary dla tych kwantyfikatorów, dla których otrzymane zdanie było choć trochę prawdziwe - miara $T_1$ osiągnęła wartość większą od 0. \newline
+
+W wynikach pominięte zostaną miary od $T_9$ do $T_{11}$, ponieważ dotyczą one kwalifikatora, którego nie wykorzystujemy w zdaniu drugim.
+
+\clearpage
 
 
+
+\subsubsection{Kwantyfikator względny}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Pictures/ResultCharts/Eks3_1.png}
+	\caption{Wykres przedstawiający wyniki eksperymentu trzeciego dla kwantyfikatorów względnych - wizualizacja danych z tabeli 8.\newline (wykorzystano przerywane linie ze względu na pokrywanie się wykresów)}
+\end{figure}
+
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c c} 
+		\hline
+		  &  \textbf{Kwalifikator} & \textbf{Kwalifikator} & \textbf{Brak kwalifikatora}\\ [0.5ex] 
+		\hline
+		\hline
+		\textbf{Miara}  & {Less than quarter} & {Some} & {Less than quarter}\\ [0.5ex] 
+		\hline
+		\hline
+$T_1$	&	1,000	&	0,623	&	1,000	\\
+$T_2$	&	0,853	&	0,853	&	0,853	\\
+$T_3$	&	0,231	&	0,231	&	0,147	\\
+$T_4$	&	0,124	&	0,124	&	0,039	\\
+$T_5$	&	1,000	&	1,000	&	1,000	\\
+$T_6$	&	0,700	&	0,750	&	0,700	\\
+$T_7$	&	0,775	&	0,800	&	0,775	\\
+$T_8$	&	0,994	&	0,994	&	0,994	\\
+		\hline
+	\end{tabular}
+	\caption{Tabela przedstawiająca wyniki eksperymentu dla obu zdań, w pierwszym wierszu podano informację o wykorzystaniu kwalifikatora $Q_{\textit{OVERCAST}}(x)$.}
+\end{table}
+
+\clearpage
+
+
+\subsubsection{Kwantyfikator bezwzględny}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{Pictures/ResultCharts/Eks3_2.png}
+	\caption{Wykres przedstawiający wyniki eksperymentu trzeciego dla kwantyfikatorów bezwzględnych - wizualizacja danych z tabeli 9.}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c c c} 
+		\hline
+		  &  \textbf{Kwalifikator} & \textbf{Brak kwalifikatora}\\ [0.5ex] 
+		\hline
+		\hline
+		\textbf{Miara}  & {About 1000} & {About 2000}\\ [0.5ex] 
+		\hline
+		\hline
+$T_1$	&	0,483	&	0,434	\\
+$T_2$	&	0,853	&	0,853	\\
+$T_3$	&	0,231	&	0,147	\\
+$T_4$	&	0,124	&	0,039	\\
+$T_5$	&	1,000	&	1,000	\\
+$T_6$	&	0,965	&	0,965	\\
+$T_7$	&	0,982	&	0,982	\\
+$T_8$	&	0,994	&	0,994	\\
+		\hline
+	\end{tabular}
+	\caption{Tabela przedstawiająca wyniki eksperymentu dla obu zdań, w pierwszym wierszu podano informację o wykorzystaniu kwalifikatora $Q_{\textit{OVERCAST}}(x)$.}
+\end{table}
 
 
 \section{Dyskusja}
