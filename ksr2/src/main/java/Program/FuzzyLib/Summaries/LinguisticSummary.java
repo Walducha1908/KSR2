@@ -1,11 +1,14 @@
 package Program.FuzzyLib.Summaries;
 
+import Program.FuzzyLib.Containers.LinguisticVariableContainer;
+import Program.FuzzyLib.Containers.QuantifierContainer;
 import Program.FuzzyLib.Logic.LinguisticVariable;
 import Program.FuzzyLib.Logic.Measures;
 import Program.Model.Containers.ResultContainer;
 import Program.Model.Record;
 import Program.Model.Containers.RecordContainer;
 import Program.Model.Result;
+import Program.Model.Seasons;
 import Program.Settings;
 
 import java.text.DecimalFormat;
@@ -52,6 +55,50 @@ public class LinguisticSummary {
         }
 
         sentence = (SentenceMaker.makeSentence(quantifier, qualifier, summarizer));
+
+        ResultContainer.addResult(new Result(sentence, records.size(), degreeOfTruth, degreeOfImprecision,
+                degreeOfCovering, degreeOfAppropriateness, lengthOfSummary, degreeOfQuantifierImprecision,
+                degreeOfQuantifierCardinality, degreeOfSummarizerCardinality, degreeOfQualifierImprecision,
+                degreeOfQualifierCardinality, lengthOfQualifier));
+
+        if (Settings.displayAll) {
+            System.out.print(ResultContainer.results.getLast());
+        }
+    }
+
+    public static void createMultiSubjectLinguisticSentence(LinguisticVariable quantifier, LinguisticVariable summarizer, Seasons season1, Seasons season2) {
+        double degreeOfTruth = -1, degreeOfImprecision = -1, degreeOfCovering = -1, degreeOfAppropriateness = -1,
+                lengthOfSummary = -1, degreeOfQuantifierImprecision = -1, degreeOfQuantifierCardinality = -1,
+                degreeOfSummarizerCardinality = -1, degreeOfQualifierImprecision = -1, degreeOfQualifierCardinality = -1,
+                lengthOfQualifier = -1;
+        String sentence;
+
+        LinkedList<Record> records, records1, records2;
+        records = RecordContainer.getAllRecordsList();
+        records1 = RecordContainer.getAllRecordsFromSeasonList(season1);
+        records2 = RecordContainer.getAllRecordsFromSeasonList(season2);
+
+//        double degreeOfTruth1 = Measures.degreeOfTruth(quantifier, LinguisticVariableContainer.linguisticVariables.get("All"), summarizer, records1);
+//        double degreeOfTruth2 = Measures.degreeOfTruth(quantifier, LinguisticVariableContainer.linguisticVariables.get("All"), summarizer, records2);
+//        if (degreeOfTruth2 > 0) {
+//            degreeOfTruth = degreeOfTruth1 / (degreeOfTruth1 + degreeOfTruth2);
+//        } else {
+//            degreeOfTruth = 0;
+//        }
+
+        degreeOfTruth = Measures.degreeOfTruthMultiSubject(quantifier, summarizer, records1, records2);
+
+        if (!Settings.countOnlyDegreeOfTruth) {
+            degreeOfImprecision = Measures.degreeOfImprecision(summarizer, records);
+            degreeOfCovering = Measures.degreeOfCovering(LinguisticVariableContainer.linguisticVariables.get("All"), summarizer, records);
+            degreeOfAppropriateness = Measures.degreeOfAppropriateness(LinguisticVariableContainer.linguisticVariables.get("All"), summarizer, records);
+            lengthOfSummary = Measures.lengthOfSummary(summarizer);
+            degreeOfQuantifierImprecision = Measures.degreeOfQuantifierImprecision(quantifier, records);
+            degreeOfQuantifierCardinality = Measures.degreeOfQuantifierCardinality(quantifier, records);
+            degreeOfSummarizerCardinality = Measures.degreeOfSummarizerCardinality(summarizer, records);
+        }
+
+        sentence = (SentenceMaker.makeMultiSubjectSentence(quantifier, summarizer, season1, season2));
 
         ResultContainer.addResult(new Result(sentence, records.size(), degreeOfTruth, degreeOfImprecision,
                 degreeOfCovering, degreeOfAppropriateness, lengthOfSummary, degreeOfQuantifierImprecision,

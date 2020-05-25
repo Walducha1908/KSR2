@@ -9,6 +9,7 @@ import Program.FuzzyLib.Logic.LinguisticVariable;
 import Program.FuzzyLib.Logic.OrSummarizer;
 import Program.FuzzyLib.Summaries.LinguisticSummary;
 import Program.Model.Containers.ResultContainer;
+import Program.Model.Seasons;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -36,33 +37,19 @@ public class Program extends Application {
         Manager.prepareQuantifiers();
 //        launch(args);
 
-        // Common case.
-        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
-            LinguisticSummary.createLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"),
-                    LinguisticVariableContainer.linguisticVariables.get("HighRH"));
-        }
-        for (LinguisticVariable quantifier: QuantifierContainer.absoluteQuantifiersList) {
-            LinguisticSummary.createLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"),
-                    LinguisticVariableContainer.linguisticVariables.get("HighRH"));
-        }
-
-        // Common case.
-        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
-            LinguisticSummary.createLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("All"),
-                    LinguisticVariableContainer.linguisticVariables.get("HighRH"));
-        }
-        for (LinguisticVariable quantifier: QuantifierContainer.absoluteQuantifiersList) {
-            LinguisticSummary.createLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("All"),
-                    LinguisticVariableContainer.linguisticVariables.get("HighRH"));
-        }
+//        // Common case.
+//        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"),
+//                    LinguisticVariableContainer.linguisticVariables.get("HighRH"));
+//        }
+//        for (LinguisticVariable quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"),
+//                    LinguisticVariableContainer.linguisticVariables.get("HighRH"));
+//        }
 
 //        // Using and.
 //        AndSummarizer andSummarizer = new AndSummarizer(
@@ -114,6 +101,16 @@ public class Program extends Application {
 //                    LinguisticVariableContainer.linguisticVariables.get("All"),
 //                    orAndSummarizer);
 //        }
+
+        // Multi subject summary.
+        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+            LinguisticSummary.createMultiSubjectLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+                    Seasons.summer,
+                    Seasons.winter);
+        }
+
 
         // We have all results in container, let's print only positive.
         System.out.println("\nTrue sentences: " + ResultContainer.getOnlyTrue());

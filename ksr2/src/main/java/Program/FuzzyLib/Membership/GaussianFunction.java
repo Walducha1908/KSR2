@@ -37,7 +37,7 @@ public class GaussianFunction implements MembershipFunction {
 
     @Override
     public double cardinality() {
-        return mid;
+        return Math.sqrt(Math.PI) * width;
     }
 
     @Override

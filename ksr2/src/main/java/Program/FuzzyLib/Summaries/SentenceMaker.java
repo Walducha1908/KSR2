@@ -26,6 +26,19 @@ public class SentenceMaker {
         return sentence;
     }
 
+    public static String makeMultiSubjectSentence(LinguisticVariable quantifier, LinguisticVariable summarizer, Seasons season1, Seasons season2) {
+        String sentence = quantifier.toString();
+        sentence += "of ";
+        sentence += seasonDictionary(season1) + " ";
+        sentence += "measures compared to ";
+        sentence += seasonDictionary(season2) + " ";
+        sentence += "measures have ";
+        sentence += summarizer.toString();
+        sentence += ".";
+
+        return sentence;
+    }
+
     public static String columnDictionary(Columns column) {
         if (column != null) {
             switch (column) {

@@ -22,6 +22,27 @@ public class Measures {
         }
     }
 
+    public static double degreeOfTruthMultiSubject(LinguisticVariable quantifier, LinguisticVariable summarizer, LinkedList<Record> records1, LinkedList<Record> records2) {
+        double result1 = 0;
+        double result2 = 0;
+        for (Record record : records1) {
+            result1 += summarizer.getMembershipWithRecord(record);
+        }
+        result1 /= records1.size();
+        for (Record record : records2) {
+            result2 += summarizer.getMembershipWithRecord(record);
+        }
+        result2 /= records2.size();
+
+        if (quantifier.isAbsolute()) {
+            return -1;
+        }
+        else {
+            double x = result1 / (result1 + result2);
+            return quantifier.getMembership(x);
+        }
+    }
+
     public static double degreeOfImprecision(LinguisticVariable summarizer, LinkedList<Record> records) {
         double quotient = 1;
         LinkedList<LinguisticVariable> allLinguisticVariables = summarizer.getAllLinguisticVariables();
