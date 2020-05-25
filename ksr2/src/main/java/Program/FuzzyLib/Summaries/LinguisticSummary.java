@@ -67,7 +67,8 @@ public class LinguisticSummary {
         }
     }
 
-    public static void createMultiSubjectLinguisticSentence(LinguisticVariable quantifier, LinguisticVariable summarizer, Seasons season1, Seasons season2) {
+    public static void createMultiSubjectLinguisticSentence(LinguisticVariable quantifier, LinguisticVariable summarizer,
+                                                            Seasons season1, Seasons season2) {
         double degreeOfTruth = -1, degreeOfImprecision = -1, degreeOfCovering = -1, degreeOfAppropriateness = -1,
                 lengthOfSummary = -1, degreeOfQuantifierImprecision = -1, degreeOfQuantifierCardinality = -1,
                 degreeOfSummarizerCardinality = -1, degreeOfQualifierImprecision = -1, degreeOfQualifierCardinality = -1,

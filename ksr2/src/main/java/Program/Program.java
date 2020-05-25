@@ -106,9 +106,9 @@ public class Program extends Application {
         for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
             LinguisticSummary.createMultiSubjectLinguisticSentence(
                     quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("VeryStrongFXX"),
-                    Seasons.winter,
-                    Seasons.summer);
+                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+                    Seasons.summer,
+                    Seasons.winter);
         }
 
 

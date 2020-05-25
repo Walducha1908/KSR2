@@ -445,7 +445,7 @@ public class LinguisticVariableContainer {
                 "",
                 null,
                 null,
-                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(-2.0, -1.0, 776.0, 777.0))));
+                new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(-1.0, -1.0, -1.0, -1.0))));
         linguisticVariables.put("All", All);
 
     }
