@@ -12,6 +12,7 @@ import Program.Model.Seasons;
 import Program.Settings;
 
 import java.text.DecimalFormat;
+import java.util.Collections;
 import java.util.LinkedList;
 
 public class LinguisticSummary {
@@ -74,17 +75,11 @@ public class LinguisticSummary {
         String sentence;
 
         LinkedList<Record> records, records1, records2;
-        records = RecordContainer.getAllRecordsList();
         records1 = RecordContainer.getAllRecordsFromSeasonList(season1);
         records2 = RecordContainer.getAllRecordsFromSeasonList(season2);
-
-//        double degreeOfTruth1 = Measures.degreeOfTruth(quantifier, LinguisticVariableContainer.linguisticVariables.get("All"), summarizer, records1);
-//        double degreeOfTruth2 = Measures.degreeOfTruth(quantifier, LinguisticVariableContainer.linguisticVariables.get("All"), summarizer, records2);
-//        if (degreeOfTruth2 > 0) {
-//            degreeOfTruth = degreeOfTruth1 / (degreeOfTruth1 + degreeOfTruth2);
-//        } else {
-//            degreeOfTruth = 0;
-//        }
+        records = new LinkedList<>();
+        records.addAll(records1);
+        records.addAll(records2);
 
         degreeOfTruth = Measures.degreeOfTruthMultiSubject(quantifier, summarizer, records1, records2);
 
