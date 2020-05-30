@@ -41,8 +41,8 @@ public class Program extends Application {
         for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
             LinguisticSummary.createLinguisticSentence(
                     quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
-                    LinguisticVariableContainer.linguisticVariables.get("HighRH"));
+                    LinguisticVariableContainer.linguisticVariables.get("NoneRH"),
+                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"));
         }
 //        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
 //            LinguisticSummary.createLinguisticSentence(
@@ -103,13 +103,13 @@ public class Program extends Application {
 //        }
 //
         // Multi subject summary.
-//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
-//            LinguisticSummary.createMultiSubjectLinguisticSentence(
-//                    quantifier,
-//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
-//                    Seasons.summer,
-//                    Seasons.winter);
-//        }
+        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+            LinguisticSummary.createMultiSubjectLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+                    Seasons.summer,
+                    Seasons.winter);
+        }
 
 
         // We have all results in container, let's print only positive.

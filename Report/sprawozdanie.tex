@@ -93,7 +93,9 @@ gdzie $a$, $b$, $c$ oraz $d$ są parametrami funkcji przynależności - wierzcho
 
 \subsection{Podsumowania lingwistyczne}
 
-W tym rozdziale skoncentrujemy się na wyjaśnieniu czym są podsumowania lingwistyczne, które stanowią głowny przedmiot rozważań tego zadania. \newline
+W tym rozdziale skoncentrujemy się na wyjaśnieniu czym są podsumowania lingwistyczne, które stanowią głowny przedmiot rozważań tego zadania. Rozważanie rozpoczniemy od jednopodmiotowych podsumowań lingwistycznych a zakończymy na podsumowaniach wielopodmiotowych. \newline
+
+\subsubsection{Jednopodmiotowe podsumowania lingwistyczne}
 
 Ogólna postać lingwistycznego podsumowania bazy danych, prezentuje się następująco \cite{ksiazka}:
 \begin{equation}
@@ -128,6 +130,17 @@ gdzie $W$ jest kwalifikatorem - dodatkową właściwością (lub zestawem właś
 Kończąc nasze rozważania, zaprezentujemy jeszcze przytaczany wcześniej przykład, z wykorzystaniem kwalifikatora i sumaryzatora złożonego: \textit{"Prawie wszyscy programiści mający około 30 lat zarabiają ponad 2000 złotych i mają bardzo drogi samochód [0.54]"}.
 
 
+\subsubsection{Wielopodmiotowe podsumowania lingwistyczne}
+W poprzedmin podrozdziale omówiliśmy podsumowania lingwistyczne wykorzystujące tylko jeden podmiot. Okazuje się jednak, że podsumowania lingwistyczne mogą opierać się o wiele podmiotów. Szczegółowe rozważania dotyczące wielopodmiotowych podsumowań lingiwstycznych można znaleźć w pozycji \textit{Pozyskiwanie wiedzy z relacyjnych baz danych: wielopodmiotowe podsumowania lingwistyczne, Adam Niewiadomski, Izabela Superson.} \cite{polska}. \newline
+
+W tym sprawozdaniu skoncentrujemy się tylko na jednej z form zaproponowanych w \cite{polska}, o następującej postaci:
+\begin{equation}
+Q  ~ P_1 ~ \textit{w odniesieniu do} ~ P_2  ~ { \textit{jest/są} }  ~ S_j ~[T]
+\end{equation}
+gdzie $Q$ jest kwantyfikatorem, $P_1$ i $P_2$ są podmiotami podsumowania a $S_j$ jest sumaryzatorem.\newline
+
+Podobnie jak w przypadku jednopodmiotowych podsumowań, posłużymy się przykładem: \textit{"Większość programistów w odniesieniu do pielęgniarek ma bardzo drogi samochód [0.92]"}, gdzie: \textit{"Większość"} to kwantyfikator, \textit{"programiści"} to pierwszy podmiot lingwistyczny,  \textit{"pielęgniarki"} to drugi podmiot lingwistyczny, \textit{"ma bardzo drogi samochód"} to sumaryztaor, a  \textit{"[0.92]"} to stopień prawdziwości podsumowania.
+
 \subsection{Miary jakości dla podumowań lingwistycznych}
 
 Aby określić jakość naszych podsumowaniań zaimplementowaliśmy 11 miar jakości od $T_1$ do $T_{11}$. Poniżej zestawimy nazwy miar jakości wraz z onaczeniami matematycznymi, którymi będziemy się posługiwać w następnych rozdziałach:
@@ -146,7 +159,17 @@ Aby określić jakość naszych podsumowaniań zaimplementowaliśmy 11 miar jako
 \item $T_{11}$ - długość kwalifikatora.
 \end{itemize}
 
-Dokładny opis miar i wzorów można znaleźć w rozdziałach 8.3 i 8.4 w monografii \textit{Methods for the linguistic summarization of data - aplications of fuzzy sets and their extensions, Adam Niewiadomski} \cite{ksiazka}.
+Dokładny opis miar i wzorów można znaleźć w rozdziałach 8.3 i 8.4 w monografii \textit{Methods for the linguistic summarization of data - aplications of fuzzy sets and their extensions, Adam Niewiadomski} \cite{ksiazka}.\newline
+
+Ze względu na liczbę i zróżnicowanie miar podsumowań lingwistycznych, postanowiliśmy wprowadzić miarę optymalną, upraszczającą przedstawienie i analizę podsumowań. Miara optymalna dla jednopodmiotowych podsumowań jest sumą wszystkich pozostałych miar:
+\begin{equation}
+T_s = \sum_{i=1}^{11} T_{i}
+\end{equation}
+
+W przypadku podsumowań wielopodmiotowych, jedyną analizowaną miarą będzie miara $T_1$, dlatego też miara optymalna dla podsumowań wielopodmiotowych określona jest prostym wzorem:
+\begin{equation}
+T_m = T_{1}
+\end{equation}
 
 \clearpage
 
@@ -853,374 +876,9 @@ Kwantyfikator \textit{More than 6000} - funkcja trapezoidalna:
 
 \section{Wyniki}
 
-Przeprowadzone eksperymenty zostały podzielone na trzy etapy, w których porównywać będziemy różne zależności:
-\begin{itemize}[label=$\bullet$\scshape\bfseries]
-\item W pierwszym etapie sprawdzimy jak zmieniać się będą miary podsumowań dla poszczególnych kwantyfikatorów.
-\item W drugim etapie przeanalizujemy zdania bardziej złożone - sumaryzatory wykorzystujące spójnik \emph{AND}.
-\item W trzecim etapie skoncentrujemy się na różnicy w rezultatch uzyskiwanych w wyniku wykorzystania kwalifikatora w opozycji do zdań, w których kwalifikator nie jest używany.
-\end{itemize}
+W tym rozdziale przedstawimy wybrane, wygenerowane przez nasz program podsumowania lingiwstyczne wraz z obliczonymi najważniejszymi miarami - dla podsumowań jednopodmiotowych będą to miary $T_1$ i miara optymalna $T_s$, dla podsumowań wielopodmiotowych będzie to jedyna analizowana miara $T_1$ = $T_m$.\newline
 
-
-\subsection{Wpływ wyboru kwantyfikatora na jakość podsumowania}
-
-W pierwszym etapie, wygenerowano następujące zdania:
-\begin{itemize}[label=$\bullet$\scshape\bfseries]
-\item Zdanie pierwsze: \textit{X of summer measures with cold daily average temperature have cloudy insolation.} - wykorzystujące zmienną lingwistyczną TGS jako kwalifikator (etykieta \textit{Cold}) oraz zmienną Q jako sumaryzator (etykieta \textit{Cloudy}).
-\item Zdanie drugie: \textit{X of measures with very strong strongest wind blow have overcast insolation.} - wykorzystujące zmienną lingwistyczną FXX jako kwalifikator (etykieta \textit{Very strong}) oraz zmienną Q jako sumaryzator (etykieta \textit{Overcast}).
-\item Zdanie trzecie: \textit{X of measures with none precipitation have gentle daily wind speed average.} - wykorzystujące zmienną lingwistyczną RH jako kwalifikator (etykieta \textit{None}) oraz zmienną FG jako sumaryzator (etykieta \textit{Gentle}).
-\end{itemize}
-gdzie \textit{X} jest jednym ze zdefiniowaych przez nas kwantyfikatorów.\newline
-
-Miary $T_2 - T_5$ oraz $T_8 - T_{11}$ osiągały stałe wartości w obrębie każdego ze zdań, dlatego też ich wartości zostały zamieszczone poza tabelami, w których zestawiono tylko te miary, których wartości były zmienne wewnątrz jednego eksperymentu.
-
-\clearpage
-
-
-
-\subsubsection{Zdanie pierwsze}
-
-Wartości miar, które były jednakowe dla każdego kwantyfikatora, prezentują się następująco:
-$T_2$ = 0,537, $T_3$ = 0,726, $T_4$ = 0,374, $T_5$ = 1, $T_8$ = 0,797, $T_9$ = 0,844, $T_{10}$ = 0,954, $T_{11}$ = 1.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.99\textwidth]{Pictures/ResultCharts/Eks1_1.png}
-	\caption{Wykres przedstawiający wyniki eksperymentu dla zdania pierwszego}
-\end{figure}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c} 
-		\hline
-		\textbf{Kwantyfikator}  & \textbf{$T_1$} & \textbf{$T_6$} & \textbf{$T_7$}\\ [0.5ex] 
-		\hline
-		\hline
-None	&	0,000	&	0,900	&	0,950	\\
-Less than quarter	&	0,000	&	0,700	&	0,775	\\
-Some 	&	0,000	&	0,750	&	0,800	\\
-About one thirds 	&	0,000	&	0,800	&	0,900	\\
-About half 	&	0,000	&	0,800	&	0,850	\\
-About two thirds 	&	0,116	&	0,800	&	0,900	\\
-Majority 	&	0,968	&	0,800	&	0,850	\\
-Almost all	&	0,000	&	0,840	&	0,870	\\
-Less than 200	&	1,000	&	0,950	&	0,953	\\
-About 500	&	0,000	&	0,932	&	0,966	\\
-About 1000	&	0,000	&	0,865	&	0,932	\\
-About 2000	&	0,000	&	0,865	&	0,932	\\
-About 3000	&	0,000	&	0,820	&	0,910	\\
-About 5000	&	0,000	&	0,775	&	0,887	\\
-More than 6000	&	0,000	&	0,437	&	0,493	\\
-		\hline
-	\end{tabular}
-	\caption{Tabela przedstawiająca wyniki eksperymentu dla zdania pierwszego}
-\end{table}
-
-\clearpage
-
-
-
-\subsubsection{Zdanie drugie}
-
-Wartości miar, które były jednakowe dla każdego kwantyfikatora, prezentują się następująco:
-$T_2$ = 0,690, $T_3$ = 0,633, $T_4$ = 0,358, $T_5$ = 1, $T_8$ = 0,976, $T_9$ = 0,979, $T_{10}$ = 0,991, $T_{11}$ = 1.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.99\textwidth]{Pictures/ResultCharts/Eks1_2.png}
-	\caption{Wykres przedstawiający wyniki eksperymentu dla zdania drugiego}
-\end{figure}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c} 
-		\hline
-		\textbf{Kwantyfikator}  & \textbf{$T_1$} & \textbf{$T_6$} & \textbf{$T_7$}\\ [0.5ex] 
-		\hline
-		\hline
-None	&	0,000	&	0,900	&	0,950	\\
-Less than quarter	&	0,000	&	0,700	&	0,775	\\
-Some 	&	0,000	&	0,750	&	0,800	\\
-About one thirds 	&	0,000	&	0,800	&	0,900	\\
-About half 	&	0,000	&	0,800	&	0,850	\\
-About two thirds 	&	0,905	&	0,800	&	0,900	\\
-Majority 	&	0,000	&	0,800	&	0,850	\\
-Almost all	&	0,000	&	0,840	&	0,870	\\
-Less than 200	&	1,000	&	0,987	&	0,988	\\
-About 500	&	0,000	&	0,982	&	0,991	\\
-About 1000	&	0,000	&	0,965	&	0,982	\\
-About 2000	&	0,000	&	0,965	&	0,982	\\
-About 3000	&	0,000	&	0,953	&	0,976	\\
-About 5000	&	0,000	&	0,941	&	0,971	\\
-More than 6000	&	0,000	&	0,853	&	0,868	\\
-		\hline
-	\end{tabular}
-	\caption{Tabela przedstawiająca wyniki eksperymentu dla zdania drugiego}
-\end{table}
-
-\clearpage
-
-
-
-\subsubsection{Zdanie trzecie}
-
-Wartości miar, które były jednakowe dla każdego kwantyfikatora, prezentują się następująco:
-$T_2$ = 0,742, $T_3$ = 0,332, $T_4$ = 0,141, $T_5$ = 1, $T_8$ = 0,999, $T_9$ = 0,373, $T_{10}$ = 1, $T_{11}$ = 1.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.99\textwidth]{Pictures/ResultCharts/Eks1_3.png}
-	\caption{Wykres przedstawiający wyniki eksperymentu dla zdania trzeciego}
-\end{figure}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c} 
-		\hline
-		\textbf{Kwantyfikator}  & \textbf{$T_1$} & \textbf{$T_6$} & \textbf{$T_7$}\\ [0.5ex] 
-		\hline
-		\hline
-None	&	0,000	&	0,900	&	0,950	\\
-Less than quarter	&	0,915	&	0,700	&	0,775	\\
-Some 	&	1,000	&	0,750	&	0,800	\\
-About one thirds 	&	0,242	&	0,800	&	0,900	\\
-About half 	&	0,000	&	0,800	&	0,850	\\
-About two thirds 	&	0,000	&	0,800	&	0,900	\\
-Majority 	&	0,000	&	0,800	&	0,850	\\
-Almost all	&	0,000	&	0,840	&	0,870	\\
-Less than 200	&	0,000	&	0,987	&	0,988	\\
-About 500	&	0,000	&	0,982	&	0,991	\\
-About 1000	&	0,000	&	0,965	&	0,982	\\
-About 2000	&	0,000	&	0,965	&	0,982	\\
-About 3000	&	0,201	&	0,953	&	0,976	\\
-About 5000	&	0,000	&	0,941	&	0,971	\\
-More than 6000	&	0,000	&	0,853	&	0,868	\\
-		\hline
-	\end{tabular}
-	\caption{Tabela przedstawiająca wyniki eksperymentu dla zdania trzeciego}
-\end{table}
-
-\clearpage
-
-
-
-\subsection{Wpływ wykorzystania operacji iloczynu na jakość podsumowania}
-
-W drugim etapie, wygenerowano następujące zdania:
-\begin{itemize}[label=$\bullet$\scshape\bfseries]
-\item Zdanie pierwsze: \textit{X of measures with gentle daily wind speed average have sunny insolation.} - wykorzystujące zmienną lingwistyczną FG jako kwalifikator (etykieta \textit{Gentle}) oraz zmienną Q jako sumaryzator (etykieta \textit{Sunny}).
-\item Zdanie drugie: \textit{X of measures with gentle daily wind speed average have none precipitation.} - wykorzystujące zmienną lingwistyczną FG jako kwalifikator (etykieta \textit{Gentle}) oraz zmienną RH jako sumaryzator (etykieta \textit{None}).
-\item Zdanie trzecie: \textit{X of measures with gentle daily wind speed average have sunny insolation and none precipitation.} - wykorzystujące zmienną lingwistyczną FG jako kwalifikator (etykieta \textit{Gentle}) oraz iloczyn zmiennych Q (etykieta \textit{Sunny}) i RH (etykieta \textit{None})  jako sumaryzator.
-\end{itemize}
-gdzie \textit{X} jest jednym ze zdefiniowaych przez nas kwantyfikatorów.\newline
-
-W tym podrozdziale porównamy wszystkie miary dla tych kwantyfikatorów, dla których otrzymane zdanie było choć trochę prawdziwe - miara $T_1$ osiągnęła wartość większą od 0.
-
-\clearpage
-
-
-\subsubsection{Kwantyfikator względny}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\textwidth]{Pictures/ResultCharts/Eks2_1.png}
-	\caption{Wykres przedstawiający wyniki eksperymentu drugiego dla kwantyfikatorów względnych - wizualizacja danych z tabel 4. 5. i 6.}
-\end{figure}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c} 
-		\hline
-		\textbf{Miara}  & {Some} & {About one thirds}\\ [0.5ex] 
-		\hline
-		\hline
-$T_1$	&	1,000	&	0,902	\\
-$T_2$	&	0,653	&	0,653	\\
-$T_3$	&	0,417	&	0,417	\\
-$T_4$	&	0,153	&	0,153	\\
-$T_5$	&	1,000	&	1,000	\\
-$T_6$	&	0,750	&	0,800	\\
-$T_7$	&	0,800	&	0,900	\\
-$T_8$	&	0,912	&	0,912	\\
-$T_9$	&	0,742	&	0,742	\\
-$T_{10}$	&	0,999	&	0,999	\\
-$T_{11}$	&	1,000	&	1,000	\\
-		\hline
-	\end{tabular}
-	\caption{Tabela przedstawiająca wyniki eksperymentu dla zdania pierwszego - z sumaryzatorem $Q_{\textit{SUNNY}}(x)$}
-\end{table}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c} 
-		\hline
-		\textbf{Miara}  & {Majority}\\ [0.5ex] 
-		\hline
-		\hline
-$T_1$	&	1,000	\\
-$T_2$	&	0,373	\\
-$T_3$	&	0,808	\\
-$T_4$	&	0,188	\\
-$T_5$	&	1,000	\\
-$T_6$	&	0,800	\\
-$T_7$	&	0,850	\\
-$T_8$	&	1,000	\\
-$T_9$	&	0,742	\\
-$T_{10}$	&	0,999	\\
-$T_{11}$	&	1,000	\\
-		\hline
-	\end{tabular}
-	\caption{Tabela przedstawiająca wyniki eksperymentu dla zdania drugiego - z sumaryzatorem ${RH}_{\textit{NONE}}(x)$}
-\end{table}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c} 
-		\hline
-		\textbf{Miara}  & {Less than quarter} & {Some} & {About one thirds}\\ [0.5ex] 
-		\hline
-		\hline
-$T_1$	&	0,215	&	1,000	&	0,593	\\
-$T_2$	&	0,534	&	0,534	&	0,534	\\
-$T_3$	&	0,367	&	0,367	&	0,367	\\
-$T_4$	&	0,203	&	0,203	&	0,203	\\
-$T_5$	&	0,500	&	0,500	&	0,500	\\
-$T_6$	&	0,700	&	0,750	&	0,800	\\
-$T_7$	&	0,775	&	0,800	&	0,900	\\
-$T_8$	&	0,994	&	0,994	&	0,994	\\
-$T_9$	&	0,742	&	0,742	&	0,742	\\
-$T_{10}$	&	0,999	&	0,999	&	0,999	\\
-$T_{11}$	&	1,000	&	1,000	&	1,000	\\
-		\hline
-	\end{tabular}
-	\caption{Tabela przedstawiająca wyniki eksperymentu dla zdania trzeciego - z sumaryzatorem ${Q}_{\textit{SUNNY}}(x) ~AND~ {RH}_{\textit{NONE}}(x)$}
-\end{table}
-
-
-\clearpage
-
-
-
-\subsubsection{Kwantyfikator bezwzględny}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\textwidth]{Pictures/ResultCharts/Eks2_2.png}
-	\caption{Wykres przedstawiający wyniki eksperymentu drugiego dla kwantyfikatorów bezwzględnych - wizualizacja danych z tabeli 7.}
-\end{figure}
-
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c} 
-		\hline
-		  &  $Q_{\textit{SUNNY}}(x)$ & ${RH}_{\textit{NONE}}(x)$ & ${Q}_{\textit{SUNNY}}(x) ~{AND}~ {RH}_{\textit{NONE}}(x)$\\ [0.5ex] 
-		\hline
-		\hline
-		\textbf{Miara}  & {About 1000} & {About 3000} & {About 1000}\\ [0.5ex] 
-		\hline
-		\hline
-$T_1$	&	0,862	&	0,201	&	0,802	\\
-$T_2$	&	0,653	&	0,373	&	0,534	\\
-$T_3$	&	0,417	&	0,808	&	0,367	\\
-$T_4$	&	0,153	&	0,188	&	0,203	\\
-$T_5$	&	1,000	&	1,000	&	0,500	\\
-$T_6$	&	0,965	&	0,953	&	0,965	\\
-$T_7$	&	0,982	&	0,976	&	0,982	\\
-$T_8$	&	0,912	&	1,000	&	0,994	\\
-$T_9$	&	0,742	&	0,742	&	0,742	\\
-$T_{10}$	&	0,999	&	0,999	&	0,999	\\
-$T_{11}$	&	1,000	&	1,000	&	1,000	\\
-		\hline
-	\end{tabular}
-	\caption{Tabela przedstawiająca wyniki eksperymentu dla wszystkich trzech zdań, w pierwszym wierszu podano wykorzystywany w danym zdaniu sumaryzator.}
-\end{table}
-
-\clearpage
-
-
-
-\subsection{Wpływ wykorzystania kwalifikatora na jakość podsumowania}
-
-W ostatnim etapie, wygenerowano dwa zdania:
-\begin{itemize}[label=$\bullet$\scshape\bfseries]
-\item Zdanie pierwsze: \textit{X of measures with overcast insolation have high precipitation.} - wykorzystujące zmienną lingwistyczną Q jako kwalifikator (etykieta \textit{Overcast}) oraz zmienną RH jako sumaryzator (etykieta \textit{High}).
-\item Zdanie drugie: \textit{X of measures have high precipitation.} - nie posiada kwalifikatora, sumaryzator zaś stanowi ponownie zmienna RH (etykieta \textit{High}).
-\end{itemize}
-gdzie \textit{X} jest jednym ze zdefiniowaych przez nas kwantyfikatorów.\newline
-
-W tym podrozdziale, podobnie jak w przypadku poprzedniego etapu eksperymentów, porównamy wszystkie miary dla tych kwantyfikatorów, dla których otrzymane zdanie było choć trochę prawdziwe - miara $T_1$ osiągnęła wartość większą od 0. \newline
-
-W wynikach pominięte zostaną miary od $T_9$ do $T_{11}$, ponieważ dotyczą one kwalifikatora, którego nie wykorzystujemy w zdaniu drugim.
-
-\clearpage
-
-
-
-\subsubsection{Kwantyfikator względny}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\textwidth]{Pictures/ResultCharts/Eks3_1.png}
-	\caption{Wykres przedstawiający wyniki eksperymentu trzeciego dla kwantyfikatorów względnych - wizualizacja danych z tabeli 8.\newline (wykorzystano przerywane linie ze względu na pokrywanie się wykresów)}
-\end{figure}
-
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c c} 
-		\hline
-		  &  \textbf{Kwalifikator} & \textbf{Kwalifikator} & \textbf{Brak kwalifikatora}\\ [0.5ex] 
-		\hline
-		\hline
-		\textbf{Miara}  & {Less than quarter} & {Some} & {Less than quarter}\\ [0.5ex] 
-		\hline
-		\hline
-$T_1$	&	1,000	&	0,623	&	1,000	\\
-$T_2$	&	0,853	&	0,853	&	0,853	\\
-$T_3$	&	0,231	&	0,231	&	0,147	\\
-$T_4$	&	0,124	&	0,124	&	0,039	\\
-$T_5$	&	1,000	&	1,000	&	1,000	\\
-$T_6$	&	0,700	&	0,750	&	0,700	\\
-$T_7$	&	0,775	&	0,800	&	0,775	\\
-$T_8$	&	0,994	&	0,994	&	0,994	\\
-		\hline
-	\end{tabular}
-	\caption{Tabela przedstawiająca wyniki eksperymentu dla obu zdań, w pierwszym wierszu podano informację o wykorzystaniu kwalifikatora $Q_{\textit{OVERCAST}}(x)$.}
-\end{table}
-
-\clearpage
-
-
-\subsubsection{Kwantyfikator bezwzględny}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\textwidth]{Pictures/ResultCharts/Eks3_2.png}
-	\caption{Wykres przedstawiający wyniki eksperymentu trzeciego dla kwantyfikatorów bezwzględnych - wizualizacja danych z tabeli 9.}
-\end{figure}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{c c c} 
-		\hline
-		  &  \textbf{Kwalifikator} & \textbf{Brak kwalifikatora}\\ [0.5ex] 
-		\hline
-		\hline
-		\textbf{Miara}  & {About 1000} & {About 2000}\\ [0.5ex] 
-		\hline
-		\hline
-$T_1$	&	0,483	&	0,434	\\
-$T_2$	&	0,853	&	0,853	\\
-$T_3$	&	0,231	&	0,147	\\
-$T_4$	&	0,124	&	0,039	\\
-$T_5$	&	1,000	&	1,000	\\
-$T_6$	&	0,965	&	0,965	\\
-$T_7$	&	0,982	&	0,982	\\
-$T_8$	&	0,994	&	0,994	\\
-		\hline
-	\end{tabular}
-	\caption{Tabela przedstawiająca wyniki eksperymentu dla obu zdań, w pierwszym wierszu podano informację o wykorzystaniu kwalifikatora $Q_{\textit{OVERCAST}}(x)$.}
-\end{table}
+Wybrane przez nas podsumowania zostały zostały zebrane w poniższej tabeli.
 
 
 \section{Dyskusja}
@@ -1242,7 +900,9 @@ Narzędzie Maven\newline
 Biblioteka JavaFX\newline
 \textit{https://openjfx.io/}
 \bibitem{ksiazka}
-Methods for the linguistic summarization of data - aplications of fuzzy sets and their extensions, Adam Niewiadomski, Akademicka Oficyna Wydawnicza EXIT, Warszawa 2008
+Methods for the linguistic summarization of data - aplications of fuzzy sets and their extensions, Adam Niewiadomski, Akademicka Oficyna Wydawnicza EXIT, Warszawa 2008.
+\bibitem{polska}
+Pozyskiwanie wiedzy z relacyjnych baz danych: wielopodmiotowe podsumowania lingwistyczne, Adam Niewiadomski, Izabela Superson.
 \bibitem{zadech} 
 Zadeh, L. A.: 1965, ‘Fuzzy sets’.  \textit{Inf. and Control} 8, 338–353.
 \end{thebibliography}

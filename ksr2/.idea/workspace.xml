@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0edc1891-cb6a-4050-be60-2eb2d34676f2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Reports/KSR2_Report_2020_05_27_16_01_00.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Logic/AndSummarizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Logic/AndSummarizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Logic/Measures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Logic/Measures.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Logic/OrSummarizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Logic/OrSummarizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Summaries/LinguisticSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/FuzzyLib/Summaries/LinguisticSummary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Program/Data/DataWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/Data/DataWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Program/Model/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/Model/Result.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Program/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Program/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Containers/LinguisticVariableContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Containers/LinguisticVariableContainer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Containers/QuantifierContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Containers/QuantifierContainer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Logic/AndSummarizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Logic/AndSummarizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Logic/LinguisticVariable$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Logic/LinguisticVariable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Logic/Measures.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Logic/Measures.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Logic/OrSummarizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Logic/OrSummarizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Summaries/LinguisticSummary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Summaries/LinguisticSummary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Summaries/SentenceMaker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Program/FuzzyLib/Summaries/SentenceMaker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Program/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Program/Program.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +120,7 @@
       <workItem from="1590494546941" duration="12000" />
       <workItem from="1590587846399" duration="1248000" />
       <workItem from="1590650072622" duration="619000" />
-      <workItem from="1590849180179" duration="1705000" />
+      <workItem from="1590849180179" duration="3863000" />
     </task>
     <servers />
   </component>
@@ -160,11 +150,11 @@
     </state>
     <state x="2334" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589296689636" />
     <state x="414" y="180" width="1092" height="775" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588602357054" />
-    <state x="612" y="189" key="#com.intellij.ide.util.MemberChooser" timestamp="1590850307048">
+    <state x="612" y="189" key="#com.intellij.ide.util.MemberChooser" timestamp="1590856476064">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="2685" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1589541666436" />
-    <state x="612" y="189" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1590850307048" />
+    <state x="612" y="189" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1590856476064" />
     <state x="765" y="241" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588599696032" />
     <state x="2676" y="404" width="408" height="238" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1589550957016">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -184,29 +174,29 @@
     </state>
     <state x="592" y="227" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590254900576" />
     <state x="740" y="322" key="FileChooserDialogImpl/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588599990249" />
-    <state width="1493" height="275" key="GridCell.Tab.0.bottom" timestamp="1590851017357">
+    <state width="1493" height="275" key="GridCell.Tab.0.bottom" timestamp="1590857078016">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="366" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590589095375" />
-    <state width="1493" height="275" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590851017357" />
+    <state width="1493" height="275" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590857078016" />
     <state width="1877" height="248" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588602822792" />
-    <state width="1493" height="275" key="GridCell.Tab.0.center" timestamp="1590851017357">
+    <state width="1493" height="275" key="GridCell.Tab.0.center" timestamp="1590857078015">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="366" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590589095375" />
-    <state width="1493" height="275" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590851017357" />
+    <state width="1493" height="275" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590857078015" />
     <state width="1877" height="248" key="GridCell.Tab.0.center/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588602822792" />
-    <state width="1493" height="275" key="GridCell.Tab.0.left" timestamp="1590851017357">
+    <state width="1493" height="275" key="GridCell.Tab.0.left" timestamp="1590857078014">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="366" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590589095375" />
-    <state width="1493" height="275" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590851017357" />
+    <state width="1493" height="275" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590857078014" />
     <state width="1877" height="248" key="GridCell.Tab.0.left/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588602822792" />
-    <state width="1493" height="275" key="GridCell.Tab.0.right" timestamp="1590851017357">
+    <state width="1493" height="275" key="GridCell.Tab.0.right" timestamp="1590857078016">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1877" height="366" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590589095375" />
-    <state width="1493" height="275" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590851017357" />
+    <state width="1493" height="275" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590857078016" />
     <state width="1877" height="248" key="GridCell.Tab.0.right/0.0.1920.1050/-1920.1.1920.1050@0.0.1920.1050" timestamp="1588602822792" />
     <state width="1493" height="259" key="GridCell.Tab.1.bottom" timestamp="1590849591825">
       <screen x="0" y="0" width="1536" height="824" />

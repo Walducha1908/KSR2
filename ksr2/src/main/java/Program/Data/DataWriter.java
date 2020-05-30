@@ -33,6 +33,9 @@ public class DataWriter {
         cell.setCellValue("Sentence");
 
         cell = row.createCell(++columnCount);
+        cell.setCellValue("T");
+
+        cell = row.createCell(++columnCount);
         cell.setCellValue("T1");
 
         cell = row.createCell(++columnCount);
@@ -73,6 +76,10 @@ public class DataWriter {
             // Sentence
             Cell valueCell = row.createCell(++columnCount);
             valueCell.setCellValue(ResultContainer.results.get(i).getSentence());
+
+            // Optimum
+            valueCell = row.createCell(++columnCount);
+            valueCell.setCellValue(ResultContainer.results.get(i).getOptimumMeasure());
 
             // T1
             valueCell = row.createCell(++columnCount);
