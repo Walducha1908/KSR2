@@ -7,11 +7,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class OrSummarizer extends LinguisticVariable{
-    private LinguisticVariable firstVariable;
-    private LinguisticVariable secondVariable;
+public class OrSummarizer extends LinguisticLabel {
+    private LinguisticLabel firstVariable;
+    private LinguisticLabel secondVariable;
 
-    public OrSummarizer(LinguisticVariable firstVariable, LinguisticVariable secondVariable) {
+    public OrSummarizer(LinguisticLabel firstVariable, LinguisticLabel secondVariable) {
         super();
         this.firstVariable = firstVariable;
         this.secondVariable = secondVariable;
@@ -48,19 +48,19 @@ public class OrSummarizer extends LinguisticVariable{
         return firstVariable.degreeOfFuzziness(values) * secondVariable.degreeOfFuzziness(values);
     }
 
-    public LinguisticVariable getFirstVariable() {
+    public LinguisticLabel getFirstVariable() {
         return firstVariable;
     }
 
-    public void setFirstVariable(LinguisticVariable firstVariable) {
+    public void setFirstVariable(LinguisticLabel firstVariable) {
         this.firstVariable = firstVariable;
     }
 
-    public LinguisticVariable getSecondVariable() {
+    public LinguisticLabel getSecondVariable() {
         return secondVariable;
     }
 
-    public void setSecondVariable(LinguisticVariable secondVariable) {
+    public void setSecondVariable(LinguisticLabel secondVariable) {
         this.secondVariable = secondVariable;
     }
 
@@ -70,8 +70,8 @@ public class OrSummarizer extends LinguisticVariable{
     }
 
     @Override
-    public LinkedList<LinguisticVariable> getAllLinguisticVariables() {
-        LinkedList<LinguisticVariable> variables = new LinkedList<>();
+    public LinkedList<LinguisticLabel> getAllLinguisticVariables() {
+        LinkedList<LinguisticLabel> variables = new LinkedList<>();
         variables.addAll(firstVariable.getAllLinguisticVariables());
         variables.addAll(secondVariable.getAllLinguisticVariables());
         return variables;

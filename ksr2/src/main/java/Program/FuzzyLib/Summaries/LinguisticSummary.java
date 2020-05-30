@@ -1,8 +1,7 @@
 package Program.FuzzyLib.Summaries;
 
 import Program.FuzzyLib.Containers.LinguisticVariableContainer;
-import Program.FuzzyLib.Containers.QuantifierContainer;
-import Program.FuzzyLib.Logic.LinguisticVariable;
+import Program.FuzzyLib.Logic.LinguisticLabel;
 import Program.FuzzyLib.Logic.Measures;
 import Program.Model.Containers.ResultContainer;
 import Program.Model.Record;
@@ -12,12 +11,11 @@ import Program.Model.Seasons;
 import Program.Settings;
 
 import java.text.DecimalFormat;
-import java.util.Collections;
 import java.util.LinkedList;
 
 public class LinguisticSummary {
 
-    public static void createLinguisticSentence(LinguisticVariable quantifier, LinguisticVariable qualifier, LinguisticVariable summarizer) {
+    public static void createLinguisticSentence(LinguisticLabel quantifier, LinguisticLabel qualifier, LinguisticLabel summarizer) {
         double degreeOfTruth = -1, degreeOfImprecision = -1, degreeOfCovering = -1, degreeOfAppropriateness = -1,
             lengthOfSummary = -1, degreeOfQuantifierImprecision = -1, degreeOfQuantifierCardinality = -1,
             degreeOfSummarizerCardinality = -1, degreeOfQualifierImprecision = -1, degreeOfQualifierCardinality = -1,
@@ -67,7 +65,7 @@ public class LinguisticSummary {
         }
     }
 
-    public static void createMultiSubjectLinguisticSentence(LinguisticVariable quantifier, LinguisticVariable summarizer,
+    public static void createMultiSubjectLinguisticSentence(LinguisticLabel quantifier, LinguisticLabel summarizer,
                                                             Seasons season1, Seasons season2) {
         double degreeOfTruth = -1, degreeOfImprecision = -1, degreeOfCovering = -1, degreeOfAppropriateness = -1,
                 lengthOfSummary = -1, degreeOfQuantifierImprecision = -1, degreeOfQuantifierCardinality = -1,

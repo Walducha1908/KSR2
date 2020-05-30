@@ -2,14 +2,7 @@ package Program;
 
 
 import Program.Data.DataWriter;
-import Program.FuzzyLib.Containers.LinguisticVariableContainer;
-import Program.FuzzyLib.Containers.QuantifierContainer;
-import Program.FuzzyLib.Logic.AndSummarizer;
-import Program.FuzzyLib.Logic.LinguisticVariable;
-import Program.FuzzyLib.Logic.OrSummarizer;
-import Program.FuzzyLib.Summaries.LinguisticSummary;
 import Program.Model.Containers.ResultContainer;
-import Program.Model.Seasons;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -35,7 +28,7 @@ public class Program extends Application {
         Manager.readAllRecords();
         Manager.prepareLinguisticVariables();
         Manager.prepareQuantifiers();
-//        launch(args);
+        launch(args);
 
 //        // Common case.
 //        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
@@ -103,13 +96,13 @@ public class Program extends Application {
 //        }
 
         // Multi subject summary.
-        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
-            LinguisticSummary.createMultiSubjectLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
-                    Seasons.summer,
-                    Seasons.winter);
-        }
+//        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.createMultiSubjectLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+//                    Seasons.summer,
+//                    Seasons.winter);
+//        }
 
 
         // We have all results in container, let's print only positive.

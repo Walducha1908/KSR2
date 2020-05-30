@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 public class Measures {
 
-    public static double degreeOfTruth(LinguisticVariable quantifier, LinguisticVariable qualifier, LinguisticVariable summarizer, LinkedList<Record> records) {
+    public static double degreeOfTruth(LinguisticLabel quantifier, LinguisticLabel qualifier, LinguisticLabel summarizer, LinkedList<Record> records) {
         double up = 0;
         double down = 0;
         for (Record record : records) {
@@ -22,7 +22,7 @@ public class Measures {
         }
     }
 
-    public static double degreeOfTruthMultiSubject(LinguisticVariable quantifier, LinguisticVariable summarizer, LinkedList<Record> records1, LinkedList<Record> records2) {
+    public static double degreeOfTruthMultiSubject(LinguisticLabel quantifier, LinguisticLabel summarizer, LinkedList<Record> records1, LinkedList<Record> records2) {
         double result1 = 0;
         double result2 = 0;
         for (Record record : records1) {
@@ -43,16 +43,16 @@ public class Measures {
         }
     }
 
-    public static double degreeOfImprecision(LinguisticVariable summarizer, LinkedList<Record> records) {
+    public static double degreeOfImprecision(LinguisticLabel summarizer, LinkedList<Record> records) {
         double quotient = 1;
-        LinkedList<LinguisticVariable> allLinguisticVariables = summarizer.getAllLinguisticVariables();
-        for (LinguisticVariable variable : allLinguisticVariables) {
+        LinkedList<LinguisticLabel> allLinguisticLabels = summarizer.getAllLinguisticVariables();
+        for (LinguisticLabel variable : allLinguisticLabels) {
             quotient *= variable.degreeOfFuzziness(records);
         }
-        return 1 - Math.pow(quotient, 1.0 / allLinguisticVariables.size());
+        return 1 - Math.pow(quotient, 1.0 / allLinguisticLabels.size());
     }
 
-    public static double degreeOfCovering(LinguisticVariable qualifier, LinguisticVariable summarizer, LinkedList<Record> records) {
+    public static double degreeOfCovering(LinguisticLabel qualifier, LinguisticLabel summarizer, LinkedList<Record> records) {
         double t = 0;
         double h = 0;
         for (Record record : records) {
@@ -66,11 +66,11 @@ public class Measures {
         return t / h;
     }
 
-    public static double degreeOfAppropriateness(LinguisticVariable qualifier, LinguisticVariable summarizer, LinkedList<Record> records) {
+    public static double degreeOfAppropriateness(LinguisticLabel qualifier, LinguisticLabel summarizer, LinkedList<Record> records) {
         double quotient = 1;
-        LinkedList<LinguisticVariable> allLinguisticVariables = summarizer.getAllLinguisticVariables();
+        LinkedList<LinguisticLabel> allLinguisticLabels = summarizer.getAllLinguisticVariables();
         double t3 = degreeOfCovering(qualifier, summarizer, records);
-        for (LinguisticVariable variable : allLinguisticVariables) {
+        for (LinguisticLabel variable : allLinguisticLabels) {
             double sum = 0;
             for (Record record : records){
                 sum += variable.getMembershipWithRecord(record);
@@ -80,12 +80,12 @@ public class Measures {
         return Math.abs(quotient - t3);
     }
 
-    public static double lengthOfSummary(LinguisticVariable summarizer) {
+    public static double lengthOfSummary(LinguisticLabel summarizer) {
         int summarizers = summarizer.getAllLinguisticVariables().size();
         return 2 * Math.pow(1.0 / 2.0, summarizers);
     }
 
-    public static double degreeOfQuantifierImprecision(LinguisticVariable quantifier, LinkedList<Record> records) {
+    public static double degreeOfQuantifierImprecision(LinguisticLabel quantifier, LinkedList<Record> records) {
         double result = quantifier.getMembershipFunction().support();
         if (quantifier.isAbsolute())
         {
@@ -94,7 +94,7 @@ public class Measures {
         return 1 - result;
     }
 
-    public static double degreeOfQuantifierCardinality(LinguisticVariable quantifier, LinkedList<Record> records) {
+    public static double degreeOfQuantifierCardinality(LinguisticLabel quantifier, LinkedList<Record> records) {
         double result = quantifier.getMembershipFunction().cardinality();
 
         if (quantifier.isAbsolute())
@@ -104,24 +104,24 @@ public class Measures {
         return 1 - result;
     }
 
-    public static double degreeOfSummarizerCardinality(LinguisticVariable summarizer, LinkedList<Record> records) {
+    public static double degreeOfSummarizerCardinality(LinguisticLabel summarizer, LinkedList<Record> records) {
         double quotient = 1;
-        LinkedList<LinguisticVariable> allLinguisticVariables = summarizer.getAllLinguisticVariables();
-        for (LinguisticVariable variable : allLinguisticVariables) {
+        LinkedList<LinguisticLabel> allLinguisticLabels = summarizer.getAllLinguisticVariables();
+        for (LinguisticLabel variable : allLinguisticLabels) {
             quotient *= variable.cardinality() / records.size();
         }
-        return 1 - Math.pow(quotient, 1.0 / allLinguisticVariables.size());
+        return 1 - Math.pow(quotient, 1.0 / allLinguisticLabels.size());
     }
 
-    public static double degreeOfQualifierImprecision(LinguisticVariable qualifier, LinkedList<Record> records) {
+    public static double degreeOfQualifierImprecision(LinguisticLabel qualifier, LinkedList<Record> records) {
         return 1 - qualifier.degreeOfFuzziness(records);
     }
 
-    public static double degreeOfQualifierCardinality(LinguisticVariable qualifier, LinkedList<Record> records) {
+    public static double degreeOfQualifierCardinality(LinguisticLabel qualifier, LinkedList<Record> records) {
         return 1 - (qualifier.cardinality() / records.size());
     }
 
-    public static double lengthOfQualifier(LinguisticVariable qualifier) {
+    public static double lengthOfQualifier(LinguisticLabel qualifier) {
         int qualifiers = qualifier.getAllLinguisticVariables().size();
         return 2 * Math.pow(1.0 / 2.0, qualifiers);
     }
