@@ -2,7 +2,14 @@ package Program;
 
 
 import Program.Data.DataWriter;
+import Program.FuzzyLib.Containers.LinguisticVariableContainer;
+import Program.FuzzyLib.Containers.QuantifierContainer;
+import Program.FuzzyLib.Logic.AndSummarizer;
+import Program.FuzzyLib.Logic.LinguisticLabel;
+import Program.FuzzyLib.Logic.OrSummarizer;
+import Program.FuzzyLib.Summaries.LinguisticSummary;
 import Program.Model.Containers.ResultContainer;
+import Program.Model.Seasons;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -28,75 +35,75 @@ public class Program extends Application {
         Manager.readAllRecords();
         Manager.prepareLinguisticVariables();
         Manager.prepareQuantifiers();
-        launch(args);
+//        launch(args);
 
-//        // Common case.
-//        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+        // Common case.
+        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+            LinguisticSummary.createLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+                    LinguisticVariableContainer.linguisticVariables.get("HighRH"));
+        }
+//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
 //            LinguisticSummary.createLinguisticSentence(
 //                    quantifier,
 //                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"),
 //                    LinguisticVariableContainer.linguisticVariables.get("HighRH"));
 //        }
-//        for (LinguisticVariable quantifier: QuantifierContainer.absoluteQuantifiersList) {
-//            LinguisticSummary.createLinguisticSentence(
-//                    quantifier,
-//                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"),
-//                    LinguisticVariableContainer.linguisticVariables.get("HighRH"));
-//        }
-
+//
 //        // Using and.
 //        AndSummarizer andSummarizer = new AndSummarizer(
 //                LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
 //                LinguisticVariableContainer.linguisticVariables.get("LowRH"));
-//        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
 //            LinguisticSummary.createLinguisticSentence(
 //                    quantifier,
 //                    LinguisticVariableContainer.linguisticVariables.get("GentleFG"),
 //                    andSummarizer);
 //        }
-//        for (LinguisticVariable quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
 //            LinguisticSummary.createLinguisticSentence(
 //                    quantifier,
 //                    LinguisticVariableContainer.linguisticVariables.get("GentleFG"),
 //                    andSummarizer);
 //        }
-
-        // Using or.
+//
+//        // Using or.
 //        OrSummarizer orSummarizer = new OrSummarizer(
 //                LinguisticVariableContainer.linguisticVariables.get("ColdTGS"),
 //                LinguisticVariableContainer.linguisticVariables.get("HotTGS"));
-//        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
 //            LinguisticSummary.createLinguisticSentence(
 //                    quantifier,
 //                    LinguisticVariableContainer.linguisticVariables.get("All"),
 //                    orSummarizer);
 //        }
-//        for (LinguisticVariable quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
 //            LinguisticSummary.createLinguisticSentence(
 //                    quantifier,
 //                    LinguisticVariableContainer.linguisticVariables.get("All"),
 //                    orSummarizer);
 //        }
-
-//         Using 'and' and 'or' both - hardcore case.
+//
+//        //Using 'and' and 'or' both - hardcore case.
 //        OrSummarizer orAndSummarizer = new OrSummarizer(
 //                orSummarizer,
 //                LinguisticVariableContainer.linguisticVariables.get("HotTGS"));
-//        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
 //            LinguisticSummary.createLinguisticSentence(
 //                    quantifier,
 //                    LinguisticVariableContainer.linguisticVariables.get("All"),
 //                    orAndSummarizer);
 //        }
-//        for (LinguisticVariable quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
 //            LinguisticSummary.createLinguisticSentence(
 //                    quantifier,
 //                    LinguisticVariableContainer.linguisticVariables.get("All"),
 //                    orAndSummarizer);
 //        }
-
+//
         // Multi subject summary.
-//        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
 //            LinguisticSummary.createMultiSubjectLinguisticSentence(
 //                    quantifier,
 //                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),

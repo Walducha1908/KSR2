@@ -7,24 +7,24 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class AndSummarizer extends LinguisticLabel {
-    private LinguisticLabel firstVariable;
-    private LinguisticLabel secondVariable;
+    private LinguisticLabel firstLabel;
+    private LinguisticLabel secondLabel;
 
-    public AndSummarizer(LinguisticLabel firstVariable, LinguisticLabel secondVariable) {
+    public AndSummarizer(LinguisticLabel firstLabel, LinguisticLabel secondLabel) {
         super();
-        this.firstVariable = firstVariable;
-        this.secondVariable = secondVariable;
+        this.firstLabel = firstLabel;
+        this.secondLabel = secondLabel;
 
-        if (firstVariable.getSeason() != null && secondVariable.getSeason() != null) {
-            if (firstVariable.getSeason() != secondVariable.getSeason()) {
+        if (firstLabel.getSeason() != null && secondLabel.getSeason() != null) {
+            if (firstLabel.getSeason() != secondLabel.getSeason()) {
                 throw new IllegalArgumentException("Cannot run sentence with different seasons!");
             }
         }
 
-        if (firstVariable.getSeason() != null) {
-            this.setSeason(firstVariable.getSeason());
-        } else if (secondVariable.getSeason() != null) {
-            this.setSeason(secondVariable.getSeason());
+        if (firstLabel.getSeason() != null) {
+            this.setSeason(firstLabel.getSeason());
+        } else if (secondLabel.getSeason() != null) {
+            this.setSeason(secondLabel.getSeason());
         } else {
             this.setSeason(null);
         }
@@ -32,48 +32,48 @@ public class AndSummarizer extends LinguisticLabel {
 
     @Override
     public double getMembershipWithRecord(Record record) {
-        return Math.min(firstVariable.getMembershipWithRecord(record), secondVariable.getMembershipWithRecord(record));
+        return Math.min(firstLabel.getMembershipWithRecord(record), secondLabel.getMembershipWithRecord(record));
     }
 
     public LinkedList<Record> support(LinkedList<Record> records) {
-        List<Record> list = firstVariable.support(records).stream()
+        List<Record> list = firstLabel.support(records).stream()
                 .distinct()
-                .filter(secondVariable.support(records)::contains)
+                .filter(secondLabel.support(records)::contains)
                 .collect(Collectors.toList());
         LinkedList<Record> result = new LinkedList<>(list);
         return result;
     }
 
     public double degreeOfFuzziness(LinkedList<Record> records) {
-        return firstVariable.degreeOfFuzziness(records) * secondVariable.degreeOfFuzziness(records);
+        return firstLabel.degreeOfFuzziness(records) * secondLabel.degreeOfFuzziness(records);
     }
 
-    public LinguisticLabel getFirstVariable() {
-        return firstVariable;
+    public LinguisticLabel getFirstLabel() {
+        return firstLabel;
     }
 
-    public void setFirstVariable(LinguisticLabel firstVariable) {
-        this.firstVariable = firstVariable;
+    public void setFirstLabel(LinguisticLabel firstLabel) {
+        this.firstLabel = firstLabel;
     }
 
-    public LinguisticLabel getSecondVariable() {
-        return secondVariable;
+    public LinguisticLabel getSecondLabel() {
+        return secondLabel;
     }
 
-    public void setSecondVariable(LinguisticLabel secondVariable) {
-        this.secondVariable = secondVariable;
+    public void setSecondLabel(LinguisticLabel secondLabel) {
+        this.secondLabel = secondLabel;
     }
 
     @Override
     public String toString() {
-        return firstVariable + " and " + secondVariable;
+        return firstLabel + " and " + secondLabel;
     }
 
     @Override
     public LinkedList<LinguisticLabel> getAllLinguisticVariables() {
         LinkedList<LinguisticLabel> variables = new LinkedList<>();
-        variables.addAll(firstVariable.getAllLinguisticVariables());
-        variables.addAll(secondVariable.getAllLinguisticVariables());
+        variables.addAll(firstLabel.getAllLinguisticVariables());
+        variables.addAll(secondLabel.getAllLinguisticVariables());
         return variables;
     }
 }
