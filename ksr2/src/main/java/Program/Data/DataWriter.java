@@ -1,6 +1,7 @@
 package Program.Data;
 
 import Program.Model.Containers.ResultContainer;
+import Program.Model.Result;
 import Program.Settings;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -12,6 +13,7 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.LinkedList;
 
 public class DataWriter {
     public static void saveResults() {
@@ -68,62 +70,69 @@ public class DataWriter {
         cell = row.createCell(++columnCount);
         cell.setCellValue("T11");
 
-        for (int i = 0; i < ResultContainer.results.size(); i++) {
+        LinkedList<Result> results;
+        if (Settings.saveOnlyTrueSentences) {
+            results = ResultContainer.getOnlyTrue();
+        } else {
+            results = ResultContainer.results;
+        }
+
+        for (int i = 0; i < results.size(); i++) {
 
             row = sheet.createRow(++rowCount);
             columnCount = 0;
 
             // Sentence
             Cell valueCell = row.createCell(++columnCount);
-            valueCell.setCellValue(ResultContainer.results.get(i).getSentence());
+            valueCell.setCellValue(results.get(i).getSentence());
 
             // Optimum
             valueCell = row.createCell(++columnCount);
-            valueCell.setCellValue(ResultContainer.results.get(i).getOptimumMeasure());
+            valueCell.setCellValue(results.get(i).getOptimumMeasure());
 
             // T1
             valueCell = row.createCell(++columnCount);
-            valueCell.setCellValue(ResultContainer.results.get(i).getDegreeOfTruth());
+            valueCell.setCellValue(results.get(i).getDegreeOfTruth());
 
             // T2
             valueCell = row.createCell(++columnCount);
-            valueCell.setCellValue(ResultContainer.results.get(i).getDegreeOfImprecision());
+            valueCell.setCellValue(results.get(i).getDegreeOfImprecision());
 
             // T3
             valueCell = row.createCell(++columnCount);
-            valueCell.setCellValue(ResultContainer.results.get(i).getDegreeOfCovering());
+            valueCell.setCellValue(results.get(i).getDegreeOfCovering());
 
             // T4
             valueCell = row.createCell(++columnCount);
-            valueCell.setCellValue(ResultContainer.results.get(i).getDegreeOfAppropriateness());
+            valueCell.setCellValue(results.get(i).getDegreeOfAppropriateness());
 
             // T5
             valueCell = row.createCell(++columnCount);
-            valueCell.setCellValue(ResultContainer.results.get(i).getLengthOfSummary());
+            valueCell.setCellValue(results.get(i).getLengthOfSummary());
 
             // T6
             valueCell = row.createCell(++columnCount);
-            valueCell.setCellValue(ResultContainer.results.get(i).getDegreeOfQuantifierImprecision());
+            valueCell.setCellValue(results.get(i).getDegreeOfQuantifierImprecision());
 
             // T7
             valueCell = row.createCell(++columnCount);
-            valueCell.setCellValue(ResultContainer.results.get(i).getDegreeOfQuantifierCardinality());
+            valueCell.setCellValue(results.get(i).getDegreeOfQuantifierCardinality());
 
             // T8
             valueCell = row.createCell(++columnCount);
-            valueCell.setCellValue(ResultContainer.results.get(i).getDegreeOfSummarizerCardinality());
+            valueCell.setCellValue(results.get(i).getDegreeOfSummarizerCardinality());
 
             // T9
             valueCell = row.createCell(++columnCount);
-            valueCell.setCellValue(ResultContainer.results.get(i).getDegreeOfQualifierImprecision());
+            valueCell.setCellValue(results.get(i).getDegreeOfQualifierImprecision());
 
             // T10
             valueCell = row.createCell(++columnCount);
-            valueCell.setCellValue(ResultContainer.results.get(i).getDegreeOfQualifierCardinality());
+            valueCell.setCellValue(results.get(i).getDegreeOfQualifierCardinality());
 
             // T11
             valueCell = row.createCell(++columnCount);
-            valueCell.setCellValue(ResultContainer.results.get(i).getLengthOfQualifier());
+            valueCell.setCellValue(results.get(i).getLengthOfQualifier());
         }
 
         sheet.autoSizeColumn(1);

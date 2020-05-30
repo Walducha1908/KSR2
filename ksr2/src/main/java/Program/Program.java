@@ -41,15 +41,51 @@ public class Program extends Application {
         for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
             LinguisticSummary.createLinguisticSentence(
                     quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("NoneRH"),
-                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"));
+                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+                    LinguisticVariableContainer.linguisticVariables.get("NoneRH"));
         }
-//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
-//            LinguisticSummary.createLinguisticSentence(
-//                    quantifier,
-//                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"),
-//                    LinguisticVariableContainer.linguisticVariables.get("HighRH"));
-//        }
+        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+            LinguisticSummary.createLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+                    LinguisticVariableContainer.linguisticVariables.get("NoneRH"));
+        }
+        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+            LinguisticSummary.createLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+                    LinguisticVariableContainer.linguisticVariables.get("LowRH"));
+        }
+        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+            LinguisticSummary.createLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+                    LinguisticVariableContainer.linguisticVariables.get("LowRH"));
+        }
+        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+            LinguisticSummary.createLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"),
+                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"));
+        }
+        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+            LinguisticSummary.createLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"),
+                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"));
+        }
+        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+            LinguisticSummary.createLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"),
+                    LinguisticVariableContainer.linguisticVariables.get("HighRH"));
+        }
+        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+            LinguisticSummary.createLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"),
+                    LinguisticVariableContainer.linguisticVariables.get("HighRH"));
+        }
 //
 //        // Using and.
 //        AndSummarizer andSummarizer = new AndSummarizer(
@@ -103,13 +139,13 @@ public class Program extends Application {
 //        }
 //
         // Multi subject summary.
-        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
-            LinguisticSummary.createMultiSubjectLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
-                    Seasons.summer,
-                    Seasons.winter);
-        }
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.createMultiSubjectLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+//                    Seasons.summer,
+//                    Seasons.winter);
+//        }
 
 
         // We have all results in container, let's print only positive.
