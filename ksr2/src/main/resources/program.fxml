@@ -41,8 +41,8 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <CheckBox layoutX="135.0" layoutY="184.0" mnemonicParsing="false" text="Yes" />
-      <Button fx:id="button1" layoutX="14.0" layoutY="255.0" mnemonicParsing="false" onAction="#useGenerateButton" prefHeight="25.0" prefWidth="510.0" text="Generate complex" />
+      <CheckBox fx:id="isItComplex" layoutX="135.0" layoutY="184.0" mnemonicParsing="false" text="Yes" />
+      <Button fx:id="button1" layoutX="14.0" layoutY="255.0" mnemonicParsing="false" onAction="#useGenerateComplexButton" prefHeight="25.0" prefWidth="510.0" text="Generate complex" />
    </children>
    <effect>
       <Blend />
