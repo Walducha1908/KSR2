@@ -38,69 +38,229 @@ public class Program extends Application {
 //        launch(args);
 
         // Common case.
-        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
-            LinguisticSummary.createLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
-                    LinguisticVariableContainer.linguisticVariables.get("NoneRH"));
-        }
-        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
-            LinguisticSummary.createLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
-                    LinguisticVariableContainer.linguisticVariables.get("NoneRH"));
-        }
-        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
-            LinguisticSummary.createLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
-                    LinguisticVariableContainer.linguisticVariables.get("LowRH"));
-        }
-        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
-            LinguisticSummary.createLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
-                    LinguisticVariableContainer.linguisticVariables.get("LowRH"));
-        }
-        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
-            LinguisticSummary.createLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"),
-                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"));
-        }
-        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
-            LinguisticSummary.createLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"),
-                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"));
-        }
-        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
-            LinguisticSummary.createLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"),
-                    LinguisticVariableContainer.linguisticVariables.get("HighRH"));
-        }
-        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
-            LinguisticSummary.createLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"),
-                    LinguisticVariableContainer.linguisticVariables.get("HighRH"));
-        }
-//
-//        // Using and.
-//        AndSummarizer andSummarizer = new AndSummarizer(
-//                LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
-//                LinguisticVariableContainer.linguisticVariables.get("LowRH"));
 //        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
 //            LinguisticSummary.createLinguisticSentence(
 //                    quantifier,
-//                    LinguisticVariableContainer.linguisticVariables.get("GentleFG"),
+//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+//                    LinguisticVariableContainer.linguisticVariables.get("ColdTGS"));
+//        }
+//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+//                    LinguisticVariableContainer.linguisticVariables.get("ColdTGS"));
+//        }
+//
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+//                    LinguisticVariableContainer.linguisticVariables.get("WarmTGS"));
+//        }
+//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+//                    LinguisticVariableContainer.linguisticVariables.get("WarmTGS"));
+//        }
+//
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+//                    LinguisticVariableContainer.linguisticVariables.get("HotTGS"));
+//        }
+//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+//                    LinguisticVariableContainer.linguisticVariables.get("HotTGS"));
+//        }
+
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("All"),
+//                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"));
+//        }
+//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("All"),
+//                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"));
+//        }
+//
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("All"),
+//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"));
+//        }
+//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("All"),
+//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"));
+//        }
+
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("All"),
+//                    LinguisticVariableContainer.linguisticVariables.get("CloudyQ"));
+//        }
+//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("All"),
+//                    LinguisticVariableContainer.linguisticVariables.get("CloudyQ"));
+//        }
+//
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("All"),
+//                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"));
+//        }
+//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("All"),
+//                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"));
+//        }
+
+
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+//                    LinguisticVariableContainer.linguisticVariables.get("LowRH"));
+//        }
+//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+//                    LinguisticVariableContainer.linguisticVariables.get("LowRH"));
+//        }
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"),
+//                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"));
+//        }
+//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"),
+//                    LinguisticVariableContainer.linguisticVariables.get("DownpourRH"));
+//        }
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"),
+//                    LinguisticVariableContainer.linguisticVariables.get("HighRH"));
+//        }
+//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("OvercastQ"),
+//                    LinguisticVariableContainer.linguisticVariables.get("HighRH"));
+//        }
+//
+        // Using and.
+        AndSummarizer andSummarizer = new AndSummarizer(
+                LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+                LinguisticVariableContainer.linguisticVariables.get("GentleFG"));
+        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+            LinguisticSummary.createLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get("ColdTGS"),
+                    andSummarizer);
+        }
+        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+            LinguisticSummary.createLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get("ColdTGS"),
+                    andSummarizer);
+        }
+//        andSummarizer = new AndSummarizer(
+//                LinguisticVariableContainer.linguisticVariables.get("WarmTGS"),
+//                LinguisticVariableContainer.linguisticVariables.get("ModerateFG"));
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
 //                    andSummarizer);
 //        }
 //        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
 //            LinguisticSummary.createLinguisticSentence(
 //                    quantifier,
-//                    LinguisticVariableContainer.linguisticVariables.get("GentleFG"),
+//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+//                    andSummarizer);
+//        }
+
+//        andSummarizer = new AndSummarizer(
+//                LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+//                LinguisticVariableContainer.linguisticVariables.get("HotTGS"));
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("ModerateFG"),
+//                    andSummarizer);
+//        }
+//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("ModerateFG"),
+//                    andSummarizer);
+//        }
+//
+//        andSummarizer = new AndSummarizer(
+//                LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+//                LinguisticVariableContainer.linguisticVariables.get("HotTGS"));
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("StrongFG"),
+//                    andSummarizer);
+//        }
+//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("StrongFG"),
+//                    andSummarizer);
+//        }
+//
+//
+//        andSummarizer = new AndSummarizer(
+//                LinguisticVariableContainer.linguisticVariables.get("GentleFG"),
+//                LinguisticVariableContainer.linguisticVariables.get("WarmTGS"));
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+//                    andSummarizer);
+//        }
+//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+//                    andSummarizer);
+//        }
+//
+//        andSummarizer = new AndSummarizer(
+//                LinguisticVariableContainer.linguisticVariables.get("GentleFG"),
+//                LinguisticVariableContainer.linguisticVariables.get("HotTGS"));
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+//                    andSummarizer);
+//        }
+//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
 //                    andSummarizer);
 //        }
 //

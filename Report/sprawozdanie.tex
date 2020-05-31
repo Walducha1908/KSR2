@@ -14,6 +14,9 @@
 \usepackage{longtable}
 \usepackage{lscape}
 \usepackage{icomma}
+\usepackage{multirow}
+\usepackage{booktabs, makecell, tabularx}
+\renewcommand\tabularxcolumn[1]{m{#1}}
 {\theoremstyle{definition}
   \newtheorem{definition}{Definicja}
 }
@@ -112,22 +115,22 @@ Omówmy poszczególne elementy powyższego wzoru:
 
 Zaprezentujmy przykład, dla omówionej postaci podsumowania lingwistycznego: \textit{"Prawie wszyscy programiści zarabiają ponad 2000 złotych [0.88]"}, gdzie:  \textit{"Prawie wszyscy"} to kwantyfikator,  \textit{"programiści"} to podmit lingwistyczny, \textit{"zarabiają ponad 2000 złotych"} to sumaryztaor, a  \textit{"[0.88]"} to stopień prawdziwości podsumowania. \newline
 
-Aby zwiększyć stopień skomplikowania podsumowania lingwistycznego, można skorzystać ze złożonego sumaryztora. Wtedy podsumowanie lingwistyczne przybiera postać:
-\begin{equation}
-Q  ~ P ~ { \textit{jest/są} }  ~ S_1 ~ \textit{i/lub} ~ S_2  ~ \textit{i/lub} ~ ... ~ \textit{i/lub} ~ S_n ~[T]
-\end{equation}
-gdzie za pomocą słowa \textit{lub} wyrażamy sumę sumaryzatorów zaś z wykorzystaniem słowa \textit{i} - ich iloczyn.\newline
 
-Rozwińmy podany wcześniej przykład, tak aby wykorzystywał on sumaryzator złożony: \textit{"Prawie wszyscy programiści zarabiają ponad 2000 złotych i mają bardzo drogi samochód [0.54]"}, sumaryzatorem złożonym w tym przykładzie jest \textit{"zarabiają ponad 2000 złotych i mają bardzo drogi samochód}".\newline
-
-
-Ostatnim etapem w naszej wędrówce po rozważaniach dotyczących podsumowań lingwistycznych, będzie podsumowanie z kwalifikatorem, które ma postać:
+Następnym etapem w naszej wędrówce po rozważaniach dotyczących podsumowań lingwistycznych, będzie podsumowanie z kwalifikatorem, które ma postać:
 \begin{equation}
 Q  ~ P ~ \textit{będących/mających własność} ~ W  ~ { \textit{jest/są} }  ~ S_j ~[T]
 \end{equation}
 gdzie $W$ jest kwalifikatorem - dodatkową właściwością (lub zestawem właściwości) posiadaną przez analizowane obiekty (np. \textit{"[programiści] mający około 30 lat"}).\newline
 
-Kończąc nasze rozważania, zaprezentujemy jeszcze przytaczany wcześniej przykład, z wykorzystaniem kwalifikatora i sumaryzatora złożonego: \textit{"Prawie wszyscy programiści mający około 30 lat zarabiają ponad 2000 złotych i mają bardzo drogi samochód [0.54]"}.
+Ponownie zaprezentujemy przytaczany wcześniej przykład, tym razem rozbudujemy go o kwalifikator: \textit{"Prawie wszyscy programiści mający około 30 lat zarabiają ponad 2000 złotych [0.54]"}.\newline
+
+Aby jeszcze bardziej zwiększyć stopień skomplikowania podsumowania lingwistycznego, można skorzystać ze złożonego sumaryztora. Wtedy podsumowanie lingwistyczne przybiera postać:
+\begin{equation}
+Q  ~ P ~ \textit{mających własność} ~ W ~ { \textit{jest/są} }  ~ S_1 ~ \textit{i/lub} ~ S_2  ~ \textit{i/lub} ~ ... ~ \textit{i/lub} ~ S_n ~[T]
+\end{equation}
+gdzie za pomocą słowa \textit{lub} wyrażamy sumę sumaryzatorów zaś z wykorzystaniem słowa \textit{i} - ich iloczyn.\newline
+
+Rozwińmy podany wcześniej przykład, tak aby wykorzystywał on sumaryzator złożony: \textit{"Prawie wszyscy programiści mający około 30 lat zarabiają ponad 2000 złotych i mają bardzo drogi samochód [0.54]"}, sumaryzatorem złożonym w tym przykładzie jest \textit{"zarabiają ponad 2000 złotych i mają bardzo drogi samochód}".\newline
 
 
 \subsubsection{Wielopodmiotowe podsumowania lingwistyczne}
@@ -878,7 +881,113 @@ Kwantyfikator \textit{More than 6000} - funkcja trapezoidalna:
 
 W tym rozdziale przedstawimy wybrane, wygenerowane przez nasz program podsumowania lingiwstyczne wraz z obliczonymi najważniejszymi miarami - dla podsumowań jednopodmiotowych będą to miary $T_1$ i miara optymalna $T_s$, dla podsumowań wielopodmiotowych będzie to jedyna analizowana miara $T_1$ = $T_m$.\newline
 
-Wybrane przez nas podsumowania zostały zostały zebrane w poniższej tabeli.
+Prezentowane podsumowania zostały przez nas podzielone ze względu na wykorzystywane zmienne lingwistyczne. Zaprezentujemy najciekawsze podsumowania w następującym porządku:
+
+\begin{itemize}[label=$\bullet$\scshape\bfseries]
+\item nasłonecznienie (zmienna $Q$) a opady atmosferyczne (zmienna $RH$),
+\item temperatura latem i zimą (zmienne \textit{TGS} i \textit{TGW}) a nasłonecznienie (zmienna $Q$),
+\item zależności średniej prędkości wiatru (zmienna \textit{FG}), temperatury (zmienna \textit{TGS}) i nasłonecznienia (zmienna $Q$) w dniach letnich,
+\end{itemize}
+
+\clearpage
+
+\subsection{Nasłonecznienie a opady atmosferyczne}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabularx}{\linewidth}{ |c|X|c|c|c| } 
+\hline
+Nr & \multicolumn{1}{|c|}{Podsumowanie} & $T$ & $T_1$ & Forma \\
+\hline
+1	&	About two thirds of measures have none precipitation.	&	7,308	&	0,602 & \multirow{4}{1em}{\newline\newline\newline(3)} \\ \cline{1-4}
+2	&	Less than quarter of measures have low precipitation.	&	7,513	&	1,000	& \\	\cline{1-4}
+3	&	Less than quarter of measures have high precipitation.	&	7,508	&	1,000	& \\	\cline{1-4}
+4	&	None of measures have downpour precipitation.	&	7,633	&	0,814	& \\
+\hline
+\hline
+5	&	Some of measures have sunny insolation.	&	7,544	&	1,000 &	\multirow{7}{1em}{\newline\newline\newline\newline\newline(3)} \\ \cline{1-4}
+6	&	Some of measures have cloudy insolation.	&	7,615	&	1,000	& \\	\cline{1-4}
+7	&	About one thirds of measures have cloudy insolation.	&	7,674	&	0,908	& \\	\cline{1-4}
+8	&	More than 6000 of measures have cloudy insolation.	&	6,258	&	0,531	& \\	\cline{1-4}
+9	&	Some of measures have overcast insolation.	&	7,562	&	1,000	& \\	\cline{1-4}
+10	&	About one thirds of measures have overcast insolation.	&	7,155	&	0,444	& \\	\cline{1-4}
+11	&	About 5000 of measures have overcast insolation.	&	7,252	&	0,328	& \\	
+\hline
+\hline
+
+12	&	Majority of measures with sunny insolation have none precipitation.	&	8,575	&	1,000 & \multirow{6}{1em}{\newline\newline\newline\newline\newline(4)} \\
+\cline{1-4}
+13	&	Less than quarter of measures with sunny insolation have low precipitation.	&	7,999	&	1,000 & \\
+\cline{1-4}
+14	&	None of measures with overcast insolation have downpour precipitation.	&	8,228	&	0,719  & \\
+\cline{1-4}
+15	&	Less than quarter of measures with overcast insolation have downpour precipitation.	&	7,414	&	0,281  & \\
+\cline{1-4}
+16	&	Some of measures with overcast insolation have high precipitation.	&	8,042	&	0,623  & \\
+\cline{1-4}
+17	&	About 1000 of measures with overcast insolation have high precipitation.	&	8,299	&	0,483  & \\
+\hline
+\end{tabularx}
+\caption{Wybrane podsumowania lingwistyczne dla zmiennych lingwistycznych $Q$ i $RH$}
+\end{center}
+\end{table}
+
+\clearpage
+
+\subsection{Temperatura latem i zimą a nasłonecznienie}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabularx}{\linewidth}{ |c|X|c|c|c| } 
+\hline
+Nr & \multicolumn{1}{|c|}{Podsumowanie} & $T$ & $T_1$ & Forma \\
+\hline
+18	&	Less than quarter of summer measures have cold daily average temperature.	&	6,974	&	0,432	& \multirow{3}{1em}{\newline\newline(3)} \\ \cline{1-4}
+19	&	Majority of summer measures have warm daily average temperature.	&	7,172	&	0,483	& \\	\cline{1-4}
+20	&	Less than quarter of summer measures have hot daily average temperature.	&	6,687	&	0,209	& \\	\hline\hline
+21	&	Some of winter measures have cold daily average temperature.	&	7,130	&	0,501 & \multirow{3}{1em}{\newline\newline(3)} \\ \cline{1-4}	
+22	&	About two thirds of winter measures have warm daily average temperature.	&	7,751	&	0,929	& \\	\cline{1-4}
+23	&	None of winter measures have hot daily average temperature.	&	7,775	&	0,947	& \\	\hline\hline
+
+24	&	None of summer measures with sunny insolation have cold daily average temperature.	&	7,597	&	0,779  & \multirow{3}{1em}{\newline\newline\newline(4)} \\ \cline{1-4}			
+25    &	Almost all of summer measures with sunny insolation have warm daily average temperature.	&	7,791	&	1,000	& \\	\cline{1-4}
+26	&	Less than quarter of summer measures with sunny insolation have hot daily average temperature.	&	6,949	&	0,418	& \\	\hline\hline
+
+27	&	About one thirds of winter measures with sunny insolation have cold daily average temperature.	&	7,964	&	0,727 & \multirow{3}{1em}{\newline\newline\newline(4)} \\ \cline{1-4}	
+28	&	About two thirds of winter measures with sunny insolation have warm daily average temperature.	&	8,099	&	0,685	& \\	\cline{1-4}
+29	&	None of winter measures with sunny insolation have hot daily average temperature.	&	8,350	&	0,953	& \\ \hline
+
+\end{tabularx}
+\caption{Wybrane podsumowania lingwistyczne dla zmiennych lingwistycznych \textit{TGS}, \textit{TGW} i $Q$}
+\end{center}
+\end{table}
+
+\clearpage
+
+\subsection{Średnia prędkość wiatru, temperatura i nasłonecznienie latem}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabularx}{\linewidth}{ |c|X|c|c|c| } 
+\hline
+Nr & \multicolumn{1}{|c|}{Podsumowanie} & $T$ & $T_1$ & Forma \\
+\hline
+30	&	About one thirds of summer measures with hot daily average temperature have sunny insolation and gentle daily wind speed average.	&	8,082	&	0,607& \multirow{3}{1em}{\newline\newline\newline\newline(5)} \\ \cline{1-4}	
+31	&	Less than quarter of summer measures with warm daily average temperature have sunny insolation and gentle daily wind speed average.	&	6,868	&	1,000	& \\	\cline{1-4}
+32	&	Less than quarter of summer measures with cold daily average temperature have sunny insolation and gentle daily wind speed average.	&	7,509 &	1,000	& \\	\hline\hline
+33	&	Less than quarter of summer measures with sunny insolation have warm daily average temperature and strong daily wind speed average.	&	6,287	&	0,534	& \multirow{6}{1em}{\newline\newline\newline\newline\newline\newline\newline\newline\newline(5)} \\	\cline{1-4}
+34	&	About half of summer measures with sunny insolation have warm daily average temperature and moderate daily wind speed average.	&	7,199	&	1,000	& \\	\cline{1-4}
+35	&	Less than quarter of summer measures with overcast insolation have warm daily average temperature and strong daily wind speed average.	&	8,136	&	1,000	& \\	\cline{1-4}
+36	&	About half of summer measures with overcast insolation have warm daily average temperature and moderate daily wind speed average.	&	6,960	&	0,137	& \\	\cline{1-4}
+37	&	Less than quarter of summer measures with cloudy insolation have warm daily average temperature and strong daily wind speed average.	&	7,227	&	1,000	& \\	\cline{1-4}
+38	&	About half of summer measures with cloudy insolation have warm daily average temperature and moderate daily wind speed average.	&	7,472	&	1,000	& \\
+\hline
+\end{tabularx}
+\caption{Wybrane podsumowania lingwistyczne dla zmiennych lingwistycznych \textit{FG}, \textit{TGS} i $Q$}
+\end{center}
+\end{table}
+
+\clearpage
 
 
 \section{Dyskusja}
