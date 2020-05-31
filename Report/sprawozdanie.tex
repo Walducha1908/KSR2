@@ -1051,8 +1051,32 @@ Pod względem wartości miary optymalnej $T_s$ należy wyróżnić podsumowanie 
 \subsection{Średnia prędkość wiatru, temperatura i nasłonecznienie latem}
 Wszystkie podsumowania w tabeli 3. to podsumowania w formie (5), a więc takie, które wykorzystują sumaryzator złożony.\newline
 
+Pierwsze trzy podsumowania (od 30. do 32.) ilustrują udział letnich, słonecznych dni (zmienna lingwistyczna \textit{Q}) ze spokojnym wiatrem (zmienna \textit{FG} opisująca średnią dzienną prędkość waitru, etykieta \textit{Gentle}) w letnich dniach o różnej temperaturze (ponownie wykorzystujemy zmienną \textit{TGS}). Okazuje się, że najwięcej słonecznych dni ze spokojnym wiatrem jest wśród dni gorących (\textit{About one thirds}). Zarówno wśród dni ciepłych (\textit{Warm}) jak i zimnych (\textit{Cold}) zaledwie mniej niż ćwierć (\textit{Less than quarter}) stanowią dni słoneczne ze spokojnym wiatrem.\newline
+
+Teraz zwróćmy naszą uwagę na podsumowania - 33., 35., i 37. oraz 34., 36. i 38. Pierwsza trójka zestawia letnie, ciepłe dni z silnym wiatrem (\textit{Strong}) jako sumaryzator z letnimi pomiarami o wybranym zachmurzeniu jako kwalifikaotr. Druga trójka podsumowań jest bardzo podobna, z tym że tym razem sumaryzator stonowią ciepłe dni z umiarkowanym wiatrem (\textit{Moderate}). Okazuje się, że w obu przypadkach, bez względu na stopień zachmurzenia, otrzymujemy bardzo zbliżony rezultat. Dla podsumowań 33., 35., i 37. prawdziwe są zdania dla kwantyfikatora \textit{Less than quarter}, zaś dla podsumowań 34., 36. i 38. miara $T_1$ osiąga dodatnie wartości za każdym razem dla kwantyfikatora \textit{About half}.\newline
+
+W tej sekcji wyników, najwyższe wartości miary optymalnej $T_s$ zanotowano dla podsumowań 30. i 35., zdecydowanie najniższe - dla podsumowania 33.
+
+
+\subsection{Porównanie parametrów atmosferycznych dla różnych pór roku}
+W tej sekcji dyskusji skupimy się na zaprezentownych przez nas podsumowaniach wielopodmiotowych - forma (6), zebranych w tabeli 4. Podsumowania wielopodmiotowe umożliwiają porównywanie obiektów reprezentujących różne podmioty. W naszym przypadku są to pomiary z różnych pór roku.\newline
+
+Na podstawie podsumowania 39. wnioskujemy, że prawie wszystkie letnie dni są bardziej nasłonecznione od dni zimowych. 40. podsumowanie informuje o tym, że zaledwie mniej niż ćwierć letnich dni ma silnejszy najsilniejszy poryw wiatru w ciągu dnia (sumaryzatorem w tym zdaniu jest etykieta \textit{Very strong} zmiennej lingwistycznej \textit{FXX}), a co za tym idzie, możemy stwierdzić że zimą porywy wiatru są silniejsze. Następne podsumowanie (41.) wykorzystuje jako sumaryzator etykietę \textit{Strong} zmiennej lingwistycznej \textit{FG}. Możemy zauważyć, że ponownie tylko niektóre (\textit{Some}) letnie pomiary osiągają większe wartości średniego wiatru, co utwierdza nas w przekonaniu że zimą wieje mocniej.\newline
+
+Podsumowanie 41. porównuje zimę i lato pod względem dni bez opadów atmosferycznych. Miara $T_m$ dla tego podsumowania osiągnęła wartość $T_m = 1$, co przy kwantyfikatorze \textit{About half} jasno wskazuje na to, że tak samo dużo dni bez opadów jest latem jak i zimą.\newline
+
+Ostatnie podsumowanie jest jedynym, przedstawionym przez nas, które odnosi siIę do pomiarów wiosennych i jesiennych. Sumaryzator stanowi etykieta \textit{High} zmiennej lingwistycznej \textit{RH} a więc duże opady atmosferyczne. Ponownie okazało się, że zdanie prawdziwe wykorzystuje sumaryzator \textit{About half}, co wskazuje na to, że liczby dni wiosennych lub jesiennych oraz zimowych, z dużą liczbą opadów, są bardzo do siebie zbliżone. 
+
 \section{Wnioski}
-\textit{Praca w toku}
+Na drodze implementacji biblioteki do obliczeń rozmytych i podsumowań llingwistycznych, przeprowadzonych eksperymentów oraz ich dyskusji, wyciągneliśmy następujące wnioski:
+\begin{itemize}[label=$\bullet$\scshape\bfseries]
+\item Podsumowania lingwistyczne stanowią bardzo skuteczny sposób analizy danych i jej interpretacji, odpowiednio dobrane zmienne lingwistyczne i kwantyfikatory umożliwiają potwierdzenie intuicyjnych, znanych zależności, ale także odnajdywanie nowych korelacji i związków między cechami badnych podmiotów.
+\item Parametry funkcji przynależności kwantyfikatorów absolutnych muszą być odpowiednio dobierane pod wielkość i rodzaj używanej bazy danych, w naszym przypadku dobrane przez nas kwantyfikatory bezwzględne okazały się dużo mniej użyteczne od kwantyfikatorów względnych.
+\item Analizowanie wartości osiąganych przez miary jakości od $T_2$ do $T_11$ ma właściwy sens tylko wtedy gdy, miara $T_1$ osiąga wartość dodatnią.
+\item Liczba rekordów w bazie danych ma bezpośredni wpływ na precyzję i jakość generwoanych podsumowań.
+\item Im węższe wartości funkcji przynależności zmiennych lingwistycznych, tym bardziej miarodajne wyniki.
+\item Bardzo ważnym aspektem jest dobór zbiorów rozmytych dla etykiet w taki sposób aby się nakładały (w ten sposób upewniamy się, że nasza dziedzina nie będzie miała pustych obszarów - niepokrytych przez żaden zbiór rozmyty). Ta uwaga jest bardzo ważna również przy definiowaniu kwantyfikatorów względnych, ponieważ za wszelką cenę należy unikać sytuacji, w której istnieją takie konfigurację kwalifikatorów i sumaryzatorów, dla których wygenerowane podsumowania nie osiągnają dodatniej wartości miary $T_1$ dla żadnego z kwantyfikatorów względnych.
+\end{itemize}
 
 
 \begin{thebibliography}{5}
