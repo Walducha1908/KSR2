@@ -35,7 +35,7 @@ public class Program extends Application {
         Manager.readAllRecords();
         Manager.prepareLinguisticVariables();
         Manager.prepareQuantifiers();
-//        launch(args);
+        launch(args);
 
 //        // Common case.
 //        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
@@ -103,23 +103,23 @@ public class Program extends Application {
 //        }
 
         // Multi subject summary.
-        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
-            LinguisticSummary.createMultiSubjectLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
-                    Seasons.summer,
-                    Seasons.winter);
-        }
-
-
-        // We have all results in container, let's print only positive.
-        System.out.println("\nTrue sentences: " + ResultContainer.getOnlyTrue());
-
-        // Save results
-        DataWriter.saveResults();
-
-        // Close app.
-        Runtime.getRuntime().exit(0);
+//        for (LinguisticVariable quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.createMultiSubjectLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+//                    Seasons.summer,
+//                    Seasons.winter);
+//        }
+//
+//
+//        // We have all results in container, let's print only positive.
+//        System.out.println("\nTrue sentences: " + ResultContainer.getOnlyTrue());
+//
+//        // Save results
+//        DataWriter.saveResults();
+//
+//        // Close app.
+//        Runtime.getRuntime().exit(0);
     }
 
 }
