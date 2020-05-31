@@ -167,22 +167,22 @@ public class Program extends Application {
 //                    LinguisticVariableContainer.linguisticVariables.get("HighRH"));
 //        }
 //
-        // Using and.
-        AndSummarizer andSummarizer = new AndSummarizer(
-                LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
-                LinguisticVariableContainer.linguisticVariables.get("GentleFG"));
-        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
-            LinguisticSummary.createLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("ColdTGS"),
-                    andSummarizer);
-        }
-        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
-            LinguisticSummary.createLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get("ColdTGS"),
-                    andSummarizer);
-        }
+//        // Using and.
+//        AndSummarizer andSummarizer = new AndSummarizer(
+//                LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+//                LinguisticVariableContainer.linguisticVariables.get("GentleFG"));
+//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("ColdTGS"),
+//                    andSummarizer);
+//        }
+//        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
+//            LinguisticSummary.createLinguisticSentence(
+//                    quantifier,
+//                    LinguisticVariableContainer.linguisticVariables.get("ColdTGS"),
+//                    andSummarizer);
+//        }
 //        andSummarizer = new AndSummarizer(
 //                LinguisticVariableContainer.linguisticVariables.get("WarmTGS"),
 //                LinguisticVariableContainer.linguisticVariables.get("ModerateFG"));
@@ -299,13 +299,48 @@ public class Program extends Application {
 //        }
 //
         // Multi subject summary.
-//        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
-//            LinguisticSummary.createMultiSubjectLinguisticSentence(
-//                    quantifier,
-//                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
-//                    Seasons.summer,
-//                    Seasons.winter);
-//        }
+        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+            LinguisticSummary.createMultiSubjectLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get("SunnyQ"),
+                    Seasons.summer,
+                    Seasons.winter);
+        }
+        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+            LinguisticSummary.createMultiSubjectLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get("VeryStrongFXX"),
+                    Seasons.summer,
+                    Seasons.winter);
+        }
+        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+            LinguisticSummary.createMultiSubjectLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get("StrongFG"),
+                    Seasons.summer,
+                    Seasons.winter);
+        }
+        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+            LinguisticSummary.createMultiSubjectLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get("NoneRH"),
+                    Seasons.summer,
+                    Seasons.winter);
+        }
+        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+            LinguisticSummary.createMultiSubjectLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get("GentleFG"),
+                    Seasons.spring_autumn,
+                    Seasons.summer);
+        }
+        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+            LinguisticSummary.createMultiSubjectLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get("HighRH"),
+                    Seasons.spring_autumn,
+                    Seasons.winter);
+        }
 
 
         // We have all results in container, let's print only positive.
