@@ -5,7 +5,7 @@ import Program.Data.DataWriter;
 import Program.FuzzyLib.Containers.LinguisticVariableContainer;
 import Program.FuzzyLib.Containers.QuantifierContainer;
 import Program.FuzzyLib.Logic.AndSummarizer;
-import Program.FuzzyLib.Logic.LinguisticVariable;
+import Program.FuzzyLib.Logic.LinguisticLabel;
 import Program.FuzzyLib.Logic.OrSummarizer;
 import Program.FuzzyLib.Summaries.LinguisticSummary;
 import Program.Model.Containers.ResultContainer;
@@ -24,7 +24,7 @@ public class Program extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/program.fxml"));
             primaryStage.setTitle("Mati je kluski");
-            primaryStage.setScene(new Scene(root, 800, 600));
+            primaryStage.setScene(new Scene(root, 1293, 540));
             primaryStage.show();
         } catch (Exception ex) {
             System.out.println(ex);
