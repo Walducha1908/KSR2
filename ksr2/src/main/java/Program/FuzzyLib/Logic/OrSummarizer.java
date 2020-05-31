@@ -70,10 +70,10 @@ public class OrSummarizer extends LinguisticLabel {
     }
 
     @Override
-    public LinkedList<LinguisticLabel> getAllLinguisticVariables() {
+    public LinkedList<LinguisticLabel> getAllLinguisticLabels() {
         LinkedList<LinguisticLabel> variables = new LinkedList<>();
-        variables.addAll(firstLabel.getAllLinguisticVariables());
-        variables.addAll(secondLabel.getAllLinguisticVariables());
+        variables.addAll(firstLabel.getAllLinguisticLabels());
+        variables.addAll(secondLabel.getAllLinguisticLabels());
         return variables;
     }
 }

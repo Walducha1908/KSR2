@@ -142,7 +142,7 @@ public class LinguisticLabel {
         this.season = season;
     }
 
-    public LinkedList<LinguisticLabel> getAllLinguisticVariables() {
+    public LinkedList<LinguisticLabel> getAllLinguisticLabels() {
         LinkedList<LinguisticLabel> variables = new LinkedList<>();
         variables.add(this);
         return variables;

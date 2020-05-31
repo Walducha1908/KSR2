@@ -229,7 +229,7 @@ Podpakiet \textit{Logic} odpowiada za implementacje zmiennych lingwistycznych, o
 
 Klasy podpakietu \textit{Logic} są następujące:
 \begin{itemize}[label=$\bullet$\scshape\bfseries]
-\item \textit{LinguisticVariable} - klasa implementująca zmienną lingwistyczną,
+\item \textit{LinguisticLabel} - klasa implementująca pojedynczą etykietę zmiennej lingwistycznej,
 \item \textit{AndSummarizer} - klasa implementująca operacje iloczynu, dziedziczy z klasy \textit{LinguisticVariable},
 \item \textit{Measures} - klasa implementująca miary jakości podsumowań lingwistycznych.\newline\newline
 \end{itemize}
@@ -1068,7 +1068,7 @@ Podsumowanie 41. porównuje zimę i lato pod względem dni bez opadów atmosfery
 Ostatnie podsumowanie jest jedynym, przedstawionym przez nas, które odnosi siIę do pomiarów wiosennych i jesiennych. Sumaryzator stanowi etykieta \textit{High} zmiennej lingwistycznej \textit{RH} a więc duże opady atmosferyczne. Ponownie okazało się, że zdanie prawdziwe wykorzystuje sumaryzator \textit{About half}, co wskazuje na to, że liczby dni wiosennych lub jesiennych oraz zimowych, z dużą liczbą opadów, są bardzo do siebie zbliżone. 
 
 \section{Wnioski}
-Na drodze implementacji biblioteki do obliczeń rozmytych i podsumowań llingwistycznych, przeprowadzonych eksperymentów oraz ich dyskusji, wyciągneliśmy następujące wnioski:
+Na drodze implementacji biblioteki do obliczeń rozmytych i podsumowań lingwistycznych, przeprowadzonych eksperymentów oraz ich dyskusji, wyciągneliśmy następujące wnioski:
 \begin{itemize}[label=$\bullet$\scshape\bfseries]
 \item Podsumowania lingwistyczne stanowią bardzo skuteczny sposób analizy danych i jej interpretacji, odpowiednio dobrane zmienne lingwistyczne i kwantyfikatory umożliwiają potwierdzenie intuicyjnych, znanych zależności, ale także odnajdywanie nowych korelacji i związków między cechami badnych podmiotów.
 \item Parametry funkcji przynależności kwantyfikatorów absolutnych muszą być odpowiednio dobierane pod wielkość i rodzaj używanej bazy danych, w naszym przypadku dobrane przez nas kwantyfikatory bezwzględne okazały się dużo mniej użyteczne od kwantyfikatorów względnych.
