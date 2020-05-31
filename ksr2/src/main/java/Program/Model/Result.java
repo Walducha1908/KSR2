@@ -18,6 +18,7 @@ public class Result {
     private double degreeOfQualifierImprecision;
     private double degreeOfQualifierCardinality;
     private double lengthOfQualifier;
+    private double optimumMeasure;
 
     @Override
     public String toString() {
@@ -35,6 +36,7 @@ public class Result {
                 " degreeOfQualifierImprecision = " + df.format(degreeOfQualifierImprecision) +
                 " degreeOfQualifierCardinality = " + df.format(degreeOfQualifierCardinality) +
                 " lengthOfQualifier = " + df.format(lengthOfQualifier) +
+                " optimum = " + df.format(optimumMeasure) +
                 "]\n";
     }
 
@@ -56,6 +58,14 @@ public class Result {
         this.degreeOfQualifierImprecision = degreeOfQualifierImprecision;
         this.degreeOfQualifierCardinality = degreeOfQualifierCardinality;
         this.lengthOfQualifier = lengthOfQualifier;
+        if (degreeOfImprecision >= 0) {
+            this.optimumMeasure = degreeOfTruth + degreeOfImprecision + degreeOfCovering
+                    + degreeOfAppropriateness + lengthOfSummary + degreeOfQuantifierImprecision +
+                    degreeOfQuantifierCardinality + degreeOfSummarizerCardinality +
+                    degreeOfQualifierImprecision + degreeOfQualifierCardinality + lengthOfQualifier;
+        } else {
+            this.optimumMeasure = degreeOfTruth;
+        }
     }
 
     public String getSentence() {
@@ -120,5 +130,13 @@ public class Result {
 
     public double getLengthOfQualifier() {
         return lengthOfQualifier;
+    }
+
+    public double getOptimumMeasure() {
+        return optimumMeasure;
+    }
+
+    public void setOptimumMeasure(double optimumMeasure) {
+        this.optimumMeasure = optimumMeasure;
     }
 }

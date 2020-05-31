@@ -1,11 +1,11 @@
 package Program.FuzzyLib.Summaries;
 
-import Program.FuzzyLib.Logic.LinguisticVariable;
+import Program.FuzzyLib.Logic.LinguisticLabel;
 import Program.Model.Columns;
 import Program.Model.Seasons;
 
 public class SentenceMaker {
-    public static String makeSentence(LinguisticVariable quantifier, LinguisticVariable qualifier, LinguisticVariable summarizer) {
+    public static String makeSentence(LinguisticLabel quantifier, LinguisticLabel qualifier, LinguisticLabel summarizer) {
         String sentence = quantifier.toString();
         sentence += "of ";
         if (summarizer.getSeason() != null) {
@@ -26,7 +26,7 @@ public class SentenceMaker {
         return sentence;
     }
 
-    public static String makeMultiSubjectSentence(LinguisticVariable quantifier, LinguisticVariable summarizer, Seasons season1, Seasons season2) {
+    public static String makeMultiSubjectSentence(LinguisticLabel quantifier, LinguisticLabel summarizer, Seasons season1, Seasons season2) {
         String sentence = quantifier.toString();
         sentence += "of ";
         sentence += seasonDictionary(season1) + " ";

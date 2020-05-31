@@ -1,6 +1,6 @@
 package Program.FuzzyLib.Containers;
 
-import Program.FuzzyLib.Logic.LinguisticVariable;
+import Program.FuzzyLib.Logic.LinguisticLabel;
 import Program.FuzzyLib.Membership.TrapezoidFunction;
 import Program.FuzzyLib.Membership.TriangularFunction;
 
@@ -9,18 +9,18 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 public class QuantifierContainer {
-    public static HashMap<String, LinguisticVariable> nonAbsoluteQuantifiersMap;
-    public static LinkedList<LinguisticVariable> nonAbsoluteQuantifiersList;
+    public static HashMap<String, LinguisticLabel> nonAbsoluteQuantifiersMap;
+    public static LinkedList<LinguisticLabel> nonAbsoluteQuantifiersList;
 
-    public static HashMap<String, LinguisticVariable> absoluteQuantifiersMap;
-    public static LinkedList<LinguisticVariable> absoluteQuantifiersList;
+    public static HashMap<String, LinguisticLabel> absoluteQuantifiersMap;
+    public static LinkedList<LinguisticLabel> absoluteQuantifiersList;
 
     public static void prepareNonAbsoluteQuantifiers() {
-        nonAbsoluteQuantifiersMap = new HashMap<String, LinguisticVariable>();
-        nonAbsoluteQuantifiersList = new LinkedList<LinguisticVariable>();
+        nonAbsoluteQuantifiersMap = new HashMap<String, LinguisticLabel>();
+        nonAbsoluteQuantifiersList = new LinkedList<LinguisticLabel>();
 
         /* None */
-        LinguisticVariable none = new LinguisticVariable (
+        LinguisticLabel none = new LinguisticLabel(
                 "None",
                 false,
                 new TriangularFunction(new LinkedList<Double>(Arrays.asList(0.0, 0.0, 0.1))));
@@ -28,7 +28,7 @@ public class QuantifierContainer {
         nonAbsoluteQuantifiersList.add(none);
 
         /* Less than quarter */
-        LinguisticVariable lessThanQuarter  = new LinguisticVariable (
+        LinguisticLabel lessThanQuarter  = new LinguisticLabel(
                 "Less than quarter",
                 false,
                 new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(0.0, 0.10, 0.25, 0.3))));
@@ -36,7 +36,7 @@ public class QuantifierContainer {
         nonAbsoluteQuantifiersList.add(lessThanQuarter);
 
         /* Some */
-        LinguisticVariable some = new LinguisticVariable (
+        LinguisticLabel some = new LinguisticLabel(
                 "Some",
                 false,
                 new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(0.15, 0.2, 0.35, 0.4))));
@@ -44,7 +44,7 @@ public class QuantifierContainer {
         nonAbsoluteQuantifiersList.add(some);
 
         /* About one thirds */
-        LinguisticVariable aboutOneThirds = new LinguisticVariable (
+        LinguisticLabel aboutOneThirds = new LinguisticLabel(
                 "About one thirds",
                 false,
                 new TriangularFunction(new LinkedList<Double>(Arrays.asList(0.23, 0.33, 0.43))));
@@ -52,7 +52,7 @@ public class QuantifierContainer {
         nonAbsoluteQuantifiersList.add(aboutOneThirds);
 
         /* About half */
-        LinguisticVariable aboutHalf = new LinguisticVariable (
+        LinguisticLabel aboutHalf = new LinguisticLabel(
                 "About half",
                 false,
                 new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(0.4, 0.45, 0.55, 0.6))));
@@ -60,7 +60,7 @@ public class QuantifierContainer {
         nonAbsoluteQuantifiersList.add(aboutHalf);
 
         /* About two thirds */
-        LinguisticVariable aboutTwoThirds = new LinguisticVariable (
+        LinguisticLabel aboutTwoThirds = new LinguisticLabel(
                 "About two thirds",
                 false,
                 new TriangularFunction(new LinkedList<Double>(Arrays.asList(0.56, 0.66, 0.76))));
@@ -68,7 +68,7 @@ public class QuantifierContainer {
         nonAbsoluteQuantifiersList.add(aboutTwoThirds);
 
         /* Majority */
-        LinguisticVariable majority = new LinguisticVariable (
+        LinguisticLabel majority = new LinguisticLabel(
                 "Majority",
                 false,
                 new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(0.7, 0.75, 0.85, 0.9))));
@@ -76,7 +76,7 @@ public class QuantifierContainer {
         nonAbsoluteQuantifiersList.add(majority);
 
         /* Almost all */
-        LinguisticVariable almostAll = new LinguisticVariable (
+        LinguisticLabel almostAll = new LinguisticLabel(
                 "Almost all",
                 false,
                 new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(0.85, 0.9, 1.0, 1.01))));
@@ -85,11 +85,11 @@ public class QuantifierContainer {
     }
 
     public static void prepareAbsoluteQuantifiers() {
-        absoluteQuantifiersMap = new HashMap<String, LinguisticVariable>();
-        absoluteQuantifiersList = new LinkedList<LinguisticVariable>();
+        absoluteQuantifiersMap = new HashMap<String, LinguisticLabel>();
+        absoluteQuantifiersList = new LinkedList<LinguisticLabel>();
 
         /* Less than 200 */
-        LinguisticVariable lessThan200 = new LinguisticVariable(
+        LinguisticLabel lessThan200 = new LinguisticLabel(
                 "Less than 200",
                 true,
                 new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(0.0, 0.0, 200.0, 220.0))));
@@ -97,7 +97,7 @@ public class QuantifierContainer {
         absoluteQuantifiersList.add(lessThan200);
 
         /* About 500 */
-        LinguisticVariable about500 = new LinguisticVariable(
+        LinguisticLabel about500 = new LinguisticLabel(
                 "About 500",
                 true,
                 new TriangularFunction(new LinkedList<Double>(Arrays.asList(350.0, 500.0, 650.0))));
@@ -105,7 +105,7 @@ public class QuantifierContainer {
         absoluteQuantifiersList.add(about500);
 
         /* About 1000 */
-        LinguisticVariable about1000 = new LinguisticVariable(
+        LinguisticLabel about1000 = new LinguisticLabel(
                 "About 1000",
                 true,
                 new TriangularFunction(new LinkedList<Double>(Arrays.asList(700.0, 1000.0, 1300.0))));
@@ -113,7 +113,7 @@ public class QuantifierContainer {
         absoluteQuantifiersList.add(about1000);
 
         /* About 2000 */
-        LinguisticVariable about2000 = new LinguisticVariable(
+        LinguisticLabel about2000 = new LinguisticLabel(
                 "About 2000",
                 true,
                 new TriangularFunction(new LinkedList<Double>(Arrays.asList(1700.0, 2000.0, 2300.0))));
@@ -121,7 +121,7 @@ public class QuantifierContainer {
         absoluteQuantifiersList.add(about2000);
 
         /* About 3000 */
-        LinguisticVariable about3000 = new LinguisticVariable(
+        LinguisticLabel about3000 = new LinguisticLabel(
                 "About 3000",
                 true,
                 new TriangularFunction(new LinkedList<Double>(Arrays.asList(2600.0, 3000.0, 3400.0))));
@@ -129,7 +129,7 @@ public class QuantifierContainer {
         absoluteQuantifiersList.add(about3000);
 
         /* About 5000 */
-        LinguisticVariable about5000 = new LinguisticVariable(
+        LinguisticLabel about5000 = new LinguisticLabel(
                 "About 5000",
                 true,
                 new TriangularFunction(new LinkedList<Double>(Arrays.asList(4500.0, 5000.0, 5500.0))));
@@ -137,7 +137,7 @@ public class QuantifierContainer {
         absoluteQuantifiersList.add(about5000);
 
         /* More than 6000 */
-        LinguisticVariable moreThan6000 = new LinguisticVariable(
+        LinguisticLabel moreThan6000 = new LinguisticLabel(
                 "More than 6000",
                 true,
                 new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(5500.0, 6000.0, 17000.0, 17000.1))));

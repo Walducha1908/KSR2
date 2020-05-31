@@ -8,7 +8,7 @@ import Program.Model.Seasons;
 
 import java.util.LinkedList;
 
-public class LinguisticVariable {
+public class LinguisticLabel {
     private String quantifierName;
     private boolean absolute;
     private MembershipFunction membershipFunction;
@@ -16,7 +16,7 @@ public class LinguisticVariable {
     private Seasons season;
 
     /* Variables constructor */
-    public LinguisticVariable(String quantifierName, Columns column, Seasons season, MembershipFunction membershipFunction) {
+    public LinguisticLabel(String quantifierName, Columns column, Seasons season, MembershipFunction membershipFunction) {
         this.quantifierName = quantifierName;
         this.absolute = false;
         this.membershipFunction = membershipFunction;
@@ -25,7 +25,7 @@ public class LinguisticVariable {
     }
 
     /* Quantifiers constructor */
-    public LinguisticVariable(String quantifierName, boolean absolute, MembershipFunction membershipFunction) {
+    public LinguisticLabel(String quantifierName, boolean absolute, MembershipFunction membershipFunction) {
         this.quantifierName = quantifierName;
         this.absolute = absolute;
         this.membershipFunction = membershipFunction;
@@ -33,7 +33,7 @@ public class LinguisticVariable {
         this.season = null;
     }
 
-    public LinguisticVariable() {
+    public LinguisticLabel() {
         this.quantifierName = null;
         this.absolute = false;
         this.membershipFunction = null;
@@ -142,8 +142,8 @@ public class LinguisticVariable {
         this.season = season;
     }
 
-    public LinkedList<LinguisticVariable> getAllLinguisticVariables() {
-        LinkedList<LinguisticVariable> variables = new LinkedList<>();
+    public LinkedList<LinguisticLabel> getAllLinguisticVariables() {
+        LinkedList<LinguisticLabel> variables = new LinkedList<>();
         variables.add(this);
         return variables;
     }
