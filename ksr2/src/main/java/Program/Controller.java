@@ -5,14 +5,12 @@ import Program.FuzzyLib.Containers.LinguisticVariableContainer;
 import Program.FuzzyLib.Containers.QuantifierContainer;
 import Program.FuzzyLib.Logic.AndSummarizer;
 import Program.FuzzyLib.Logic.LinguisticLabel;
-import Program.FuzzyLib.Logic.LinguisticLabel;
 import Program.FuzzyLib.Summaries.LinguisticSummary;
 import Program.Model.Containers.ResultContainer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
@@ -25,13 +23,40 @@ import java.util.*;
 
 public class Controller implements Initializable {
 
-    @FXML private Button button;
     @FXML private ChoiceBox qualifier;
     @FXML private ChoiceBox summarizer1;
     @FXML private ChoiceBox summarizer2;
     @FXML private TextArea textOutput;
     @FXML private CheckBox isItComplex;
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        textOutput.setWrapText(true);
+        List<String> list = new ArrayList<String>();
+
+        for(Map.Entry<String, LinguisticLabel> entry : LinguisticVariableContainer.linguisticVariables.entrySet()){
+            StringBuilder sb = new StringBuilder();
+            if(entry.getKey().toString().equals("All")){
+
+            }
+            sb.append(entry.getValue());
+            sb.append(" - ");
+            sb.append(entry.getKey());
+            list.add(sb.toString());
+        }
+
+        ObservableList obList = FXCollections.observableList(list);
+        qualifier.setItems(obList);
+        summarizer1.setItems(obList);
+        summarizer2.setItems(obList);
+
+    }
+
+    public void saveResultsButton() {
+        // Save results
+        DataWriter.saveResults();
+        System.out.println("Results saved successfully");
+    }
 
     public void useGenerateButton() throws IOException, ParseException {
 
@@ -57,9 +82,6 @@ public class Controller implements Initializable {
         textOutput.clear();
         System.out.println("\nTrue sentences: " + ResultContainer.getOnlyTrue());
         textOutput.setText("\nTrue sentences: " + ResultContainer.getOnlyTrue());
-
-        // Save results
-        DataWriter.saveResults();
     }
 
     public void useGenerateComplexButton() throws IOException, ParseException {
@@ -71,7 +93,7 @@ public class Controller implements Initializable {
             String[] data1 = b.split(" - ");
 
             String c = summarizer2.getSelectionModel().getSelectedItem().toString();
-            String[] data2 = b.split(" - ");
+            String[] data2 = c.split(" - ");
 
             AndSummarizer andSummarizer = new AndSummarizer(
                 LinguisticVariableContainer.linguisticVariables.get(data[1]),
@@ -93,31 +115,10 @@ public class Controller implements Initializable {
         System.out.println("\nTrue sentences: " + ResultContainer.getOnlyTrue());
         textOutput.setText("\nTrue sentences: " + ResultContainer.getOnlyTrue());
 
-        // Save results
-        DataWriter.saveResults();
-
         }else{
             System.out.println("AND option was not selected");
         }
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        textOutput.setWrapText(true);
-        List<String> list = new ArrayList<String>();
 
-        for(Map.Entry<String, LinguisticLabel> entry : LinguisticVariableContainer.linguisticVariables.entrySet()){
-            StringBuilder sb = new StringBuilder();
-            sb.append(entry.getValue());
-            sb.append(" - ");
-            sb.append(entry.getKey());
-            list.add(sb.toString());
-        }
-
-        ObservableList obList = FXCollections.observableList(list);
-        qualifier.setItems(obList);
-        summarizer1.setItems(obList);
-        summarizer2.setItems(obList);
-
-    }
 }

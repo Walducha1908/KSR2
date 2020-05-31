@@ -25,6 +25,7 @@ public class Program extends Application {
             Parent root = FXMLLoader.load(getClass().getResource("/program.fxml"));
             primaryStage.setTitle("Mati je kluski");
             primaryStage.setScene(new Scene(root, 1293, 540));
+            primaryStage.setResizable(false);
             primaryStage.show();
         } catch (Exception ex) {
             System.out.println(ex);
