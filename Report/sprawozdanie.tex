@@ -134,7 +134,7 @@ Rozwińmy podany wcześniej przykład, tak aby wykorzystywał on sumaryzator zł
 
 
 \subsubsection{Wielopodmiotowe podsumowania lingwistyczne}
-W poprzedmin podrozdziale omówiliśmy podsumowania lingwistyczne wykorzystujące tylko jeden podmiot. Okazuje się jednak, że podsumowania lingwistyczne mogą opierać się o wiele podmiotów. Szczegółowe rozważania dotyczące wielopodmiotowych podsumowań lingiwstycznych można znaleźć w pozycji \textit{Pozyskiwanie wiedzy z relacyjnych baz danych: wielopodmiotowe podsumowania lingwistyczne, Adam Niewiadomski, Izabela Superson.} \cite{polska}. \newline
+W poprzedmin podrozdziale omówiliśmy podsumowania lingwistyczne wykorzystujące tylko jeden podmiot. Okazuje się jednak, że podsumowania lingwistyczne mogą opierać się o wiele podmiotów. Szczegółowe rozważania dotyczące wielopodmiotowych podsumowań lingiwstycznych można znaleźć w pozycji \cite{polska}. \newline
 
 W tym sprawozdaniu skoncentrujemy się tylko na jednej z form zaproponowanych w \cite{polska}, o następującej postaci:
 \begin{equation}
@@ -162,7 +162,7 @@ Aby określić jakość naszych podsumowaniań zaimplementowaliśmy 11 miar jako
 \item $T_{11}$ - długość kwalifikatora.
 \end{itemize}
 
-Dokładny opis miar i wzorów można znaleźć w rozdziałach 8.3 i 8.4 w monografii \textit{Methods for the linguistic summarization of data - aplications of fuzzy sets and their extensions, Adam Niewiadomski} \cite{ksiazka}.\newline
+Dokładny opis miar i wzorów można znaleźć w rozdziałach 8.3 i 8.4 w monografii \cite{ksiazka}.\newline
 
 Ze względu na liczbę i zróżnicowanie miar podsumowań lingwistycznych, postanowiliśmy wprowadzić miarę optymalną, upraszczającą przedstawienie i analizę podsumowań. Miara optymalna dla jednopodmiotowych podsumowań jest sumą wszystkich pozostałych miar:
 \begin{equation}
@@ -881,7 +881,7 @@ Kwantyfikator \textit{More than 6000} - funkcja trapezoidalna:
 
 W tym rozdziale przedstawimy wybrane, wygenerowane przez nasz program podsumowania lingiwstyczne wraz z obliczonymi najważniejszymi miarami - dla podsumowań jednopodmiotowych będą to miary $T_1$ i miara optymalna $T_s$, dla podsumowań wielopodmiotowych będzie to jedyna analizowana miara $T_1$ = $T_m$.\newline
 
-W przypadku podsumowań jednopodmiotowych, nie wykorzystujących kwalifikatora (forma (3), miara $T_s$ nie będzie obliczna, ze względu na brak możliwości obliczenia miar od $T_9$ do $T_{11}$, które opierają sią na kwalifikatorze.\newline
+W przypadku podsumowań jednopodmiotowych, nie wykorzystujących kwalifikatora (forma (3)), miara $T_s$ nie będzie obliczna, ze względu na brak możliwości obliczenia miar od $T_9$ do $T_{11}$, które opierają sią na kwalifikatorze.\newline
 
 Prezentowane podsumowania zostały przez nas podzielone ze względu na wykorzystywane zmienne lingwistyczne. Pierwsze trzy podrozdziały będą dotyczyć podsumowań jednopodmiotowych, ostatni zaś podsumowań wielopodmiotowych. Zaprezentujemy najciekawsze podsumowania w następującym porządku:
 
@@ -1065,14 +1065,14 @@ Na podstawie podsumowania 39. wnioskujemy, że prawie wszystkie letnie dni są b
 
 Podsumowanie 41. porównuje zimę i lato pod względem dni bez opadów atmosferycznych. Miara $T_m$ dla tego podsumowania osiągnęła wartość $T_m = 1$, co przy kwantyfikatorze \textit{About half} jasno wskazuje na to, że tak samo dużo dni bez opadów jest latem jak i zimą.\newline
 
-Ostatnie podsumowanie jest jedynym, przedstawionym przez nas, które odnosi siIę do pomiarów wiosennych i jesiennych. Sumaryzator stanowi etykieta \textit{High} zmiennej lingwistycznej \textit{RH} a więc duże opady atmosferyczne. Ponownie okazało się, że zdanie prawdziwe wykorzystuje sumaryzator \textit{About half}, co wskazuje na to, że liczby dni wiosennych lub jesiennych oraz zimowych, z dużą liczbą opadów, są bardzo do siebie zbliżone. 
+Ostatnie podsumowanie jest jedynym, przedstawionym przez nas, które odnosi się do pomiarów wiosennych i jesiennych. Sumaryzator stanowi etykieta \textit{High} zmiennej lingwistycznej \textit{RH} a więc duże opady atmosferyczne. Ponownie okazało się, że zdanie prawdziwe wykorzystuje sumaryzator \textit{About half}, co wskazuje na to, że liczby dni wiosennych lub jesiennych oraz zimowych, z dużą liczbą opadów, są bardzo do siebie zbliżone. 
 
 \section{Wnioski}
 Na drodze implementacji biblioteki do obliczeń rozmytych i podsumowań lingwistycznych, przeprowadzonych eksperymentów oraz ich dyskusji, wyciągneliśmy następujące wnioski:
 \begin{itemize}[label=$\bullet$\scshape\bfseries]
 \item Podsumowania lingwistyczne stanowią bardzo skuteczny sposób analizy danych i jej interpretacji, odpowiednio dobrane zmienne lingwistyczne i kwantyfikatory umożliwiają potwierdzenie intuicyjnych, znanych zależności, ale także odnajdywanie nowych korelacji i związków między cechami badnych podmiotów.
 \item Parametry funkcji przynależności kwantyfikatorów absolutnych muszą być odpowiednio dobierane pod wielkość i rodzaj używanej bazy danych, w naszym przypadku dobrane przez nas kwantyfikatory bezwzględne okazały się dużo mniej użyteczne od kwantyfikatorów względnych.
-\item Analizowanie wartości osiąganych przez miary jakości od $T_2$ do $T_11$ ma właściwy sens tylko wtedy gdy, miara $T_1$ osiąga wartość dodatnią.
+\item Analizowanie wartości osiąganych przez miary jakości od $T_2$ do $T_{11}$ ma sens tylko wtedy gdy, miara $T_1$ osiąga wartość dodatnią.
 \item Liczba rekordów w bazie danych ma bezpośredni wpływ na precyzję i jakość generwoanych podsumowań.
 \item Im węższe wartości funkcji przynależności zmiennych lingwistycznych, tym bardziej miarodajne wyniki.
 \item Bardzo ważnym aspektem jest dobór zbiorów rozmytych dla etykiet w taki sposób aby się nakładały (w ten sposób upewniamy się, że nasza dziedzina nie będzie miała pustych obszarów - niepokrytych przez żaden zbiór rozmyty). Ta uwaga jest bardzo ważna również przy definiowaniu kwantyfikatorów względnych, ponieważ za wszelką cenę należy unikać sytuacji, w której istnieją takie konfigurację kwalifikatorów i sumaryzatorów, dla których wygenerowane podsumowania nie osiągnają dodatniej wartości miary $T_1$ dla żadnego z kwantyfikatorów względnych.
