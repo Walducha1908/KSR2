@@ -10,10 +10,14 @@ import Program.Model.Containers.ResultContainer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -21,13 +25,14 @@ import java.text.ParseException;
 import java.util.*;
 
 
-public class Controller implements Initializable {
+public class MainController implements Initializable {
 
     @FXML private ChoiceBox qualifier;
     @FXML private ChoiceBox summarizer1;
     @FXML private ChoiceBox summarizer2;
     @FXML private TextArea textOutput;
     @FXML private CheckBox isItComplex;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -36,9 +41,6 @@ public class Controller implements Initializable {
 
         for(Map.Entry<String, LinguisticLabel> entry : LinguisticVariableContainer.linguisticVariables.entrySet()){
             StringBuilder sb = new StringBuilder();
-            if(entry.getKey().toString().equals("All")){
-
-            }
             sb.append(entry.getValue());
             sb.append(" - ");
             sb.append(entry.getKey());
@@ -118,6 +120,21 @@ public class Controller implements Initializable {
         }else{
             System.out.println("AND option was not selected");
         }
+    }
+
+    public void addNewVariableButton() {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/scene.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("okienko");
+            stage.setScene(new Scene(root, 350, 400));
+            stage.setResizable(false);
+            stage.show();
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+
     }
 
 

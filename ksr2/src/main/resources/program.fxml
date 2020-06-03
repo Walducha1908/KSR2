@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="540.0" prefWidth="1293.0" style="-fx-background-color: #bed2d4;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Program.Controller">
+<AnchorPane prefHeight="540.0" prefWidth="1293.0" style="-fx-background-color: #bed2d4;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Program.MainController">
    <children>
       <Button fx:id="button" layoutX="14.0" layoutY="96.0" mnemonicParsing="false" onAction="#useGenerateButton" prefHeight="25.0" prefWidth="510.0" text="Generate" />
       <TextArea fx:id="textOutput" layoutX="534.0" layoutY="41.0" prefHeight="490.0" prefWidth="748.0" />
@@ -44,6 +44,7 @@
       <CheckBox fx:id="isItComplex" layoutX="135.0" layoutY="184.0" mnemonicParsing="false" text="Yes" />
       <Button fx:id="button1" layoutX="14.0" layoutY="255.0" mnemonicParsing="false" onAction="#useGenerateComplexButton" prefHeight="25.0" prefWidth="510.0" text="Generate complex" />
       <Button fx:id="saveResult" layoutX="14.0" layoutY="298.0" mnemonicParsing="false" onAction="#saveResultsButton" prefHeight="25.0" prefWidth="510.0" text="SaveResults" />
+      <Button fx:id="saveResult1" layoutX="14.0" layoutY="338.0" mnemonicParsing="false" onAction="#addNewVariableButton" prefHeight="25.0" prefWidth="510.0" text="New Variable" />
    </children>
    <effect>
       <Blend />
