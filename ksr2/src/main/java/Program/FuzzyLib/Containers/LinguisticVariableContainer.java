@@ -5,9 +5,7 @@ import Program.FuzzyLib.Membership.TrapezoidFunction;
 import Program.Model.Columns;
 import Program.Model.Seasons;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.*;
 
 public class LinguisticVariableContainer {
     public static HashMap<String, LinguisticLabel> linguisticVariables;
@@ -447,5 +445,31 @@ public class LinguisticVariableContainer {
                 new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(-1.0, -1.0, -1.0, -1.0))));
         linguisticVariables.put("NoQualifier", All);
 
+        // Sort linguistic variable map with columns (variables)
+        Comparator<Map.Entry<String, LinguisticLabel>> valueComparator = new Comparator<Map.Entry<String,LinguisticLabel>>() {
+            @Override
+            public int compare(Map.Entry<String, LinguisticLabel> e1, Map.Entry<String, LinguisticLabel> e2) {
+                if (e1.getValue().getColumn() == null)
+                    return -1;
+                if (e2.getValue().getColumn() == null)
+                    return 1;
+                String s1 = e1.getValue().getColumn().toString() + e1.getValue().getQuantifierName();
+                String s2 = e2.getValue().getColumn().toString() + e2.getValue().getQuantifierName();
+                return s1.compareTo(s2);
+            }
+        };
+
+        Set<Map.Entry<String, LinguisticLabel>> entries = linguisticVariables.entrySet();
+        List<Map.Entry<String, LinguisticLabel>> listOfEntries = new ArrayList<Map.Entry<String, LinguisticLabel>>(entries);
+
+        Collections.sort(listOfEntries, valueComparator);
+
+        LinkedHashMap<String, LinguisticLabel> sortedByValue = new LinkedHashMap<String, LinguisticLabel>(listOfEntries.size());
+
+        for(Map.Entry<String, LinguisticLabel> entry : listOfEntries){
+            sortedByValue.put(entry.getKey(), entry.getValue());
+        }
+
+        linguisticVariables = sortedByValue;
     }
 }

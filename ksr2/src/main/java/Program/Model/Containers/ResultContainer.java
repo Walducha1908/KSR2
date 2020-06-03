@@ -25,4 +25,14 @@ public class ResultContainer {
         }
         return trueResults;
     }
+
+    public static String getOnlyTrueInString() {
+        String trueResults = "";
+        for (int i = results.size() - 1; i >= 0; i--) {
+            if (results.get(i).getDegreeOfTruth() >= Settings.trueSentenceCutOffPoint) {
+                trueResults += results.get(i);
+            }
+        }
+        return trueResults;
+    }
 }

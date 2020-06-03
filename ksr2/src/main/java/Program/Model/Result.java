@@ -23,20 +23,19 @@ public class Result {
     @Override
     public String toString() {
         DecimalFormat df = new DecimalFormat("0.000");
-        return "\n[" + sentence + "]\n[" +
-                "recordsUsed = " + recordsUsed +
-                " degreeOfTruth = " + df.format(degreeOfTruth) +
-                " degreeOfImprecision = " + df.format(degreeOfImprecision) +
-                " degreeOfCovering = " + df.format(degreeOfCovering) +
-                " degreeOfAppropriateness = " + df.format(degreeOfAppropriateness) +
-                " lengthOfSummary = " + df.format(lengthOfSummary) +
-                " degreeOfQuantifierImprecision = " + df.format(degreeOfQuantifierImprecision) +
-                " degreeOfQuantifierCardinality = " + df.format(degreeOfQuantifierCardinality) +
-                " degreeOfSummarizerCardinality = " + df.format(degreeOfSummarizerCardinality) +
-                " degreeOfQualifierImprecision = " + df.format(degreeOfQualifierImprecision) +
-                " degreeOfQualifierCardinality = " + df.format(degreeOfQualifierCardinality) +
-                " lengthOfQualifier = " + df.format(lengthOfQualifier) +
-                " optimum = " + df.format(optimumMeasure) +
+        return "\n" + sentence + "\n[" +
+                "Ts = " + df.format(optimumMeasure) +
+                " T1 = " + df.format(degreeOfTruth) +
+                " T2 = " + df.format(degreeOfImprecision) +
+                " T3 = " + df.format(degreeOfCovering) +
+                " T4 = " + df.format(degreeOfAppropriateness) +
+                " T5 = " + df.format(lengthOfSummary) +
+                " T6 = " + df.format(degreeOfQuantifierImprecision) +
+                " T7 = " + df.format(degreeOfQuantifierCardinality) +
+                " T8 = " + df.format(degreeOfSummarizerCardinality) +
+                " T9 = " + df.format(degreeOfQualifierImprecision) +
+                " T10 = " + df.format(degreeOfQualifierCardinality) +
+                " T11 = " + df.format(lengthOfQualifier) +
                 "]\n";
     }
 
@@ -63,6 +62,7 @@ public class Result {
                     + degreeOfAppropriateness + lengthOfSummary + degreeOfQuantifierImprecision +
                     degreeOfQuantifierCardinality + degreeOfSummarizerCardinality +
                     degreeOfQualifierImprecision + degreeOfQualifierCardinality + lengthOfQualifier;
+            this.optimumMeasure /= 11;
         } else {
             this.optimumMeasure = degreeOfTruth;
         }

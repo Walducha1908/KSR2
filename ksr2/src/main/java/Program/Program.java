@@ -23,7 +23,7 @@ public class Program extends Application {
     public void start(Stage primaryStage) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/program.fxml"));
-            primaryStage.setTitle("Mati je kluski");
+            primaryStage.setTitle("Linguistic Summarizations - weather in Netherlands 2016 - 2018");
             primaryStage.setScene(new Scene(root, 1293, 540));
             primaryStage.setResizable(false);
             primaryStage.show();
