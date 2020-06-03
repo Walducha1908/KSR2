@@ -86,8 +86,10 @@ public class SideController implements Initializable {
         variable.getSelectionModel().selectedItemProperty().addListener( (Observable, oldValue, newValue) -> {
             String temp = newValue.toString();
             String[] data = temp.split(" - ");
-            System.out.println(data[0]);
-            if (data[0] == "FG" || data[0] == "FHX" || data[0] == "FNX" || data[0] == "FXX" || data[0] == "Q" || data[0] =="RH") {
+            if(data[0].equals(" FG ")){
+                System.out.println("równe");
+            }
+            if (data[0].equals("FG") || data[0].equals("FHX") || data[0].equals("FHN") ||data[0].equals("FXX") || data[0].equals("Q") ||data[0].equals("RH")) {
                 season.setDisable(true);
             }else{
                 season.setDisable(false);
@@ -114,16 +116,13 @@ public class SideController implements Initializable {
         String[] data = var.split(" - ");
         c = Columns.valueOf(data[0]);
 
-        //getting season from gui
-        String seas = season.getSelectionModel().getSelectedItem().toString();
-        s = Seasons.valueOf(seas);
 
-        if(function.getSelectionModel().getSelectedItem().toString() == "Triangular Function"){
+        if(function.getSelectionModel().getSelectedItem().toString().equals("Triangular Function")){
             spinner4.setEditable(false);
             first = Double.valueOf(spinner1.getValue().toString());
             second =  Double.valueOf(spinner2.getValue().toString());
             third =  Double.valueOf(spinner3.getValue().toString());
-            if(c.toString() == "FG" || c.toString() == "FHX" || c.toString() == "FNX" || c.toString() == "FXX" || c.toString() == "Q" || c.toString() =="RH"){
+            if(c.toString().equals("FG") || c.toString().equals("FHX") || c.toString().equals("FHN") || c.toString().equals("FXX") || c.toString().equals("Q") || c.toString().equals("RH")){
                 StringBuilder key = new StringBuilder();
                 key.append(n);
                 key.append(c.toString());
@@ -135,6 +134,10 @@ public class SideController implements Initializable {
                 LinguisticVariableContainer.linguisticVariables.put(key.toString(), a);
                 //System.out.println(a.toString());
             }else {
+                //getting season from gui
+                String seas = season.getSelectionModel().getSelectedItem().toString();
+                s = Seasons.valueOf(seas);
+
                 StringBuilder key = new StringBuilder();
                 key.append(n);
                 key.append(c.toString());
@@ -147,12 +150,12 @@ public class SideController implements Initializable {
 
             }
 
-        }else if(function.getSelectionModel().getSelectedItem().toString() == "Trapezoid Function"){
+        }else if(function.getSelectionModel().getSelectedItem().toString().equals("Trapezoid Function")){
             first = Double.valueOf(spinner1.getValue().toString());
             second =  Double.valueOf(spinner2.getValue().toString());
             third =  Double.valueOf(spinner3.getValue().toString());
             fourth = Double.valueOf(spinner4.getValue().toString());
-            if(c.toString() == "FG" || c.toString() == "FHX" || c.toString() == "FNX" || c.toString() == "FXX" || c.toString() == "Q" || c.toString() =="RH"){
+            if(c.toString().equals("FG") || c.toString().equals("FHX") || c.toString().equals("FHN") || c.toString().equals("FXX") || c.toString().equals("Q") || c.toString().equals("RH")){
                 StringBuilder key = new StringBuilder();
                 key.append(n);
                 key.append(c.toString());
@@ -164,6 +167,10 @@ public class SideController implements Initializable {
                 LinguisticVariableContainer.linguisticVariables.put(key.toString(), a);
                 //System.out.println(a.toString());
             }else {
+                //getting season from gui
+                String seas = season.getSelectionModel().getSelectedItem().toString();
+                s = Seasons.valueOf(seas);
+
                 StringBuilder key = new StringBuilder();
                 key.append(n);
                 key.append(c.toString());
@@ -180,7 +187,7 @@ public class SideController implements Initializable {
             spinner4.setEditable(false);
             first = Double.valueOf(spinner1.getValue().toString());
             second =  Double.valueOf(spinner2.getValue().toString());
-            if(c.toString() == "FG" || c.toString() == "FHX" || c.toString() == "FNX" || c.toString() == "FXX" || c.toString() == "Q" || c.toString() =="RH"){
+            if(c.toString().equals("FG") || c.toString().equals("FHX") || c.toString().equals("FHN") || c.toString().equals("FXX") || c.toString().equals("Q") || c.toString().equals("RH")){
                 StringBuilder key = new StringBuilder();
                 key.append(n);
                 key.append(c.toString());
@@ -192,6 +199,10 @@ public class SideController implements Initializable {
                 LinguisticVariableContainer.linguisticVariables.put(key.toString(), a);
                 //System.out.println(a.toString());
             }else {
+                //getting season from gui
+                String seas = season.getSelectionModel().getSelectedItem().toString();
+                s = Seasons.valueOf(seas);
+
                 StringBuilder key = new StringBuilder();
                 key.append(n);
                 key.append(c.toString());
@@ -203,6 +214,11 @@ public class SideController implements Initializable {
                 LinguisticVariableContainer.linguisticVariables.put(key.toString(), a);
 
             }
+        }
+
+        //sprawdzenie czy Label został dodany do listy
+        for(Map.Entry<String, LinguisticLabel> entry : LinguisticVariableContainer.linguisticVariables.entrySet()){
+            System.out.println(entry.toString());
         }
     }
 }
