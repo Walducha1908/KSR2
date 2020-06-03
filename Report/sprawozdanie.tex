@@ -113,7 +113,7 @@ Omówmy poszczególne elementy powyższego wzoru:
 \item $T$ to stopień prawdziwości podsumowania (więcej informacji zamieszczono w rozdziale 2.3 dotyczącym miar jakości).
 \end{itemize}
 
-Zaprezentujmy przykład, dla omówionej postaci podsumowania lingwistycznego: \textit{"Prawie wszyscy programiści zarabiają ponad 2000 złotych [0.88]"}, gdzie:  \textit{"Prawie wszyscy"} to kwantyfikator,  \textit{"programiści"} to podmit lingwistyczny, \textit{"zarabiają ponad 2000 złotych"} to sumaryztaor, a  \textit{"[0.88]"} to stopień prawdziwości podsumowania. \newline
+Zaprezentujmy przykład, dla omówionej postaci podsumowania lingwistycznego: \textit{"Prawie wszyscy programiści zarabiają ponad 2000 złotych [0,88]"}, gdzie:  \textit{"Prawie wszyscy"} to kwantyfikator,  \textit{"programiści"} to podmit lingwistyczny, \textit{"zarabiają ponad 2000 złotych"} to sumaryztaor, a  \textit{"[0,88]"} to stopień prawdziwości podsumowania. \newline
 
 
 Następnym etapem w naszej wędrówce po rozważaniach dotyczących podsumowań lingwistycznych, będzie podsumowanie z kwalifikatorem, które ma postać:
@@ -122,7 +122,7 @@ Q  ~ P ~ \textit{będących/mających własność} ~ W  ~ { \textit{jest/są} } 
 \end{equation}
 gdzie $W$ jest kwalifikatorem - dodatkową właściwością (lub zestawem właściwości) posiadaną przez analizowane obiekty (np. \textit{"[programiści] mający około 30 lat"}).\newline
 
-Ponownie zaprezentujemy przytaczany wcześniej przykład, tym razem rozbudujemy go o kwalifikator: \textit{"Prawie wszyscy programiści mający około 30 lat zarabiają ponad 2000 złotych [0.54]"}.\newline
+Ponownie zaprezentujemy przytaczany wcześniej przykład, tym razem rozbudujemy go o kwalifikator: \textit{"Prawie wszyscy programiści mający około 30 lat zarabiają ponad 2000 złotych [0,54]"}.\newline
 
 Aby jeszcze bardziej zwiększyć stopień skomplikowania podsumowania lingwistycznego, można skorzystać ze złożonego sumaryztora. Wtedy podsumowanie lingwistyczne przybiera postać:
 \begin{equation}
@@ -130,7 +130,7 @@ Q  ~ P ~ \textit{mających własność} ~ W ~ { \textit{jest/są} }  ~ S_1 ~ \te
 \end{equation}
 gdzie za pomocą słowa \textit{lub} wyrażamy sumę sumaryzatorów zaś z wykorzystaniem słowa \textit{i} - ich iloczyn.\newline
 
-Rozwińmy podany wcześniej przykład, tak aby wykorzystywał on sumaryzator złożony: \textit{"Prawie wszyscy programiści mający około 30 lat zarabiają ponad 2000 złotych i mają bardzo drogi samochód [0.54]"}, sumaryzatorem złożonym w tym przykładzie jest \textit{"zarabiają ponad 2000 złotych i mają bardzo drogi samochód}".\newline
+Rozwińmy podany wcześniej przykład, tak aby wykorzystywał on sumaryzator złożony: \textit{"Prawie wszyscy programiści mający około 30 lat zarabiają ponad 2000 złotych i mają bardzo drogi samochód [0,54]"}, sumaryzatorem złożonym w tym przykładzie jest \textit{"zarabiają ponad 2000 złotych i mają bardzo drogi samochód}".\newline
 
 
 \subsubsection{Wielopodmiotowe podsumowania lingwistyczne}
@@ -142,7 +142,7 @@ Q  ~ P_1 ~ \textit{w odniesieniu do} ~ P_2  ~ { \textit{jest/są} }  ~ S_j ~[T]
 \end{equation}
 gdzie $Q$ jest kwantyfikatorem, $P_1$ i $P_2$ są podmiotami podsumowania a $S_j$ jest sumaryzatorem.\newline
 
-Podobnie jak w przypadku jednopodmiotowych podsumowań, posłużymy się przykładem: \textit{"Większość programistów w odniesieniu do pielęgniarek ma bardzo drogi samochód [0.92]"}, gdzie: \textit{"Większość"} to kwantyfikator, \textit{"programiści"} to pierwszy podmiot lingwistyczny,  \textit{"pielęgniarki"} to drugi podmiot lingwistyczny, \textit{"ma bardzo drogi samochód"} to sumaryztaor, a  \textit{"[0.92]"} to stopień prawdziwości podsumowania.
+Podobnie jak w przypadku jednopodmiotowych podsumowań, posłużymy się przykładem: \textit{"Większość programistów w odniesieniu do pielęgniarek ma bardzo drogi samochód [0,92]"}, gdzie: \textit{"Większość"} to kwantyfikator, \textit{"programiści"} to pierwszy podmiot lingwistyczny,  \textit{"pielęgniarki"} to drugi podmiot lingwistyczny, \textit{"ma bardzo drogi samochód"} to sumaryztaor, a  \textit{"[0,92]"} to stopień prawdziwości podsumowania.
 
 \subsection{Miary jakości dla podumowań lingwistycznych}
 
@@ -166,7 +166,7 @@ Dokładny opis miar i wzorów można znaleźć w rozdziałach 8.3 i 8.4 w monogr
 
 Ze względu na liczbę i zróżnicowanie miar podsumowań lingwistycznych, postanowiliśmy wprowadzić miarę optymalną, upraszczającą przedstawienie i analizę podsumowań. Miara optymalna dla jednopodmiotowych podsumowań jest sumą wszystkich pozostałych miar:
 \begin{equation}
-T_s = \sum_{i=1}^{11} T_{i}
+T_s = \frac{1}{11} \sum_{i=1}^{11} T_{i}
 \end{equation}
 
 W przypadku podsumowań wielopodmiotowych, jedyną analizowaną miarą będzie miara $T_1$, dlatego też miara optymalna dla podsumowań wielopodmiotowych określona jest prostym wzorem:
@@ -289,16 +289,16 @@ W celu analizy bazy danych i tworzenia jej lingwistycznych podsumowań wybraliś
 
 Wybrane kolumny są następujące:
 \begin{itemize}[label=$\bullet$\scshape\bfseries]
-\item FG - średnia prędkość wiatru przez cały dzień [$0.1 \frac{m}{s}$].
-\item FHX - najwyższa średnia prędkość wiatru w ciągu jednej godziny [$0.1 \frac{m}{s}$].
-\item FHN - najniższa średnia prędkość wiatru w ciągu jednej godziny [$0.1 \frac{m}{s}$].
-\item FXX - najszybszy podmuch wiatru w ciągu całego dnia [$0.1 \frac{m}{s}$].
-\item TG - średnia dzienna temperatura [$0.1^{\circ} C$].
-\item TN - minimalna dzienna temperatura [$0.1^{\circ} C$].
-\item TX - maksymalna dzienna temperatura [$0.1^{\circ} C$].
-\item T10N - minimalna dzienna temperatura na wysokości 10 cm od poziomu gruntu [$0.1^{\circ} C$].
+\item FG - średnia prędkość wiatru przez cały dzień [$0,1 \frac{m}{s}$].
+\item FHX - najwyższa średnia prędkość wiatru w ciągu jednej godziny [$0,1 \frac{m}{s}$].
+\item FHN - najniższa średnia prędkość wiatru w ciągu jednej godziny [$0,1 \frac{m}{s}$].
+\item FXX - najszybszy podmuch wiatru w ciągu całego dnia [$0,1 \frac{m}{s}$].
+\item TG - średnia dzienna temperatura [$0,1^{\circ} C$].
+\item TN - minimalna dzienna temperatura [$0,1^{\circ} C$].
+\item TX - maksymalna dzienna temperatura [$0,1^{\circ} C$].
+\item T10N - minimalna dzienna temperatura na wysokości 10 cm od poziomu gruntu [$0,1^{\circ} C$].
 \item Q - nasłonecznienie, energia słoneczna przypadająca na powierzchnię [$\frac{J}{cm^2}$].
-\item RH - suma opadów atmosferycznych w ciągu całego dnia [$0.1 mm$].\newline
+\item RH - suma opadów atmosferycznych w ciągu całego dnia [$0,1 mm$].\newline
 \end{itemize}
 
 Oprócz wyżej opisanych danych liczbowych, w naszej bazie znajdują się także dwie dodatkowe kolumny, służące do identyfikacji pomiaru:
@@ -742,67 +742,67 @@ Wykres ilustrujący wszystkie kwantyfikatory względne, zamieszczono poniżej.
 Kwantyfikator \textit{None} - funkcja trójkątna:
 \begin{equation}
 {Qt}_{NONE}(x)= \left\{ \begin{array}{ll}
-\frac{0.1-x}{0.1} 	 & \textrm{jeśli $0 \leq x \leq 0.1$}
+\frac{0,1-x}{0,1} 	 & \textrm{jeśli $0 \leq x \leq 0,1$}
 \end{array} \right.
 \end{equation}
 
 Kwantyfikator \textit{Less than quarter} - funkcja trapezoidalna:
 \begin{equation}
 {Qt}_{\textit{LESS THAN QUARTER}}(x)= \left\{ \begin{array}{ll}
-\frac{x}{0.1} 	& \textrm{jeśli $0 \leq x < 0.1$} \\
-1 			& \textrm{jeśli $0.1 \leq x \leq 0.25$} \\
-\frac{0.3-x}{0.05} 	& \textrm{jeśli $0.25 < x \leq 0.3$}
+\frac{x}{0,1} 	& \textrm{jeśli $0 \leq x < 0.1$} \\
+1 			& \textrm{jeśli $0,1 \leq x \leq 0,25$} \\
+\frac{0,3-x}{0,05} 	& \textrm{jeśli $0,25 < x \leq 0,3$}
 \end{array} \right.
 \end{equation}
 
 Kwantyfikator \textit{Some} - funkcja trapezoidalna:
 \begin{equation}
 {Qt}_{\textit{SOME}}(x)= \left\{ \begin{array}{ll}
-\frac{x-0.15}{0.05} 	& \textrm{jeśli $0.15 \leq x < 0.2$} \\
-1 			& \textrm{jeśli $0.2 \leq x \leq 0.35$} \\
-\frac{0.4-x}{0.05} 	& \textrm{jeśli $0.35 < x \leq 0.4$}
+\frac{x-0,15}{0,05} 	& \textrm{jeśli $0,15 \leq x < 0,2$} \\
+1 			& \textrm{jeśli $0,2 \leq x \leq 0,35$} \\
+\frac{0,4-x}{0,05} 	& \textrm{jeśli $0,35 < x \leq 0,4$}
 \end{array} \right.
 \end{equation}
 
 Kwantyfikator \textit{About one thirds} - funkcja trójkątna:
 \begin{equation}
 {Qt}_{\textit{ABOUT ONE THIRDS}}(x)= \left\{ \begin{array}{ll}
-\frac{x-0.23}{0.1} 	 & \textrm{jeśli $0.23 \leq x \leq 0.33$} \\
-\frac{0.43-x}{0.1} 	 & \textrm{jeśli $0.33 \leq x \leq 0.43$} \\
+\frac{x-0,23}{0,1} 	 & \textrm{jeśli $0,23 \leq x \leq 0,33$} \\
+\frac{0,43-x}{0,1} 	 & \textrm{jeśli $0,33 \leq x \leq 0,43$} \\
 \end{array} \right.
 \end{equation}
 
 Kwantyfikator \textit{About half} - funkcja trapezoidalna:
 \begin{equation}
 {Qt}_{\textit{ABOUT HALF}}(x)= \left\{ \begin{array}{ll}
-\frac{x-0.4}{0.05} 	& \textrm{jeśli $0.4 \leq x < 0.45$} \\
-1 			& \textrm{jeśli $0.45 \leq x \leq 0.55$} \\
-\frac{0.6-x}{0.05} 	& \textrm{jeśli $0.55 < x \leq 0.6$}
+\frac{x-0,4}{0,05} 	& \textrm{jeśli $0,4 \leq x < 0,45$} \\
+1 			& \textrm{jeśli $0,45 \leq x \leq 0,55$} \\
+\frac{0,6-x}{0,05} 	& \textrm{jeśli $0,55 < x \leq 0,6$}
 \end{array} \right.
 \end{equation}
 
 Kwantyfikator \textit{About two thirds} - funkcja trójkątna:
 \begin{equation}
 {Qt}_{\textit{ABOUT TWO THIRDS}}(x)= \left\{ \begin{array}{ll}
-\frac{x-0.56}{0.1} 	 & \textrm{jeśli $0.56 \leq x \leq 0.66$} \\
-\frac{0.76-x}{0.1} 	 & \textrm{jeśli $0.66 \leq x \leq 0.76$} \\
+\frac{x-0,56}{0,1} 	 & \textrm{jeśli $0,56 \leq x \leq 0,66$} \\
+\frac{0,76-x}{0,1} 	 & \textrm{jeśli $0,66 \leq x \leq 0,76$} \\
 \end{array} \right.
 \end{equation}
 
 Kwantyfikator \textit{Majority} - funkcja trapezoidalna:
 \begin{equation}
 {Qt}_{\textit{MAJORITY}}(x)= \left\{ \begin{array}{ll}
-\frac{x-0.7}{0.05} 	& \textrm{jeśli $0.7 \leq x < 0.75$} \\
-1 			& \textrm{jeśli $0.75 \leq x \leq 0.85$} \\
-\frac{0.9-x}{0.05} 	& \textrm{jeśli $0.85 < x \leq 0.9$}
+\frac{x-0,7}{0,05} 	& \textrm{jeśli $0,7 \leq x < 0,75$} \\
+1 			& \textrm{jeśli $0,75 \leq x \leq 0,85$} \\
+\frac{0,9-x}{0,05} 	& \textrm{jeśli $0,85 < x \leq 0,9$}
 \end{array} \right.
 \end{equation}
 
 Kwantyfikator \textit{Almost all} - funkcja trapezoidalna:
 \begin{equation}
 {Qt}_{\textit{ALMOST ALL}}(x)= \left\{ \begin{array}{ll}
-\frac{x-0.85}{0.05} 	& \textrm{jeśli $0.85 \leq x < 0.9$} \\
-1 			& \textrm{jeśli $0.9 \leq x \leq 1.0$} \\
+\frac{x-0,85}{0,05} 	& \textrm{jeśli $0,85 \leq x < 0,9$} \\
+1 			& \textrm{jeśli $0,9 \leq x \leq 1,0$} \\
 \end{array} \right.
 \end{equation}
 
@@ -918,17 +918,17 @@ Nr & \multicolumn{1}{|c|}{Podsumowanie} & $T_s$ & $T_1$ & Forma \\
 \hline
 \hline
 
-12	&	Majority of measures with sunny insolation have none precipitation.	&	8,575	&	1,000 & \multirow{6}{1em}{\newline\newline\newline\newline\newline(4)} \\
+12	&	Majority of measures with sunny insolation have none precipitation.	&	0,780	&	1,000 & \multirow{6}{1em}{\newline\newline\newline\newline\newline(4)} \\
 \cline{1-4}
-13	&	Less than quarter of measures with sunny insolation have low precipitation.	&	7,999	&	1,000 & \\
+13	&	Less than quarter of measures with sunny insolation have low precipitation.	&	0,727	&	1,000 & \\
 \cline{1-4}
-14	&	None of measures with overcast insolation have downpour precipitation.	&	8,228	&	0,719  & \\
+14	&	None of measures with overcast insolation have downpour precipitation.	&	0,748 &	0,719  & \\
 \cline{1-4}
-15	&	Less than quarter of measures with overcast insolation have downpour precipitation.	&	7,414	&	0,281  & \\
+15	&	Less than quarter of measures with overcast insolation have downpour precipitation.	&0,674&	0,281  & \\
 \cline{1-4}
-16	&	Some of measures with overcast insolation have high precipitation.	&	8,042	&	0,623  & \\
+16	&	Some of measures with overcast insolation have high precipitation.	& 0,731 &	0,623  & \\
 \cline{1-4}
-17	&	About 1000 of measures with overcast insolation have high precipitation.	&	8,299	&	0,483  & \\
+17	&	About 1000 of measures with overcast insolation have high precipitation.	&	0,754 &	0,483  & \\
 \hline
 \end{tabularx}
 \caption{Wybrane podsumowania lingwistyczne dla zmiennych lingwistycznych $Q$ i $RH$}
@@ -952,13 +952,13 @@ Nr & \multicolumn{1}{|c|}{Podsumowanie} & $T_s$ & $T_1$ & Forma \\
 22	&	About two thirds of winter measures have warm daily average temperature.	&	-	&	0,929	& \\	\cline{1-4}
 23	&	None of winter measures have hot daily average temperature.	&	-	&	0,947	& \\	\hline\hline
 
-24	&	None of summer measures with sunny insolation have cold daily average temperature.	&	7,597	&	0,779  & \multirow{3}{1em}{\newline\newline\newline(4)} \\ \cline{1-4}			
-25    &	Almost all of summer measures with sunny insolation have warm daily average temperature.	&	7,791	&	1,000	& \\	\cline{1-4}
-26	&	Less than quarter of summer measures with sunny insolation have hot daily average temperature.	&	6,949	&	0,418	& \\	\hline\hline
+24	&	None of summer measures with sunny insolation have cold daily average temperature.	&	0,690	&	0,779  & \multirow{3}{1em}{\newline\newline\newline(4)} \\ \cline{1-4}			
+25    &	Almost all of summer measures with sunny insolation have warm daily average temperature.	&	0,708	&	1,000	& \\	\cline{1-4}
+26	&	Less than quarter of summer measures with sunny insolation have hot daily average temperature.	&	0,631	&	0,418	& \\	\hline\hline
 
-27	&	About one thirds of winter measures with sunny insolation have cold daily average temperature.	&	7,964	&	0,727 & \multirow{3}{1em}{\newline\newline\newline(4)} \\ \cline{1-4}	
-28	&	About two thirds of winter measures with sunny insolation have warm daily average temperature.	&	8,099	&	0,685	& \\	\cline{1-4}
-29	&	None of winter measures with sunny insolation have hot daily average temperature.	&	8,350	&	0,953	& \\ \hline
+27	&	About one thirds of winter measures with sunny insolation have cold daily average temperature.	&	0,724	&	0,727 & \multirow{3}{1em}{\newline\newline\newline(4)} \\ \cline{1-4}	
+28	&	About two thirds of winter measures with sunny insolation have warm daily average temperature.	&	0,736	&	0,685	& \\	\cline{1-4}
+29	&	None of winter measures with sunny insolation have hot daily average temperature.	&	0,759	&	0,953	& \\ \hline
 
 \end{tabularx}
 \caption{Wybrane podsumowania lingwistyczne dla zmiennych lingwistycznych \textit{TGS}, \textit{TGW} i $Q$}
@@ -975,15 +975,15 @@ Nr & \multicolumn{1}{|c|}{Podsumowanie} & $T_s$ & $T_1$ & Forma \\
 \hline
 Nr & \multicolumn{1}{|c|}{Podsumowanie} & $T_s$ & $T_1$ & Forma \\
 \hline
-30	&	About one thirds of summer measures with hot daily average temperature have sunny insolation and gentle daily wind speed average.	&	8,082	&	0,607& \multirow{3}{1em}{\newline\newline\newline\newline(5)} \\ \cline{1-4}	
-31	&	Less than quarter of summer measures with warm daily average temperature have sunny insolation and gentle daily wind speed average.	&	6,868	&	1,000	& \\	\cline{1-4}
-32	&	Less than quarter of summer measures with cold daily average temperature have sunny insolation and gentle daily wind speed average.	&	7,509 &	1,000	& \\	\hline\hline
-33	&	Less than quarter of summer measures with sunny insolation have warm daily average temperature and strong daily wind speed average.	&	6,287	&	0,534	& \multirow{6}{1em}{\newline\newline\newline\newline\newline\newline\newline\newline\newline(5)} \\	\cline{1-4}
-34	&	About half of summer measures with sunny insolation have warm daily average temperature and moderate daily wind speed average.	&	7,199	&	1,000	& \\	\cline{1-4}
-35	&	Less than quarter of summer measures with overcast insolation have warm daily average temperature and strong daily wind speed average.	&	8,136	&	1,000	& \\	\cline{1-4}
-36	&	About half of summer measures with overcast insolation have warm daily average temperature and moderate daily wind speed average.	&	6,960	&	0,137	& \\	\cline{1-4}
-37	&	Less than quarter of summer measures with cloudy insolation have warm daily average temperature and strong daily wind speed average.	&	7,227	&	1,000	& \\	\cline{1-4}
-38	&	About half of summer measures with cloudy insolation have warm daily average temperature and moderate daily wind speed average.	&	7,472	&	1,000	& \\
+30	&	About one thirds of summer measures with hot daily average temperature have sunny insolation and gentle daily wind speed average.	&	0,734	&	0,607& \multirow{3}{1em}{\newline\newline\newline\newline(5)} \\ \cline{1-4}	
+31	&	Less than quarter of summer measures with warm daily average temperature have sunny insolation and gentle daily wind speed average.	&	0,624	&	1,000	& \\	\cline{1-4}
+32	&	Less than quarter of summer measures with cold daily average temperature have sunny insolation and gentle daily wind speed average.	&	0,683 &	1,000	& \\	\hline\hline
+33	&	Less than quarter of summer measures with sunny insolation have warm daily average temperature and strong daily wind speed average.	&	0,572	&	0,534	& \multirow{6}{1em}{\newline\newline\newline\newline\newline\newline\newline\newline\newline(5)} \\	\cline{1-4}
+34	&	About half of summer measures with sunny insolation have warm daily average temperature and moderate daily wind speed average.	&	0,654	&	1,000	& \\	\cline{1-4}
+35	&	Less than quarter of summer measures with overcast insolation have warm daily average temperature and strong daily wind speed average.	&	0,739	&	1,000	& \\	\cline{1-4}
+36	&	About half of summer measures with overcast insolation have warm daily average temperature and moderate daily wind speed average.	&	0,633	&	0,137	& \\	\cline{1-4}
+37	&	Less than quarter of summer measures with cloudy insolation have warm daily average temperature and strong daily wind speed average.	&	0,657	&	1,000	& \\	\cline{1-4}
+38	&	About half of summer measures with cloudy insolation have warm daily average temperature and moderate daily wind speed average.	&	0,679	&	1,000	& \\
 \hline
 \end{tabularx}
 \caption{Wybrane podsumowania lingwistyczne dla zmiennych lingwistycznych \textit{FG}, \textit{TGS} i $Q$}
@@ -1022,7 +1022,7 @@ W tym rozdziale przedyskutujemy wyniki zaprezentowane w poprzedniej sekcji spraw
 \subsection{Nasłonecznienie a opady atmosferyczne}
 Podsumowania od 1. do 11. to jednopodmiotowe podsumowania lingwistyczne w formie (3). Pozostałe podsumowania w tabeli 1. (od 12. do 17.) wykorzystują kwalifikator, stanowią zatem przykłady dla formy (4).\newline
 
-Pierwsze cztery z podsumowań (od 1. do 4.) informują o udziale poszczególnych etykiet zmiennej lingwistycznej opisującej opady atmosferyczne (\textit{RH}) w całej bazie danych. Okazuje się, że około dwie trzecie wszystkich pomiarów stanowią dni kompletnie bez opadów (\textit{None}). Mniej niż 25\% dni przebiegało zarówno z małą  (\textit{Low}) jak i dużą  (\textit{High}) ilością opadów atmosferycznych. Na podstawie podsumowania 4. należy zauważyć, że dni ulewne  (\textit{Downpour}) stanowiły znaczącą mniejszość, jednak wnioskując po wartości miary $T_1 = 0.814 < 1$ możemy z całą pewnością stwierdzić, ze takie dni miały miejsce.\newline
+Pierwsze cztery z podsumowań (od 1. do 4.) informują o udziale poszczególnych etykiet zmiennej lingwistycznej opisującej opady atmosferyczne (\textit{RH}) w całej bazie danych. Okazuje się, że około dwie trzecie wszystkich pomiarów stanowią dni kompletnie bez opadów (\textit{None}). Mniej niż 25\% dni przebiegało zarówno z małą  (\textit{Low}) jak i dużą  (\textit{High}) ilością opadów atmosferycznych. Na podstawie podsumowania 4. należy zauważyć, że dni ulewne  (\textit{Downpour}) stanowiły znaczącą mniejszość, jednak wnioskując po wartości miary $T_1 = 0,814 < 1$ możemy z całą pewnością stwierdzić, ze takie dni miały miejsce.\newline
 
 Podobną rolę jak podsumowania omówione w poprzednim akapicie, pełnią podsumowania od 5. do 11., tym razem koncentrujemy się na udziale poszczególnych etykiet zmiennej \textit{Q}, a więc analizujemy zachmurzenie w Holandii w poszczególnych dniach. Już na pierwszy rzut oka widać, że dni z zachmurzeniem odpowiednio małym (dni słoneczne - etykieta \textit{Sunny}), średnim (etykieta \textit{cloudy}) oraz dużym (etykieta \textit{overcast}) są liczebnie do siebie zbliżone. Jednak dzięki podsumowaniom wykorzystującym kwantyfikatory bezwzględne (8. i 11.) możemy dostrzec różnicę - liczba dni z zachmurzeniem średnim jest większa (\textit{More than 6000}) od liczby dni z zachmurzeniem dużym (\textit{About 5000}).\newline
 
@@ -1037,7 +1037,7 @@ Warto zwrócić uwagę, że w przypadku analizowanych podsumowań z tabeli 2., z
 
 Pierwsze sześć podsumowań, niesie za sobą informacje o rozkładzie temperatur latem (z wykorzystaniem zmiennej lingwistycznej \textit{TGS} przystosowanej do temperatur letnich) - podsumowania od 18. do 20. oraz zimą (z użyciem zmiennej dla temperatur zimowych \textit{TGW}) - podsumowania od 21. do 23. Okazuje się, że latem znaczna większość dni (\textit{Majority}) jest ciepłych (\textit{Warm}). Letnie dni zimne (\textit{Cold}) i gorące (\textit{Hot}) są reprezentowane przez zbiory pomiarów o podobnej liczebności (\textit{Less than quarter}).\newline
 
-W przypadku pomiarów zimowych rozkład temperatur prezentuje się podobnie, choć nie identycznie. Około dwie trzecie zimowych dni jest względnie ciepłych (biorąc pod uwagę średnie zimowe temperatury), znajdziemy jednak również całkiem liczne (\textit{Some}) zimne dni. Gorące dni zimą stanowią znaczną mniejszość - dla podsumowania 23. miara $T_1$ jest bardzo bliska jedności $T_1 = 0.947$, co w przypadku kwantyfikatora (\textit{None}) oznacza, że gorące zimowe dni są bardzo nieliczne.\newline
+W przypadku pomiarów zimowych rozkład temperatur prezentuje się podobnie, choć nie identycznie. Około dwie trzecie zimowych dni jest względnie ciepłych (biorąc pod uwagę średnie zimowe temperatury), znajdziemy jednak również całkiem liczne (\textit{Some}) zimne dni. Gorące dni zimą stanowią znaczną mniejszość - dla podsumowania 23. miara $T_1$ jest bardzo bliska jedności $T_1 = 0,947$, co w przypadku kwantyfikatora (\textit{None}) oznacza, że gorące zimowe dni są bardzo nieliczne.\newline
 
 Podsumowania od 24. do 26. pokazują jakie średnie dzienne temperatury zmierzono dla letnich, słonecznych dni. Ponownie mamy do czynienia z rezultatem, który w żadnym stopniu nas nie zaskakuje - właściwie wszystkie (\textit{Almost all}) letnie, słoneczne dni są ciepłe, mniej niż ćwierć z nich (\textit{Less than quarter}) to dni gorące. W porze letniej, słoneczne, lecz zimne dni stanowią znaczną mniejszość.\newline
 
