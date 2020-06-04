@@ -154,6 +154,8 @@ public class MainController implements Initializable {
     }
 
     public void updateVariablesBoxes() {
+        LinguisticVariableContainer.sortLinguisticVariables();
+
         List<String> list = new ArrayList<String>();
 
         for(Map.Entry<String, LinguisticLabel> entry : LinguisticVariableContainer.linguisticVariables.entrySet()){

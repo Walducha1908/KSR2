@@ -14,13 +14,13 @@
       <Label layoutX="13.0" layoutY="142.0" prefHeight="26.0" prefWidth="74.0" text="Parameter a" />
       <ChoiceBox fx:id="variable" layoutX="150.0" layoutY="15.0" prefHeight="25.0" prefWidth="180.0" />
       <ChoiceBox fx:id="function" layoutX="151.0" layoutY="98.0" prefHeight="25.0" prefWidth="180.0" />
-      <Spinner fx:id="spinner1" editable="true" initialValue="0" layoutX="149.0" layoutY="143.0" max="500" min="-500" prefHeight="25.0" prefWidth="180.0" />
+      <Spinner fx:id="spinner1" editable="true" initialValue="0" layoutX="149.0" layoutY="143.0" max="5000" min="-500" prefHeight="25.0" prefWidth="180.0" />
       <Label layoutX="13.0" layoutY="187.0" prefHeight="26.0" prefWidth="74.0" text="Parameter b" />
-      <Spinner fx:id="spinner2" editable="true" initialValue="0" layoutX="149.0" layoutY="188.0" max="500" min="-500" prefHeight="25.0" prefWidth="180.0" />
+      <Spinner fx:id="spinner2" editable="true" initialValue="0" layoutX="149.0" layoutY="188.0" max="5000" min="-500" prefHeight="25.0" prefWidth="180.0" />
       <Label layoutX="13.0" layoutY="233.0" prefHeight="26.0" prefWidth="74.0" text="Parameter b" />
-      <Spinner fx:id="spinner3" editable="true" initialValue="0" layoutX="149.0" layoutY="234.0" max="500" min="-500" prefHeight="25.0" prefWidth="180.0" />
+      <Spinner fx:id="spinner3" editable="true" initialValue="0" layoutX="149.0" layoutY="234.0" max="5000" min="-500" prefHeight="25.0" prefWidth="180.0" />
       <Label layoutX="13.0" layoutY="276.0" prefHeight="26.0" prefWidth="74.0" text="Parameter d" />
-      <Spinner fx:id="spinner4" editable="true" initialValue="0" layoutX="149.0" layoutY="277.0" max="500" min="-500" prefHeight="25.0" prefWidth="180.0" />
+      <Spinner fx:id="spinner4" editable="true" initialValue="0" layoutX="149.0" layoutY="277.0" max="5000" min="-500" prefHeight="25.0" prefWidth="180.0" />
       <Label layoutX="13.0" layoutY="313.0" prefHeight="26.0" prefWidth="74.0" text="Name" />
       <TextField fx:id="name" layoutX="151.0" layoutY="314.0" prefHeight="25.0" prefWidth="180.0" />
       <Button onAction="#createVariable" layoutX="9.0" layoutY="349.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="324.0" text="Save" />

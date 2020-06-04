@@ -445,6 +445,10 @@ public class LinguisticVariableContainer {
                 new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(-1.0, -1.0, -1.0, -1.0))));
         linguisticVariables.put("NoQualifier", All);
 
+        sortLinguisticVariables();
+    }
+
+    public static void sortLinguisticVariables() {
         // Sort linguistic variable map with columns (variables)
         Comparator<Map.Entry<String, LinguisticLabel>> valueComparator = new Comparator<Map.Entry<String,LinguisticLabel>>() {
             @Override
