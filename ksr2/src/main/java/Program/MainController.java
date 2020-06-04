@@ -14,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
@@ -37,6 +38,122 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         textOutput.setWrapText(true);
+        updateVariablesBoxes();
+    }
+
+    public void saveResultsButton() {
+        // Save results
+        DataWriter.saveResults();
+        System.out.println("Results saved successfully");
+    }
+
+    public void clearTextField() {
+        textOutput.clear();
+    }
+
+    public void useGenerateButton() throws IOException, ParseException {
+
+        if(qualifier.getSelectionModel().isEmpty() || summarizer1.getSelectionModel().isEmpty()) {
+            Alert errorAlert = new Alert(Alert.AlertType.WARNING);
+            errorAlert.setHeaderText("Not enough data");
+            errorAlert.setContentText("Please select both qualifier and summarizer");
+            errorAlert.showAndWait();
+        }else {
+
+            String a = qualifier.getSelectionModel().getSelectedItem().toString();
+            String[] data = a.split(" - ");
+
+            String b = summarizer1.getSelectionModel().getSelectedItem().toString();
+            String[] data1 = b.split(" - ");
+
+            for (LinguisticLabel quantifier : QuantifierContainer.nonAbsoluteQuantifiersList) {
+                LinguisticSummary.createLinguisticSentence(
+                        quantifier,
+                        LinguisticVariableContainer.linguisticVariables.get(data[1]),
+                        LinguisticVariableContainer.linguisticVariables.get(data1[1]));
+            }
+            for (LinguisticLabel quantifier : QuantifierContainer.absoluteQuantifiersList) {
+                LinguisticSummary.createLinguisticSentence(
+                        quantifier,
+                        LinguisticVariableContainer.linguisticVariables.get(data[1]),
+                        LinguisticVariableContainer.linguisticVariables.get(data1[1]));
+            }
+            // We have all results in container, let's print only positive.
+            textOutput.clear();
+            System.out.println("\nTrue sentences: " + ResultContainer.getOnlyTrueInString());
+            textOutput.setText(ResultContainer.getOnlyTrueInString());
+        }
+    }
+
+    public void useGenerateComplexButton() throws IOException, ParseException {
+        if(isItComplex.isSelected() == false){
+            Alert errorAlert = new Alert(Alert.AlertType.INFORMATION);
+            errorAlert.setHeaderText("Wrong selection");
+            errorAlert.setContentText("You did not choose to use an And Summarizer");
+            errorAlert.showAndWait();
+        }else {
+            if (qualifier.getSelectionModel().isEmpty() || summarizer1.getSelectionModel().isEmpty() || summarizer2.getSelectionModel().isEmpty()) {
+                Alert errorAlert = new Alert(Alert.AlertType.WARNING);
+                errorAlert.setHeaderText("Not enough data");
+                errorAlert.setContentText("Please select qualifier and both summarizers");
+                errorAlert.showAndWait();
+            } else {
+                if (isItComplex.isSelected()) {
+                    String a = qualifier.getSelectionModel().getSelectedItem().toString();
+                    String[] data = a.split(" - ");
+
+                    String b = summarizer1.getSelectionModel().getSelectedItem().toString();
+                    String[] data1 = b.split(" - ");
+
+                    String c = summarizer2.getSelectionModel().getSelectedItem().toString();
+                    String[] data2 = c.split(" - ");
+
+                    AndSummarizer andSummarizer = new AndSummarizer(
+                            LinguisticVariableContainer.linguisticVariables.get(data1[1]),
+                            LinguisticVariableContainer.linguisticVariables.get(data2[1]));
+                    for (LinguisticLabel quantifier : QuantifierContainer.nonAbsoluteQuantifiersList) {
+                        LinguisticSummary.createLinguisticSentence(
+                                quantifier,
+                                LinguisticVariableContainer.linguisticVariables.get(data[1]),
+                                andSummarizer);
+                    }
+                    for (LinguisticLabel quantifier : QuantifierContainer.absoluteQuantifiersList) {
+                        LinguisticSummary.createLinguisticSentence(
+                                quantifier,
+                                LinguisticVariableContainer.linguisticVariables.get(data[1]),
+                                andSummarizer);
+                    }
+                    // We have all results in container, let's print only positive.
+                    textOutput.clear();
+                    System.out.println("\nTrue sentences: " + ResultContainer.getOnlyTrue());
+                    textOutput.setText(ResultContainer.getOnlyTrueInString());
+
+                } else {
+                    System.out.println("AND option was not selected");
+                }
+            }
+        }
+    }
+
+    public void addNewVariableButton() {
+        Parent root;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/scene.fxml"));
+            root = (Parent) loader.load();
+            SideController controller = loader.getController();
+            controller.setParentController(this);
+            Stage stage = new Stage();
+            stage.setTitle("Adding custom variable");
+            stage.setScene(new Scene(root, 350, 400));
+            stage.setResizable(false);
+            stage.show();
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+
+    }
+
+    public void updateVariablesBoxes() {
         List<String> list = new ArrayList<String>();
 
         for(Map.Entry<String, LinguisticLabel> entry : LinguisticVariableContainer.linguisticVariables.entrySet()){
@@ -51,90 +168,6 @@ public class MainController implements Initializable {
         qualifier.setItems(obList);
         summarizer1.setItems(obList);
         summarizer2.setItems(obList);
-
-    }
-
-    public void saveResultsButton() {
-        // Save results
-        DataWriter.saveResults();
-        System.out.println("Results saved successfully");
-    }
-
-    public void useGenerateButton() throws IOException, ParseException {
-
-        String a = qualifier.getSelectionModel().getSelectedItem().toString();
-        String[] data = a.split(" - ");
-
-        String b = summarizer1.getSelectionModel().getSelectedItem().toString();
-        String[] data1 = b.split(" - ");
-
-        for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
-            LinguisticSummary.createLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get(data[1]),
-                    LinguisticVariableContainer.linguisticVariables.get(data1[1]));
-        }
-        for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
-            LinguisticSummary.createLinguisticSentence(
-                    quantifier,
-                    LinguisticVariableContainer.linguisticVariables.get(data[1]),
-                    LinguisticVariableContainer.linguisticVariables.get(data1[1]));
-        }
-        // We have all results in container, let's print only positive.
-        textOutput.clear();
-        System.out.println("\nTrue sentences: " + ResultContainer.getOnlyTrueInString());
-        textOutput.setText(ResultContainer.getOnlyTrueInString());
-    }
-
-    public void useGenerateComplexButton() throws IOException, ParseException {
-        if(isItComplex.isSelected()){
-            String a = qualifier.getSelectionModel().getSelectedItem().toString();
-            String[] data = a.split(" - ");
-
-            String b = summarizer1.getSelectionModel().getSelectedItem().toString();
-            String[] data1 = b.split(" - ");
-
-            String c = summarizer2.getSelectionModel().getSelectedItem().toString();
-            String[] data2 = c.split(" - ");
-
-            AndSummarizer andSummarizer = new AndSummarizer(
-                LinguisticVariableContainer.linguisticVariables.get(data1[1]),
-                LinguisticVariableContainer.linguisticVariables.get(data2[1]));
-            for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
-                LinguisticSummary.createLinguisticSentence(
-                        quantifier,
-                        LinguisticVariableContainer.linguisticVariables.get(data[1]),
-                        andSummarizer);
-            }
-            for (LinguisticLabel quantifier: QuantifierContainer.absoluteQuantifiersList) {
-                LinguisticSummary.createLinguisticSentence(
-                        quantifier,
-                        LinguisticVariableContainer.linguisticVariables.get(data[1]),
-                        andSummarizer);
-        }
-        // We have all results in container, let's print only positive.
-        textOutput.clear();
-        System.out.println("\nTrue sentences: " + ResultContainer.getOnlyTrue());
-        textOutput.setText(ResultContainer.getOnlyTrueInString());
-
-        }else{
-            System.out.println("AND option was not selected");
-        }
-    }
-
-    public void addNewVariableButton() {
-        Parent root;
-        try {
-            root = FXMLLoader.load(getClass().getResource("/scene.fxml"));
-            Stage stage = new Stage();
-            stage.setTitle("okienko");
-            stage.setScene(new Scene(root, 350, 400));
-            stage.setResizable(false);
-            stage.show();
-        } catch (Exception ex) {
-            System.out.println(ex);
-        }
-
     }
 
 

@@ -9,12 +9,11 @@ import Program.FuzzyLib.Membership.TriangularFunction;
 import Program.FuzzyLib.Summaries.SentenceMaker;
 import Program.Model.Columns;
 import Program.Model.Seasons;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
@@ -23,8 +22,14 @@ import java.net.URL;
 import java.util.*;
 
 public class SideController implements Initializable {
+    private MainController parentController;
     @FXML
     private ChoiceBox variable;
+
+    public void setParentController(MainController parentController) {
+        this.parentController = parentController;
+    }
+
     @FXML
     private ChoiceBox function;
     @FXML
@@ -99,126 +104,129 @@ public class SideController implements Initializable {
     }
 
     public void createVariable() {
-        String n = name.getText();
-        Columns c;
-        Seasons s;
-        MembershipFunction MF;
-        double first, second, third, fourth;
 
-        first = Integer.valueOf(spinner1.getValue().toString());
-        second =  Integer.valueOf(spinner2.getValue().toString());
-        third =  Integer.valueOf(spinner3.getValue().toString());
-        fourth =  Integer.valueOf(spinner4.getValue().toString());
+        if (name.getText().equals("") || variable.getSelectionModel().isEmpty() || function.getSelectionModel().isEmpty()) {
+            Alert errorAlert = new Alert(Alert.AlertType.WARNING);
+            errorAlert.setHeaderText("Not enough data");
+            errorAlert.setContentText("Please insert all necessary information");
+            errorAlert.showAndWait();
+        } else {
+
+            String n = name.getText();
+            Columns c;
+            Seasons s;
+            double first, second, third, fourth;
+
+            //getting name from gui
+            String var = variable.getSelectionModel().getSelectedItem().toString();
+            String[] data = var.split(" - ");
+            c = Columns.valueOf(data[0]);
 
 
-        //getting name from gui
-        String var = variable.getSelectionModel().getSelectedItem().toString();
-        String[] data = var.split(" - ");
-        c = Columns.valueOf(data[0]);
+            if (function.getSelectionModel().getSelectedItem().toString().equals("Triangular Function")) {
+                spinner4.setEditable(false);
+                first = Double.valueOf(spinner1.getValue().toString());
+                second = Double.valueOf(spinner2.getValue().toString());
+                third = Double.valueOf(spinner3.getValue().toString());
+                if (c.toString().equals("FG") || c.toString().equals("FHX") || c.toString().equals("FHN") || c.toString().equals("FXX") || c.toString().equals("Q") || c.toString().equals("RH")) {
+                    StringBuilder key = new StringBuilder();
+                    key.append(n);
+                    key.append(c.toString());
+                    LinguisticLabel a = new LinguisticLabel(
+                            n,
+                            c,
+                            null,
+                            new TriangularFunction(new LinkedList<Double>(Arrays.asList(first, second, third))));
+                    LinguisticVariableContainer.linguisticVariables.put(key.toString(), a);
+                    //System.out.println(a.toString());
+                } else {
+                    //getting season from gui
+                    String seas = season.getSelectionModel().getSelectedItem().toString();
+                    s = Seasons.valueOf(seas);
 
+                    StringBuilder key = new StringBuilder();
+                    key.append(n);
+                    key.append(c.toString());
+                    LinguisticLabel a = new LinguisticLabel(
+                            n,
+                            c,
+                            s,
+                            new TriangularFunction(new LinkedList<Double>(Arrays.asList(first, second, third))));
+                    LinguisticVariableContainer.linguisticVariables.put(key.toString(), a);
 
-        if(function.getSelectionModel().getSelectedItem().toString().equals("Triangular Function")){
-            spinner4.setEditable(false);
-            first = Double.valueOf(spinner1.getValue().toString());
-            second =  Double.valueOf(spinner2.getValue().toString());
-            third =  Double.valueOf(spinner3.getValue().toString());
-            if(c.toString().equals("FG") || c.toString().equals("FHX") || c.toString().equals("FHN") || c.toString().equals("FXX") || c.toString().equals("Q") || c.toString().equals("RH")){
-                StringBuilder key = new StringBuilder();
-                key.append(n);
-                key.append(c.toString());
-                LinguisticLabel a = new LinguisticLabel(
-                        n,
-                        c,
-                        null,
-                        new TriangularFunction(new LinkedList<Double>(Arrays.asList(first,second, third))));
-                LinguisticVariableContainer.linguisticVariables.put(key.toString(), a);
-                //System.out.println(a.toString());
-            }else {
-                //getting season from gui
-                String seas = season.getSelectionModel().getSelectedItem().toString();
-                s = Seasons.valueOf(seas);
+                }
 
-                StringBuilder key = new StringBuilder();
-                key.append(n);
-                key.append(c.toString());
-                LinguisticLabel a = new LinguisticLabel(
-                        n,
-                        c,
-                        s,
-                        new TriangularFunction(new LinkedList<Double>(Arrays.asList(first,second, third))));
-                LinguisticVariableContainer.linguisticVariables.put(key.toString(), a);
+            } else if (function.getSelectionModel().getSelectedItem().toString().equals("Trapezoid Function")) {
+                first = Double.valueOf(spinner1.getValue().toString());
+                second = Double.valueOf(spinner2.getValue().toString());
+                third = Double.valueOf(spinner3.getValue().toString());
+                fourth = Double.valueOf(spinner4.getValue().toString());
+                if (c.toString().equals("FG") || c.toString().equals("FHX") || c.toString().equals("FHN") || c.toString().equals("FXX") || c.toString().equals("Q") || c.toString().equals("RH")) {
+                    StringBuilder key = new StringBuilder();
+                    key.append(n);
+                    key.append(c.toString());
+                    LinguisticLabel a = new LinguisticLabel(
+                            n,
+                            c,
+                            null,
+                            new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(first, second, third, fourth))));
+                    LinguisticVariableContainer.linguisticVariables.put(key.toString(), a);
+                    //System.out.println(a.toString());
+                } else {
+                    //getting season from gui
+                    String seas = season.getSelectionModel().getSelectedItem().toString();
+                    s = Seasons.valueOf(seas);
 
+                    StringBuilder key = new StringBuilder();
+                    key.append(n);
+                    key.append(c.toString());
+                    LinguisticLabel a = new LinguisticLabel(
+                            n,
+                            c,
+                            s,
+                            new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(first, second, third, fourth))));
+                    LinguisticVariableContainer.linguisticVariables.put(key.toString(), a);
+
+                }
+            } else {
+                spinner3.setEditable(false);
+                spinner4.setEditable(false);
+                first = Double.valueOf(spinner1.getValue().toString());
+                second = Double.valueOf(spinner2.getValue().toString());
+                if (c.toString().equals("FG") || c.toString().equals("FHX") || c.toString().equals("FHN") || c.toString().equals("FXX") || c.toString().equals("Q") || c.toString().equals("RH")) {
+                    StringBuilder key = new StringBuilder();
+                    key.append(n);
+                    key.append(c.toString());
+                    LinguisticLabel a = new LinguisticLabel(
+                            n,
+                            c,
+                            null,
+                            new GaussianFunction(new LinkedList<Double>(Arrays.asList(first, second))));
+                    LinguisticVariableContainer.linguisticVariables.put(key.toString(), a);
+                    //System.out.println(a.toString());
+                } else {
+                    //getting season from gui
+                    String seas = season.getSelectionModel().getSelectedItem().toString();
+                    s = Seasons.valueOf(seas);
+
+                    StringBuilder key = new StringBuilder();
+                    key.append(n);
+                    key.append(c.toString());
+                    LinguisticLabel a = new LinguisticLabel(
+                            n,
+                            c,
+                            s,
+                            new GaussianFunction(new LinkedList<Double>(Arrays.asList(first, second))));
+                    LinguisticVariableContainer.linguisticVariables.put(key.toString(), a);
+
+                }
             }
 
-        }else if(function.getSelectionModel().getSelectedItem().toString().equals("Trapezoid Function")){
-            first = Double.valueOf(spinner1.getValue().toString());
-            second =  Double.valueOf(spinner2.getValue().toString());
-            third =  Double.valueOf(spinner3.getValue().toString());
-            fourth = Double.valueOf(spinner4.getValue().toString());
-            if(c.toString().equals("FG") || c.toString().equals("FHX") || c.toString().equals("FHN") || c.toString().equals("FXX") || c.toString().equals("Q") || c.toString().equals("RH")){
-                StringBuilder key = new StringBuilder();
-                key.append(n);
-                key.append(c.toString());
-                LinguisticLabel a = new LinguisticLabel(
-                        n,
-                        c,
-                        null,
-                        new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(first,second, third, fourth))));
-                LinguisticVariableContainer.linguisticVariables.put(key.toString(), a);
-                //System.out.println(a.toString());
-            }else {
-                //getting season from gui
-                String seas = season.getSelectionModel().getSelectedItem().toString();
-                s = Seasons.valueOf(seas);
-
-                StringBuilder key = new StringBuilder();
-                key.append(n);
-                key.append(c.toString());
-                LinguisticLabel a = new LinguisticLabel(
-                        n,
-                        c,
-                        s,
-                        new TriangularFunction(new LinkedList<Double>(Arrays.asList(first,second, third, fourth))));
-                LinguisticVariableContainer.linguisticVariables.put(key.toString(), a);
-
+            //sprawdzenie czy Label został dodany do listy
+            for (Map.Entry<String, LinguisticLabel> entry : LinguisticVariableContainer.linguisticVariables.entrySet()) {
+                System.out.println(entry.toString());
             }
-        }else{
-            spinner3.setEditable(false);
-            spinner4.setEditable(false);
-            first = Double.valueOf(spinner1.getValue().toString());
-            second =  Double.valueOf(spinner2.getValue().toString());
-            if(c.toString().equals("FG") || c.toString().equals("FHX") || c.toString().equals("FHN") || c.toString().equals("FXX") || c.toString().equals("Q") || c.toString().equals("RH")){
-                StringBuilder key = new StringBuilder();
-                key.append(n);
-                key.append(c.toString());
-                LinguisticLabel a = new LinguisticLabel(
-                        n,
-                        c,
-                        null,
-                        new GaussianFunction(new LinkedList<Double>(Arrays.asList(first,second))));
-                LinguisticVariableContainer.linguisticVariables.put(key.toString(), a);
-                //System.out.println(a.toString());
-            }else {
-                //getting season from gui
-                String seas = season.getSelectionModel().getSelectedItem().toString();
-                s = Seasons.valueOf(seas);
-
-                StringBuilder key = new StringBuilder();
-                key.append(n);
-                key.append(c.toString());
-                LinguisticLabel a = new LinguisticLabel(
-                        n,
-                        c,
-                        s,
-                        new GaussianFunction(new LinkedList<Double>(Arrays.asList(first,second))));
-                LinguisticVariableContainer.linguisticVariables.put(key.toString(), a);
-
-            }
-        }
-
-        //sprawdzenie czy Label został dodany do listy
-        for(Map.Entry<String, LinguisticLabel> entry : LinguisticVariableContainer.linguisticVariables.entrySet()){
-            System.out.println(entry.toString());
+            parentController.updateVariablesBoxes();
         }
     }
 }
