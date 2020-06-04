@@ -44,7 +44,7 @@
       <CheckBox fx:id="isItComplex" layoutX="135.0" layoutY="184.0" mnemonicParsing="false" text="Yes" />
       <Button fx:id="button1" layoutX="14.0" layoutY="255.0" mnemonicParsing="false" onAction="#useGenerateComplexButton" prefHeight="25.0" prefWidth="510.0" text="Generate complex" />
       <Button fx:id="saveResult" layoutX="269.0" layoutY="395.0" mnemonicParsing="false" onAction="#saveResultsButton" prefHeight="25.0" prefWidth="258.0" text="Save Results" />
-      <Button fx:id="newVariableButton" layoutX="14.0" layoutY="359.0" mnemonicParsing="false" onAction="#addNewVariableButton" prefHeight="25.0" prefWidth="510.0" text="New Variable" />
+      <Button fx:id="newVariableButton" layoutX="14.0" layoutY="359.0" mnemonicParsing="false" onAction="#addNewVariableButton" prefHeight="25.0" prefWidth="510.0" text="New Linguistic Label" />
       <Button fx:id="clearButton" layoutX="12.0" layoutY="395.0" mnemonicParsing="false" onAction="#clearTextField" prefHeight="25.0" prefWidth="258.0" text="Clear" />
    </children>
    <effect>

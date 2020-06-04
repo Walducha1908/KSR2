@@ -143,7 +143,7 @@ public class MainController implements Initializable {
             SideController controller = loader.getController();
             controller.setParentController(this);
             Stage stage = new Stage();
-            stage.setTitle("Adding custom variable");
+            stage.setTitle("Adding linguistic label");
             stage.setScene(new Scene(root, 350, 400));
             stage.setResizable(false);
             stage.show();

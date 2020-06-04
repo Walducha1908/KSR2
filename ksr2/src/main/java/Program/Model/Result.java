@@ -23,10 +23,11 @@ public class Result {
     @Override
     public String toString() {
         DecimalFormat df = new DecimalFormat("0.000");
-        return "\n" + sentence + "\n[" +
+        String s =  "\n" + sentence + "\n[" +
                 "Ts = " + df.format(optimumMeasure) +
-                " T1 = " + df.format(degreeOfTruth) +
-                " T2 = " + df.format(degreeOfImprecision) +
+                " T1 = " + df.format(degreeOfTruth);
+        if (degreeOfImprecision >= 0) {
+            s += " T2 = " + df.format(degreeOfImprecision) +
                 " T3 = " + df.format(degreeOfCovering) +
                 " T4 = " + df.format(degreeOfAppropriateness) +
                 " T5 = " + df.format(lengthOfSummary) +
@@ -35,8 +36,9 @@ public class Result {
                 " T8 = " + df.format(degreeOfSummarizerCardinality) +
                 " T9 = " + df.format(degreeOfQualifierImprecision) +
                 " T10 = " + df.format(degreeOfQualifierCardinality) +
-                " T11 = " + df.format(lengthOfQualifier) +
-                "]\n";
+                " T11 = " + df.format(lengthOfQualifier);
+        }
+        return s + "]\n";
     }
 
     public Result(String sentence, int recordsUsed, double degreeOfTruth, double degreeOfImprecision,
