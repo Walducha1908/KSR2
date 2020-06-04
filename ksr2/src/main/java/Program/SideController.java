@@ -23,13 +23,12 @@ import java.util.*;
 
 public class SideController implements Initializable {
     private MainController parentController;
-    @FXML
-    private ChoiceBox variable;
-
     public void setParentController(MainController parentController) {
         this.parentController = parentController;
     }
 
+    @FXML
+    private ChoiceBox variable;
     @FXML
     private ChoiceBox function;
     @FXML
@@ -52,7 +51,7 @@ public class SideController implements Initializable {
         List<String> variablesList = new ArrayList<String>();
         for(Columns c : Columns.values()){
             StringBuilder sb = new StringBuilder();
-            sb.append(c.toString() + " - " +SentenceMaker.columnDictionary(c));
+            sb.append(c.toString() + " - " + SentenceMaker.columnDictionary(c));
             variablesList.add(sb.toString());
         }
         ObservableList variablesObList = FXCollections.observableList(variablesList);
@@ -111,7 +110,6 @@ public class SideController implements Initializable {
             errorAlert.setContentText("Please insert all necessary information");
             errorAlert.showAndWait();
         } else {
-
             String n = name.getText();
             Columns c;
             Seasons s;
@@ -152,6 +150,9 @@ public class SideController implements Initializable {
                             c,
                             s,
                             new TriangularFunction(new LinkedList<Double>(Arrays.asList(first, second, third))));
+                    if(s.toString().equals("summer")){key.append("S");
+                    }else if(s.toString().equals("winter")){key.append("W");
+                    }else{key.append("SA");}
                     LinguisticVariableContainer.linguisticVariables.put(key.toString(), a);
 
                 }
@@ -185,6 +186,9 @@ public class SideController implements Initializable {
                             c,
                             s,
                             new TrapezoidFunction(new LinkedList<Double>(Arrays.asList(first, second, third, fourth))));
+                    if(s.toString().equals("summer")){key.append("S");
+                    }else if(s.toString().equals("winter")){key.append("W");
+                    }else{key.append("SA");}
                     LinguisticVariableContainer.linguisticVariables.put(key.toString(), a);
 
                 }
@@ -217,6 +221,10 @@ public class SideController implements Initializable {
                             c,
                             s,
                             new GaussianFunction(new LinkedList<Double>(Arrays.asList(first, second))));
+                    if(s.toString().equals("summer")){key.append("S");
+                    }else if(s.toString().equals("winter")){key.append("W");
+                    }else{key.append("SA");}
+
                     LinguisticVariableContainer.linguisticVariables.put(key.toString(), a);
 
                 }
@@ -227,6 +235,10 @@ public class SideController implements Initializable {
                 System.out.println(entry.toString());
             }
             parentController.updateVariablesBoxes();
+            Alert errorAlert = new Alert(Alert.AlertType.INFORMATION);
+            errorAlert.setHeaderText("SUCCESS");
+            errorAlert.setContentText("Label added successfully");
+            errorAlert.showAndWait();
         }
     }
 }

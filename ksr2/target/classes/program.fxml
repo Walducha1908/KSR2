@@ -11,16 +11,16 @@
 
 <AnchorPane prefHeight="540.0" prefWidth="1293.0" style="-fx-background-color: #bed2d4;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Program.MainController">
    <children>
-      <Button fx:id="button" layoutX="14.0" layoutY="96.0" mnemonicParsing="false" onAction="#useGenerateButton" prefHeight="25.0" prefWidth="510.0" text="Generate" />
+      <Button fx:id="button" layoutX="17.0" layoutY="125.0" mnemonicParsing="false" onAction="#useGenerateButton" prefHeight="25.0" prefWidth="510.0" text="Generate" />
       <TextArea fx:id="textOutput" layoutX="531.0" layoutY="39.0" prefHeight="490.0" prefWidth="748.0" />
-      <ChoiceBox fx:id="qualifier" layoutX="134.0" layoutY="15.0" prefHeight="25.0" prefWidth="389.0" />
-      <Label layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="78.0" text="Qualifier">
+      <ChoiceBox fx:id="Season1" layoutX="13.0" layoutY="324.0" prefHeight="25.0" prefWidth="258.0" />
+      <Label layoutX="17.0" layoutY="51.0" prefHeight="27.0" prefWidth="78.0" text="Qualifier">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="summarizer1" layoutX="134.0" layoutY="54.0" prefHeight="25.0" prefWidth="389.0" />
-      <Label layoutX="14.0" layoutY="53.0" prefHeight="27.0" prefWidth="112.0" text="Summarizer">
+      <ChoiceBox fx:id="summarizer1" layoutX="137.0" layoutY="91.0" prefHeight="25.0" prefWidth="389.0" />
+      <Label layoutX="17.0" layoutY="90.0" prefHeight="27.0" prefWidth="112.0" text="Summarizer">
          <font>
             <Font size="18.0" />
          </font>
@@ -30,22 +30,51 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="summarizer2" layoutX="135.0" layoutY="217.0" prefHeight="25.0" prefWidth="389.0" />
-      <Label layoutX="15.0" layoutY="216.0" prefHeight="27.0" prefWidth="112.0" text="Summarizer">
+      <ChoiceBox fx:id="summarizer2" layoutX="141.0" layoutY="196.0" prefHeight="25.0" prefWidth="389.0" />
+      <Label layoutX="21.0" layoutY="195.0" prefHeight="27.0" prefWidth="112.0" text="Summarizer">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="15.0" layoutY="179.0" prefHeight="27.0" prefWidth="112.0" text="And">
+      <Label layoutX="21.0" layoutY="158.0" prefHeight="27.0" prefWidth="112.0" text="And">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <CheckBox fx:id="isItComplex" layoutX="135.0" layoutY="184.0" mnemonicParsing="false" text="Yes" />
-      <Button fx:id="button1" layoutX="14.0" layoutY="255.0" mnemonicParsing="false" onAction="#useGenerateComplexButton" prefHeight="25.0" prefWidth="510.0" text="Generate complex" />
-      <Button fx:id="saveResult" layoutX="269.0" layoutY="395.0" mnemonicParsing="false" onAction="#saveResultsButton" prefHeight="25.0" prefWidth="258.0" text="Save Results" />
-      <Button fx:id="newVariableButton" layoutX="14.0" layoutY="359.0" mnemonicParsing="false" onAction="#addNewVariableButton" prefHeight="25.0" prefWidth="510.0" text="New Linguistic Label" />
-      <Button fx:id="clearButton" layoutX="12.0" layoutY="395.0" mnemonicParsing="false" onAction="#clearTextField" prefHeight="25.0" prefWidth="258.0" text="Clear" />
+      <CheckBox fx:id="isItComplex" layoutX="141.0" layoutY="163.0" mnemonicParsing="false" text="Yes" />
+      <Button fx:id="button1" layoutX="20.0" layoutY="234.0" mnemonicParsing="false" onAction="#useGenerateComplexButton" prefHeight="25.0" prefWidth="510.0" text="Generate complex" />
+      <Button fx:id="saveResult" layoutX="271.0" layoutY="501.0" mnemonicParsing="false" onAction="#saveResultsButton" prefHeight="25.0" prefWidth="258.0" text="Save Results" />
+      <Button fx:id="newVariableButton" layoutX="13.0" layoutY="467.0" mnemonicParsing="false" onAction="#addNewVariableButton" prefHeight="25.0" prefWidth="517.0" text="New Linguistic Label" />
+      <Button fx:id="clearButton" layoutX="14.0" layoutY="501.0" mnemonicParsing="false" onAction="#clearTextField" prefHeight="25.0" prefWidth="258.0" text="Clear" />
+      <Label layoutX="16.0" layoutY="14.0" prefHeight="27.0" prefWidth="421.0" text="Single subject summaries">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="17.0" layoutY="270.0" prefHeight="27.0" prefWidth="421.0" text="Multi subject summaries">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="Season2" layoutX="271.0" layoutY="324.0" prefHeight="25.0" prefWidth="258.0" />
+      <Label alignment="CENTER" layoutX="18.0" layoutY="297.0" prefHeight="27.0" prefWidth="258.0" text="Season 1" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="272.0" layoutY="297.0" prefHeight="27.0" prefWidth="258.0" text="Season 2" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="MultiSubSummarizer" layoutX="13.0" layoutY="376.0" prefHeight="25.0" prefWidth="517.0" />
+      <Label alignment="CENTER" layoutX="20.0" layoutY="349.0" prefHeight="27.0" prefWidth="510.0" text="Summarizer">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="button2" layoutX="13.0" layoutY="408.0" mnemonicParsing="false" onAction="#generateMultiSubject" prefHeight="25.0" prefWidth="517.0" text="Generate multi subject" />
+      <ChoiceBox fx:id="qualifier" layoutX="137.0" layoutY="52.0" prefHeight="25.0" prefWidth="389.0" />
    </children>
    <effect>
       <Blend />

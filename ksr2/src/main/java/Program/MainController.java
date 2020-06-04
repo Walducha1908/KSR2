@@ -7,6 +7,7 @@ import Program.FuzzyLib.Logic.AndSummarizer;
 import Program.FuzzyLib.Logic.LinguisticLabel;
 import Program.FuzzyLib.Summaries.LinguisticSummary;
 import Program.Model.Containers.ResultContainer;
+import Program.Model.Seasons;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -34,11 +35,16 @@ public class MainController implements Initializable {
     @FXML private TextArea textOutput;
     @FXML private CheckBox isItComplex;
 
+    @FXML private ChoiceBox Season1;
+    @FXML private ChoiceBox Season2;
+    @FXML private ChoiceBox MultiSubSummarizer;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         textOutput.setWrapText(true);
         updateVariablesBoxes();
+        setSeasons();
     }
 
     public void saveResultsButton() {
@@ -135,6 +141,33 @@ public class MainController implements Initializable {
         }
     }
 
+    public void generateMultiSubject () {
+        if(Season1.getSelectionModel().isEmpty() || Season2.getSelectionModel().isEmpty() || MultiSubSummarizer.getSelectionModel().isEmpty()) {
+            Alert errorAlert = new Alert(Alert.AlertType.WARNING);
+            errorAlert.setHeaderText("Not enough data");
+            errorAlert.setContentText("Please select both seasons and summarizer");
+            errorAlert.showAndWait();
+        }else {
+            String a = MultiSubSummarizer.getSelectionModel().getSelectedItem().toString();
+            String[] data = a.split(" - ");
+            System.out.println(data[1]);
+            Seasons s1 = Seasons.valueOf(Season1.getSelectionModel().getSelectedItem().toString());
+            Seasons s2 = Seasons.valueOf(Season2.getSelectionModel().getSelectedItem().toString());
+
+            for (LinguisticLabel quantifier: QuantifierContainer.nonAbsoluteQuantifiersList) {
+            LinguisticSummary.createMultiSubjectLinguisticSentence(
+                    quantifier,
+                    LinguisticVariableContainer.linguisticVariables.get(data[1]),
+                    s1,
+                    s2);
+        }
+            textOutput.clear();
+            System.out.println("\nTrue sentences: " + ResultContainer.getOnlyTrueInString());
+            textOutput.setText(ResultContainer.getOnlyTrueInString());
+        }
+
+    }
+
     public void addNewVariableButton() {
         Parent root;
         try {
@@ -170,6 +203,29 @@ public class MainController implements Initializable {
         qualifier.setItems(obList);
         summarizer1.setItems(obList);
         summarizer2.setItems(obList);
+
+
+        List<String> temp = new ArrayList<String>();
+        for(String s : list){
+            String c = s.substring(s.length() - 1);
+            if(c.equals("W") || c.equals("A") || c.equals("S")){
+            }else{
+                temp.add(s);
+            }
+        }
+        ObservableList ol = FXCollections.observableList(temp);
+        MultiSubSummarizer.setItems(ol);
+    }
+
+    public void setSeasons() {
+        List<String> seasonList = new ArrayList<String>();
+        seasonList.add("summer");
+        seasonList.add("winter");
+        seasonList.add("spring_autumn");
+        ObservableList seasonObList = FXCollections.observableList(seasonList);
+        Season1.setItems(seasonObList);
+        Season2.setItems(seasonObList);
+
     }
 
 
