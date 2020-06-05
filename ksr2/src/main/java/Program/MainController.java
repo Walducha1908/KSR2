@@ -177,7 +177,7 @@ public class MainController implements Initializable {
             controller.setParentController(this);
             Stage stage = new Stage();
             stage.setTitle("Adding linguistic label");
-            stage.setScene(new Scene(root, 350, 400));
+            stage.setScene(new Scene(root, 341, 418));
             stage.setResizable(false);
             stage.show();
         } catch (Exception ex) {
