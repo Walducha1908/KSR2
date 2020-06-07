@@ -1,15 +1,6 @@
 package Program;
 
 
-import Program.Data.DataWriter;
-import Program.FuzzyLib.Containers.LinguisticVariableContainer;
-import Program.FuzzyLib.Containers.QuantifierContainer;
-import Program.FuzzyLib.Logic.AndSummarizer;
-import Program.FuzzyLib.Logic.LinguisticLabel;
-import Program.FuzzyLib.Logic.OrSummarizer;
-import Program.FuzzyLib.Summaries.LinguisticSummary;
-import Program.Model.Containers.ResultContainer;
-import Program.Model.Seasons;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
