@@ -21,7 +21,7 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.util.*;
 
-public class SideController implements Initializable {
+public class SecondaryController implements Initializable {
     private MainController parentController;
     public void setParentController(MainController parentController) {
         this.parentController = parentController;

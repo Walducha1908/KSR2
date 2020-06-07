@@ -173,7 +173,7 @@ public class MainController implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/scene.fxml"));
             root = (Parent) loader.load();
-            SideController controller = loader.getController();
+            SecondaryController controller = loader.getController();
             controller.setParentController(this);
             Stage stage = new Stage();
             stage.setTitle("Adding linguistic label");
